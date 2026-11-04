@@ -23,7 +23,7 @@ export function StartView({ className }: { className?: string }) {
   const merchantSignupUrl =
     process.env.NEXT_PUBLIC_MERCHANT_SIGNUP_URL || "https://app.cartx.com/register";
   const merchantLoginUrl =
-    process.env.NEXT_PUBLIC_MERCHANT_LOGIN_URL || "https://app.cartx.com/login";
+    process.env.NEXT_PUBLIC_MERCHANT_LOGIN_URL || "/login";
 
   const isExternalSignup = merchantSignupUrl.startsWith("http");
   const isExternalLogin = merchantLoginUrl.startsWith("http");

@@ -290,7 +290,7 @@ export function Header() {
 
           {/* Log In */}
           <Link
-            href="/start"
+            href="/login"
             className="text-xs font-medium text-muted-foreground hover:text-foreground transition-all duration-200 px-2 py-1.5 rounded-md hover:bg-muted/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-ring motion-reduce:transform-none"
           >
             {t("nav.login")}
@@ -412,7 +412,7 @@ export function Header() {
             {/* Mobile Actions */}
             <div className="pt-3 border-t border-border flex flex-col gap-2">
               <Link
-                href="/start"
+                href="/login"
                 className="w-full text-center py-2 text-xs font-medium text-foreground hover:text-primary border border-border rounded-md bg-background transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none"
               >
                 {t("nav.login")}

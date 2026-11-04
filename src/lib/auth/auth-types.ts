@@ -1,13 +1,22 @@
 /**
  * CartX Public Website — Authentication Types
  *
- * Defines login credentials, validation contracts, and standardized API responses.
+ * Defines login and registration credentials, validation contracts,
+ * and standardized API responses.
  */
 
 export interface LoginCredentials {
   email: string;
   password: string;
   rememberMe?: boolean;
+}
+
+export interface RegisterCredentials {
+  fullName: string;
+  email: string;
+  password: string;
+  confirmPassword?: string;
+  termsAccepted: boolean;
 }
 
 export interface AuthUser {
@@ -31,8 +40,11 @@ export interface AuthErrorResponse {
   message: string;
   errorCode?: string;
   fieldErrors?: {
+    fullName?: string;
     email?: string;
     password?: string;
+    confirmPassword?: string;
+    termsAccepted?: string;
   };
 }
 
@@ -41,7 +53,10 @@ export type AuthResponse = AuthSuccessResponse | AuthErrorResponse;
 export interface ValidationResult {
   valid: boolean;
   errors: {
+    fullName?: string;
     email?: string;
     password?: string;
+    confirmPassword?: string;
+    termsAccepted?: string;
   };
 }

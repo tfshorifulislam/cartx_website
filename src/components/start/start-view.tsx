@@ -21,7 +21,7 @@ export function StartView({ className }: { className?: string }) {
 
   // Production Merchant App endpoints configured via environment variables
   const merchantSignupUrl =
-    process.env.NEXT_PUBLIC_MERCHANT_SIGNUP_URL || "https://app.cartx.com/register";
+    process.env.NEXT_PUBLIC_MERCHANT_SIGNUP_URL || "/register";
   const merchantLoginUrl =
     process.env.NEXT_PUBLIC_MERCHANT_LOGIN_URL || "/login";
 

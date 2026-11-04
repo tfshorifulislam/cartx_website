@@ -42,6 +42,7 @@ export function PricingView() {
       <PlanComparisonTable
         plans={plans}
         categories={comparisonCategories}
+        billingPeriod={billingPeriod}
       />
 
       {/* Section 05: White-label Add-on */}

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { CheckCircle2, Minus, Layers, ArrowRight, HelpCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import { ComparisonCategory, PricingPlan } from "../types/pricing.types";
+import { BillingPeriod, ComparisonCategory, PricingPlan } from "../types/pricing.types";
 import { MobilePlanComparison } from "./mobile-plan-comparison";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
@@ -12,12 +12,14 @@ import { cn } from "@/lib/utils";
 interface PlanComparisonTableProps {
   plans: PricingPlan[];
   categories: ComparisonCategory[];
+  billingPeriod?: BillingPeriod;
   className?: string;
 }
 
 export function PlanComparisonTable({
   plans,
   categories,
+  billingPeriod = "monthly",
   className,
 }: PlanComparisonTableProps) {
   const { locale } = useLanguage();
@@ -113,7 +115,11 @@ export function PlanComparisonTable({
                         {plan.targetAudience[isBn ? "bn" : "en"]}
                       </div>
                       <Link
-                        href={plan.cta.href}
+                        href={
+                          plan.prices.isCustom
+                            ? plan.cta.href
+                            : `/checkout?plan=${plan.id}&billing=${billingPeriod}`
+                        }
                         className={cn(
                           "group/thbtn inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-150 w-full shadow-2xs hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none",
                           plan.highlighted

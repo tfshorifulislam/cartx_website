@@ -51,6 +51,10 @@ export function PricingCard({ plan, billingPeriod, className }: PricingCardProps
       ? "স্ট্যান্ডার্ড সাপোর্ট"
       : "Standard Support";
 
+  const ctaHref = plan.prices.isCustom
+    ? plan.cta.href
+    : `/checkout?plan=${plan.id}&billing=${billingPeriod}`;
+
   return (
     <div
       className={cn(
@@ -115,11 +119,11 @@ export function PricingCard({ plan, billingPeriod, className }: PricingCardProps
         {/* 5. Aligned Primary CTA Button */}
         <div className="mb-4">
           <Link
-            href={plan.cta.href}
+            href={ctaHref}
             className={cn(
               "group/btn w-full h-10 inline-flex items-center justify-center gap-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer shadow-xs hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none",
               isHighlighted
-                ? "bg-primary text-primary-foreground hover:bg-[var(--primary-hover)] shadow-sm"
+                ? "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm"
                 : "border border-border bg-card text-foreground hover:bg-muted/50"
             )}
           >

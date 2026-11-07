@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 interface FAQItem {
@@ -94,14 +96,14 @@ export function ContactFAQ({ className }: { className?: string }) {
   return (
     <section
       aria-label="Frequently Asked Questions"
-      className={cn("py-16 sm:py-24 border-b border-border bg-card/30 transition-colors", className)}
+      className={cn("py-16 sm:py-24 border-b border-border bg-card/25 transition-colors", className)}
     >
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-        <ScrollReveal className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-3.5 py-1 text-xs font-semibold text-primary transition-colors mb-3">
-            <HelpCircle className="h-3.5 w-3.5" />
+        <ScrollReveal className="text-center mb-10 sm:mb-12">
+          <Badge variant="outline" className="gap-1.5 px-3 py-1 mb-3 text-xs font-semibold border-primary/20 bg-primary/[0.06] text-primary">
+            <HelpCircle className="size-3.5" />
             <span>{isBn ? "সাধারণ প্রশ্নোত্তর" : "Quick Answers"}</span>
-          </div>
+          </Badge>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
             <span className="block text-foreground">
               {isBn ? "সহায়ক তথ্য ও উত্তর" : "Quick Answers"}
@@ -117,49 +119,52 @@ export function ContactFAQ({ className }: { className?: string }) {
           </p>
         </ScrollReveal>
 
-        <div className="space-y-3.5">
+        <div className="space-y-3">
           {FAQ_ITEMS.map((item, idx) => {
             const isOpen = openId === item.id;
             return (
               <ScrollReveal
                 key={item.id}
                 delay={idx * 50}
-                className={cn(
-                  "rounded-2xl border transition-all duration-200 overflow-hidden",
-                  isOpen
-                    ? "bg-card border-primary/40 shadow-xs"
-                    : "bg-card/70 border-border hover:border-border/80"
-                )}
               >
-                <button
-                  type="button"
-                  onClick={() => toggle(item.id)}
-                  aria-expanded={isOpen}
-                  className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                <Card
+                  className={cn(
+                    "p-0 gap-0 transition-all duration-200 overflow-hidden",
+                    isOpen
+                      ? "bg-card border-primary/40 shadow-xs"
+                      : "bg-card/70 border-border hover:border-border/90"
+                  )}
                 >
-                  <span className="font-bold text-foreground text-sm sm:text-base">
-                    {isBn ? item.questionBn : item.questionEn}
-                  </span>
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
-                      isOpen && "rotate-180 text-primary"
-                    )}
-                  />
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => toggle(item.id)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left px-5 sm:px-6 py-4 sm:py-4.5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <span className="font-bold text-foreground text-sm sm:text-base">
+                      {isBn ? item.questionBn : item.questionEn}
+                    </span>
+                    <ChevronDown
+                      className={cn(
+                        "size-4 shrink-0 text-muted-foreground transition-transform duration-200",
+                        isOpen && "rotate-180 text-primary"
+                      )}
+                    />
+                  </button>
 
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/60">
-                    <p className="mb-3">{isBn ? item.answerBn : item.answerEn}</p>
-                    <Link
-                      href={item.linkHref}
-                      className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline text-xs"
-                    >
-                      <span>{isBn ? item.linkTextBn : item.linkTextEn}</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
-                )}
+                  {isOpen && (
+                    <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/60">
+                      <p className="mb-3">{isBn ? item.answerBn : item.answerEn}</p>
+                      <Link
+                        href={item.linkHref}
+                        className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline text-xs"
+                      >
+                        <span>{isBn ? item.linkTextBn : item.linkTextEn}</span>
+                        <ArrowRight className="size-3.5" />
+                      </Link>
+                    </div>
+                  )}
+                </Card>
               </ScrollReveal>
             );
           })}
@@ -168,4 +173,3 @@ export function ContactFAQ({ className }: { className?: string }) {
     </section>
   );
 }
-

@@ -2,8 +2,16 @@
 
 import React from "react";
 import { Handshake, LifeBuoy, Smartphone, Mail, ArrowRight } from "lucide-react";
+import { useLenis } from "lenis/react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface ContactCardsProps {
@@ -14,6 +22,7 @@ interface ContactCardsProps {
 export function ContactCards({ onSelectCategory, className }: ContactCardsProps) {
   const { locale } = useLanguage();
   const isBn = locale === "bn";
+  const lenis = useLenis();
 
   const cards = [
     {
@@ -62,49 +71,65 @@ export function ContactCards({ onSelectCategory, className }: ContactCardsProps)
     if (onSelectCategory) {
       onSelectCategory(categoryId);
     }
-    const formEl = document.getElementById("contact-form");
+    const formEl =
+      document.getElementById("contact-section") ||
+      document.getElementById("contact-form-section") ||
+      document.getElementById("contact-form");
     if (formEl) {
-      formEl.scrollIntoView({ behavior: "smooth" });
+      const top = formEl.getBoundingClientRect().top + window.scrollY - 80;
+      if (lenis) {
+        lenis.scrollTo(top, {
+          duration: 0.9,
+          easing: (val) => Math.min(1, 1.001 - Math.pow(2, -10 * val)),
+        });
+      } else {
+        formEl.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
   return (
     <section
       aria-label="Contact Channels"
-      className={cn("py-12 sm:py-16 border-b border-border bg-card/30 transition-colors", className)}
+      className={cn(
+        "py-10 sm:py-14 border-b border-border bg-card/25 transition-colors",
+        className
+      )}
     >
       <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
               <ScrollReveal
                 key={card.id}
-                delay={(idx % 4) * 70}
-                className="rounded-2xl border border-border bg-card p-6 shadow-xs hover:border-primary/40 hover:shadow-card transition-all flex flex-col justify-between group"
+                delay={(idx % 4) * 60}
+                className="h-full"
               >
-                <div>
-                  <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-foreground mb-2">
-                    {isBn ? card.titleBn : card.titleEn}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
-                    {isBn ? card.descBn : card.descEn}
-                  </p>
-                </div>
+                <Card
+                  onClick={() => handleCardClick(card.id)}
+                  className="h-full cursor-pointer border border-border/80 bg-card p-5 sm:p-6 shadow-xs hover:border-primary/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <CardHeader className="p-0 space-y-3">
+                    <div className="size-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-105 duration-200">
+                      <Icon className="size-5" />
+                    </div>
+                    <CardTitle className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+                      {isBn ? card.titleBn : card.titleEn}
+                    </CardTitle>
+                  </CardHeader>
 
-                <div className="pt-4 border-t border-border/60">
-                  <button
-                    type="button"
-                    onClick={() => handleCardClick(card.id)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline cursor-pointer"
-                  >
+                  <CardContent className="p-0 pt-2 flex-1">
+                    <CardDescription className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {isBn ? card.descBn : card.descEn}
+                    </CardDescription>
+                  </CardContent>
+
+                  <div className="pt-4 mt-auto border-t border-border/60 flex items-center gap-1.5 text-xs font-semibold text-primary group-hover:underline">
                     <span>{isBn ? card.actionBn : card.actionEn}</span>
-                    <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+                    <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Card>
               </ScrollReveal>
             );
           })}
@@ -113,4 +138,3 @@ export function ContactCards({ onSelectCategory, className }: ContactCardsProps)
     </section>
   );
 }
-

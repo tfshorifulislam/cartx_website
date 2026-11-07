@@ -13,13 +13,54 @@ export function BlogHero({ className }: { className?: string }) {
   return (
     <section
       aria-label="Blog Hero"
-      className={cn("hero-bg relative overflow-hidden transition-colors", className)}
+      className={cn(
+        "hero-bg relative overflow-hidden transition-colors",
+        className
+      )}
     >
+      {/* ── Decorative background shapes (Matches Home Hero) ── */}
+
+      {/* Large soft radial in the top-right */}
+      <div
+        className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full opacity-[0.045]"
+        style={{
+          background:
+            "radial-gradient(circle, var(--primary) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Small accent orb bottom-left for balance */}
+      <div
+        className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full opacity-[0.035]"
+        style={{
+          background:
+            "radial-gradient(circle, var(--secondary-accent) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle grid-dot pattern overlay for depth */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, var(--foreground) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* ── Main content (uses centralized .hero-padding token) ── */}
       <div className="container relative hero-padding">
-        <ScrollReveal direction="up" distance={20} className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-1.5 text-xs font-semibold text-primary transition-colors mb-6">
-            <BookOpen className="h-3.5 w-3.5" />
+        <ScrollReveal
+          direction="up"
+          delay={0}
+          className="max-w-3xl mx-auto text-center flex flex-col items-center"
+        >
+          {/* Eyebrow badge */}
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/[0.06] px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-primary mb-3.5 sm:mb-4 select-none">
+            <BookOpen className="size-3 text-secondary-accent shrink-0" />
             <span>
               {isBn ? "কার্টএক্স নলেজ হাব ও ব্লগ" : "CartX Knowledge Hub & Merchant Guides"}
             </span>
@@ -36,7 +77,7 @@ export function BlogHero({ className }: { className?: string }) {
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-5 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto !mb-6 sm:!mb-8 text-balance">
             {isBn
               ? "ইকমার্স কৌশল, ডেলিভারি অপারেশন, পেমেন্ট গেটওয়ে এবং বিক্রয় বৃদ্ধির কার্যকর পরামর্শ নিয়ে আমাদের নিয়মিত নিবন্ধ।"
               : "Actionable guides, operational strategies, and industry insights curated to help modern merchants launch and scale."}

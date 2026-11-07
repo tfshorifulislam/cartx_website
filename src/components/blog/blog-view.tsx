@@ -58,39 +58,39 @@ export function BlogView() {
       <section
         id="articles-feed"
         aria-label="Blog Articles Feed"
-        className="py-14 sm:py-20 bg-background transition-colors"
+        className="py-10 sm:py-16 md:py-20 bg-background transition-colors"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6">
           {/* Controls Bar: Search & Categories */}
-          <ScrollReveal className="max-w-6xl mx-auto mb-10 space-y-6">
+          <ScrollReveal className="max-w-5xl mx-auto mb-8 sm:mb-12 space-y-5 sm:space-y-6">
             {/* Search Input */}
-            <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <div className="relative max-w-xl mx-auto w-full px-1 sm:px-0">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={
                   isBn
-                    ? "নিবন্ধ বা বিষয়বস্তু খুঁজুন (যেমন: পেমেন্ট, ডেলিভারি, এসইও)..."
+                    ? "নিবন্ধ বা বিষয়বস্তু খুঁজুন (যেমন: পেমেন্ট, ডেলিভারি)..."
                     : "Search guides, strategies, and operational tips..."
                 }
-                className="w-full rounded-2xl border border-border bg-card pl-11 pr-10 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs"
+                className="w-full rounded-xl sm:rounded-2xl border border-border bg-card/90 backdrop-blur-xs pl-10 sm:pl-11 pr-10 py-2.5 sm:py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-all"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground cursor-pointer"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground cursor-pointer rounded-full"
                   aria-label="Clear search"
                 >
-                  <X className="h-4 w-4" />
+                  <X className="size-4" />
                 </button>
               )}
             </div>
 
             {/* Category Filter Pills (10 Categories) */}
-            <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center scrollbar-none">
               {BLOG_CATEGORIES.map((cat) => {
                 const isSelected = selectedCategory === cat.id;
                 const count =
@@ -104,7 +104,7 @@ export function BlogView() {
                     type="button"
                     onClick={() => setSelectedCategory(cat.id)}
                     className={cn(
-                      "shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer",
+                      "shrink-0 inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold transition-all cursor-pointer",
                       isSelected
                         ? "bg-primary text-primary-foreground shadow-xs"
                         : "border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -113,7 +113,7 @@ export function BlogView() {
                     <span>{isBn ? cat.nameBn : cat.nameEn}</span>
                     <span
                       className={cn(
-                        "rounded-full px-1.5 py-0.2 text-[10px] font-mono",
+                        "rounded-full px-1.5 py-0.5 text-[10px] font-mono leading-none",
                         isSelected
                           ? "bg-primary-foreground/20 text-primary-foreground"
                           : "bg-muted text-muted-foreground"
@@ -129,43 +129,41 @@ export function BlogView() {
 
           {/* Results Summary if filtering */}
           {(searchQuery || selectedCategory !== "all") && (
-            <div className="max-w-6xl mx-auto mb-6 flex items-center justify-between text-xs text-muted-foreground px-2">
+            <div className="max-w-5xl mx-auto mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-muted-foreground pb-3 border-b border-border/70">
               <span>
                 {isBn
                   ? `মোট ${filteredPosts.length}টি নিবন্ধ পাওয়া গেছে`
                   : `Showing ${filteredPosts.length} article${filteredPosts.length === 1 ? "" : "s"}`}
               </span>
-              {(searchQuery || selectedCategory !== "all") && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSearchQuery("");
-                    setSelectedCategory("all");
-                  }}
-                  className="text-primary hover:underline cursor-pointer"
-                >
-                  {isBn ? "ফিল্টার মুছুন" : "Reset filters"}
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("all");
+                }}
+                className="text-primary hover:underline cursor-pointer font-semibold text-left sm:text-right"
+              >
+                {isBn ? "ফিল্টার মুছুন" : "Reset filters"}
+              </button>
             </div>
           )}
 
           {/* Articles Grid */}
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               {filteredPosts.map((post, idx) => (
-                <ScrollReveal key={post.slug} delay={(idx % 3) * 70}>
+                <ScrollReveal key={post.slug} delay={(idx % 3) * 70} className="h-full">
                   <BlogCard post={post} />
                 </ScrollReveal>
               ))}
             </div>
           ) : (
-            <div className="max-w-md mx-auto text-center py-16 rounded-2xl border border-dashed border-border bg-card/40 p-8">
-              <Inbox className="h-10 w-10 text-muted-foreground mx-auto mb-3 opacity-60" />
-              <h3 className="text-base font-bold text-foreground mb-1">
+            <div className="max-w-md mx-auto text-center py-12 sm:py-16 px-4 sm:px-8 rounded-xl sm:rounded-2xl border border-dashed border-border bg-card/40">
+              <Inbox className="size-9 sm:size-10 text-muted-foreground mx-auto mb-3 opacity-60" />
+              <h3 className="text-sm sm:text-base font-bold text-foreground mb-1">
                 {isBn ? "কোনো নিবন্ধ পাওয়া যায়নি" : "No articles found"}
               </h3>
-              <p className="text-xs text-muted-foreground mb-4">
+              <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
                 {isBn
                   ? "আপনার অনুসন্ধানের সাথে মিলে এমন কোনো ফলাফল নেই। অন্য কোনো শব্দ অনুসন্ধান করুন।"
                   : "Try adjusting your search query or selecting a different category."}
@@ -176,7 +174,7 @@ export function BlogView() {
                   setSearchQuery("");
                   setSelectedCategory("all");
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-xs font-semibold text-primary-foreground cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-xs font-semibold text-primary-foreground hover:bg-primary-hover transition-colors cursor-pointer"
               >
                 {isBn ? "সব নিবন্ধ দেখুন" : "View all articles"}
               </button>

@@ -63,10 +63,11 @@ export function PricingHero({
 
             {/* Main H1 Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15] mb-4">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "আপনার অনলাইন ব্যবসার জন্য সহজ, স্বচ্ছ প্রাইসিং"
-                  : "Simple, Transparent Pricing for Your Online Business."}
+              <span className="block text-foreground">
+                {isBn ? "সহজ, স্বচ্ছ প্রাইসিং" : "Simple, Transparent Pricing"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "আপনার অনলাইন ব্যবসার জন্য।" : "for Your Online Business."}
               </span>
             </h1>
 

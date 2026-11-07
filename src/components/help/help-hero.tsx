@@ -32,11 +32,12 @@ export function HelpHero({ searchQuery, onSearchChange, className }: HelpHeroPro
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground">
-            <span className="brand-gradient-text block mb-1">
-              {isBn
-                ? "আমরা আপনাকে কীভাবে সাহায্য করতে পারি?"
-                : "How Can We Help You?"}
+          <h1 className="text-balance mb-3! sm:mb-3.5!">
+            <span className="block text-foreground">
+              {isBn ? "আমরা আপনাকে কীভাবে" : "How Can We"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn ? "সাহায্য করতে পারি?" : "Help You?"}
             </span>
           </h1>
 

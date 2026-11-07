@@ -26,11 +26,12 @@ export function BlogHero({ className }: { className?: string }) {
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground">
-            <span className="brand-gradient-text block mb-1">
-              {isBn
-                ? "আপনার অনলাইন ব্যবসা বৃদ্ধির প্রয়োজনীয় দিকনির্দেশনা"
-                : "Insights to Help Your Online Business Grow."}
+          <h1 className="text-balance mb-3! sm:mb-3.5!">
+            <span className="block text-foreground">
+              {isBn ? "আপনার অনলাইন ব্যবসা বৃদ্ধির" : "Insights to Help"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn ? "প্রয়োজনীয় দিকনির্দেশনা" : "Your Online Business Grow."}
             </span>
           </h1>
 

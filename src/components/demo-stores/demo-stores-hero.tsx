@@ -59,11 +59,12 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
 
           {/* Main H1 Heading */}
           <ScrollReveal delay={80}>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.18] mb-4">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "আসল কেনাকাটার অনুভূতি নিন ৬টি ডেমো স্টোরে"
-                  : "Experience Real E-Commerce with 6 Interactive Demo Stores"}
+            <h1 className="text-balance mb-3! sm:mb-3.5!">
+              <span className="block text-foreground">
+                {isBn ? "আসল কেনাকাটার অনুভূতি নিন" : "Experience Real E-Commerce"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "৬টি ডেমো স্টোরে" : "with 6 Interactive Demo Stores"}
               </span>
             </h1>
           </ScrollReveal>

@@ -52,11 +52,12 @@ export function HowItWorksHero({ className }: { className?: string }) {
           </div>
 
           {/* H1 */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15] mb-4">
-            <span className="brand-gradient-text">
-              {isBn
-                ? "অ্যাকাউন্ট তৈরি থেকে আপনার প্রথম অনলাইন অর্ডার"
-                : "From Signup to Your First Online Order."}
+          <h1 className="text-balance mb-3! sm:mb-3.5!">
+            <span className="block text-foreground">
+              {isBn ? "অ্যাকাউন্ট তৈরি থেকে" : "From Signup to"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn ? "আপনার প্রথম অনলাইন অর্ডার" : "Your First Online Order."}
             </span>
           </h1>
 

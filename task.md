@@ -1,140 +1,135 @@
-# Task: Make Demo Stores Page Fully Responsive
+# Task: Make View Demo Modal Fully Responsive
 
 **Target Page:** `/demo-stores`
 
-**URL:** `http://localhost:3000/demo-stores`
+**Target Component:** View Demo Modal
 
 ## Objective
 
-Improve the responsive design of the Demo Stores page.
+When users click the **View Demo** button on the Demo Stores page, a modal opens with Desktop and Mobile preview options.
 
-Currently, demo store previews and their content are not displaying properly across different screen sizes.
+Currently, the modal and its preview content are not fully responsive.
 
-Update the entire page so that all demo store content, preview images, cards, text, and interactive elements work perfectly on mobile, tablet, laptop, and desktop.
+Update the modal so that it works perfectly on mobile, tablet, laptop, and desktop screens.
 
-**Important:** This task is only for the Demo Stores page. Do not redesign unrelated pages.
+**Important:** Focus only on the View Demo modal and its internal preview layout. Do not redesign unrelated parts of the website.
 
-## 1. Audit Existing Design
+## 1. Modal Responsive Layout
 
-Before making changes:
+- Make the modal width responsive to the viewport.
+- Use available screen space efficiently.
+- On desktop, display a large, well-balanced modal.
+- On tablet, reduce modal dimensions appropriately.
+- On mobile, use almost the full available screen width and height.
+- Prevent modal content from overflowing the viewport.
+- Use appropriate maximum width and maximum height.
+- Keep the modal centered on desktop.
+- On mobile, use a comfortable full-screen or near-full-screen layout.
 
-- Inspect the complete `/demo-stores` page.
-- Identify all demo store cards and preview components.
-- Inspect image dimensions and aspect ratios.
-- Check existing container widths, grid layouts, and spacing.
-- Identify horizontal overflow and elements that break on smaller screens.
-- Check existing global CSS and responsive breakpoints.
+## 2. Desktop Preview
 
-## 2. Responsive Layout
+When the Desktop preview option is selected:
 
-Implement a mobile-first responsive layout.
+- Display the demo store in a desktop-style preview.
+- Scale the preview according to the available modal width.
+- Prevent horizontal overflow.
+- Preserve the website's original aspect ratio.
+- Ensure the preview does not get cut off.
+- Use internal scrolling when the preview content is taller than the available space.
+- Keep the desktop preview visually realistic.
 
-Required behavior:
+## 3. Mobile Preview
 
-- **Mobile:** Single-column layout with properly sized demo previews.
-- **Tablet:** Two-column layout where space allows.
-- **Laptop:** Three-column layout where appropriate.
-- **Large Desktop:** Balanced multi-column layout with consistent spacing.
+When the Mobile preview option is selected:
 
-Do not force fixed widths that cause horizontal scrolling.
+- Display the demo store inside a realistic mobile-sized preview.
+- Keep the mobile preview centered inside the modal.
+- Preserve the original mobile layout and proportions.
+- Prevent the preview from overflowing the modal.
+- Allow vertical scrolling inside the preview when necessary.
+- Make sure the preview remains usable on small mobile screens.
+- Do not stretch or distort the mobile preview.
 
-Use responsive CSS Grid or Flexbox based on the existing component structure.
+## 4. Desktop and Mobile Toggle
 
-## 3. Demo Store Preview Cards
-
-Make every demo store card responsive.
+Preserve the existing Desktop/Mobile preview switcher.
 
 Requirements:
 
-- Images must maintain their correct aspect ratios.
-- Preview content must not be cropped unexpectedly.
-- Card widths must adapt to the available screen width.
-- Titles and descriptions must wrap naturally.
-- Buttons must remain visible and accessible.
-- Cards must have consistent spacing and alignment.
-- Avoid fixed heights that cut off important content.
-- Maintain a consistent visual hierarchy.
+- Switching between Desktop and Mobile must work smoothly.
+- The selected option must have a clear active state.
+- Preview dimensions must update correctly when switching.
+- Switching must not break the modal layout.
+- Keep the toggle accessible on smaller screens.
 
-## 4. Demo Preview Images
+## 5. Modal Header and Controls
 
-Pay special attention to demo store screenshots and previews.
+Make the modal header responsive.
 
-- Prevent images from overflowing their containers.
-- Use appropriate `object-fit` behavior.
-- Preserve image proportions.
-- Use responsive image dimensions.
-- Avoid distorted or stretched previews.
-- Ensure previews remain visually clear on mobile.
-- Use Next.js Image where appropriate and follow existing image conventions.
+- Keep the demo store title readable.
+- Keep Desktop/Mobile controls visible.
+- Keep the close button accessible.
+- Prevent header elements from overlapping.
+- On mobile, adjust spacing and alignment appropriately.
+- Ensure all controls remain usable with touch input.
 
-## 5. Typography and Spacing
+## 6. Scrolling Behavior
 
-- Use font sizes from global CSS/theme typography.
-- Use colors from global CSS variables.
-- Maintain consistent heading and paragraph spacing.
-- Ensure long titles and descriptions wrap correctly.
-- Keep text readable on small screens.
-- Avoid unnecessary oversized text.
+Handle scrolling carefully.
 
-## 6. Responsive Breakpoints
+- Prevent the modal from exceeding the viewport height.
+- Keep the modal header and controls accessible.
+- Allow the preview area to scroll independently where appropriate.
+- Avoid unnecessary nested scrollbars.
+- Prevent background page scrolling while the modal is open.
+- Restore normal page scrolling after closing the modal.
 
-Test the page at these viewport widths:
+## 7. Technical Requirements
 
-| Device        |  Width |
-| ------------- | -----: |
-| Small Mobile  |  320px |
-| Mobile        |  375px |
-| Large Mobile  |  425px |
-| Tablet        |  768px |
-| Laptop        | 1024px |
-| Desktop       | 1440px |
-| Large Desktop | 1920px |
-
-These are testing targets, not a requirement to create separate CSS rules for every width.
-
-## 7. Design Quality
-
-The final page must:
-
-- Look premium and professional.
-- Maintain CartX branding.
-- Follow the existing global design system.
-- Use shadcn/ui where appropriate.
-- Maintain consistent card styles.
-- Avoid unnecessary gradients and decorations.
-- Preserve existing content and functionality.
-- Avoid introducing generic AI-generated design patterns.
-
-## 8. Restrictions
-
-- Do not change unrelated pages.
-- Do not change existing demo store content.
-- Do not remove any demo stores.
+- Inspect the existing modal component before changing it.
+- Reuse the existing shadcn/ui Dialog component if already implemented.
+- Use existing global CSS colors and typography.
+- Use existing responsive breakpoints and Tailwind conventions.
+- Avoid hardcoded colors.
+- Avoid unnecessary dependencies.
+- Preserve the existing demo preview functionality.
 - Do not modify backend architecture.
-- Do not add unnecessary dependencies.
-- Do not introduce hardcoded colors or arbitrary typography values.
-- Do not break English or Bangla language support.
+- Do not rewrite unrelated components.
+
+## 8. Responsive Testing
+
+Test the modal at these viewport widths:
+
+| Device       |  Width |
+| ------------ | -----: |
+| Small Mobile |  320px |
+| Mobile       |  375px |
+| Large Mobile |  425px |
+| Tablet       |  768px |
+| Laptop       | 1024px |
+| Desktop      | 1440px |
+
+Verify both Desktop and Mobile preview modes at different viewport sizes.
 
 ## 9. Final Verification
 
-After implementation:
-
-- [ ] All demo store cards are responsive.
-- [ ] All preview images display correctly.
-- [ ] No horizontal overflow exists.
-- [ ] Text wraps correctly.
-- [ ] Buttons remain accessible.
-- [ ] Mobile layout works at 320px.
-- [ ] Tablet layout works at 768px.
-- [ ] Desktop layout works at 1440px.
-- [ ] English and Bangla layouts work.
-- [ ] Existing functionality remains intact.
-- [ ] No console errors or broken images.
+- [ ] View Demo button opens the modal correctly.
+- [ ] Modal fits within all viewport sizes.
+- [ ] Desktop preview scales correctly.
+- [ ] Mobile preview scales correctly.
+- [ ] Desktop/Mobile toggle works.
+- [ ] Preview content does not get unexpectedly cropped.
+- [ ] Preview scrolling works correctly.
+- [ ] Modal header and close button remain accessible.
+- [ ] No horizontal overflow.
+- [ ] Background scrolling is handled correctly.
+- [ ] English and Bangla content works.
+- [ ] Existing functionality remains unchanged.
 
 ## Final Instruction
 
-First inspect the existing Demo Stores page and identify the responsive issues.
+First inspect the existing View Demo modal and understand how Desktop and Mobile previews are rendered.
 
-Then update the necessary components and CSS without unnecessarily rewriting the entire page.
+Then fix the responsive behavior without changing the existing visual identity or unnecessarily rewriting the component.
 
-The final result must be a polished, fully responsive Demo Stores page that looks consistent with the rest of the CartX public website.
+**The modal itself and the website preview inside it must both be responsive independently.**

@@ -29,7 +29,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface BlogCardProps {
@@ -157,15 +157,16 @@ export function BlogCard({ post, className }: BlogCardProps) {
           <div />
         )}
 
-        <Button
-          size="sm"
-          variant="outline"
-          render={<Link href={`/blog/${post.slug}`} />}
-          className="gap-1.5 text-xs font-semibold group/btn hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shrink-0 cursor-pointer"
+        <Link
+          href={`/blog/${post.slug}`}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "gap-1.5 text-xs font-semibold group/btn hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shrink-0 cursor-pointer"
+          )}
         >
           <span>{isBn ? "পড়ুন" : "Read"}</span>
           <ArrowRight className="size-3 transition-transform group-hover/btn:translate-x-0.5" />
-        </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

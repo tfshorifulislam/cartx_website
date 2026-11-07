@@ -8,7 +8,7 @@ import { BlogPost, BLOG_CATEGORIES } from "@/lib/blog-data";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface BlogFeaturedProps {
@@ -132,15 +132,16 @@ export function BlogFeatured({ post, className }: BlogFeaturedProps) {
                 </div>
 
                 <div className="pt-4 border-t border-border/70 flex items-center justify-between">
-                  <Button
-                    variant="default"
-                    size="default"
-                    render={<Link href={`/blog/${post.slug}`} />}
-                    className="gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className={cn(
+                      buttonVariants({ variant: "default", size: "default" }),
+                      "gap-2 px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    )}
                   >
                     <span>{isBn ? "পুরো গাইডটি পড়ুন" : "Read Full Article"}</span>
                     <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </div>

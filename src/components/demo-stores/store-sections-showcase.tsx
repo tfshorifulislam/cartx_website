@@ -21,17 +21,17 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
         ? "স্টোরের সবার উপরে ফ্রি শিপিং নোটিশ, সিজনাল ডিসকাউন্ট কোড কিংবা জরুরি ডেলিভারি বার্তা তুলে ধরুন।"
         : "Display real-time flash sale countdowns, minimum order thresholds for free shipping, or service updates at the very top of your site.",
       previewComponent: (
-        <div className="rounded-xl border border-border bg-card p-5">
-          <div className="rounded-lg bg-primary/10 border border-primary/20 text-primary py-2.5 px-4 text-xs font-semibold flex items-center justify-between">
-            <span className="flex items-center gap-2">
-              <Megaphone className="h-4 w-4" />
-              <span>
+        <div className="rounded-xl border border-border bg-card p-3 sm:p-5">
+          <div className="rounded-lg bg-primary/10 border border-primary/20 text-primary py-2.5 px-3 sm:px-4 text-xs font-semibold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+            <span className="flex items-center gap-2 min-w-0">
+              <Megaphone className="h-4 w-4 shrink-0" />
+              <span className="line-clamp-2 sm:line-clamp-1">
                 {isBn
                   ? "স্পেশাল উইকেন্ড অফার: সকল অর্ডারে ফ্রি ডেলিভারি!"
                   : "Weekend Flash Deal: Free nationwide courier on orders over ৳2,000"}
               </span>
             </span>
-            <span className="font-mono text-[11px] bg-primary text-primary-foreground px-2 py-0.5 rounded">
+            <span className="font-mono text-[11px] bg-primary text-primary-foreground px-2 py-0.5 rounded shrink-0 self-start sm:self-auto">
               CARTX20
             </span>
           </div>
@@ -47,9 +47,9 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
         ? "সহজ ড্রপডাউন মেনু, রিয়েলটাইম সার্চ বার, কার্ট ড্রয়ার এবং গ্রাহক অ্যাকাউন্ট অ্যাক্সেস।"
         : "Sticky or transparent headers with mega-menus, live predictive catalog search, wishlists, and localized currency/language selectors.",
       previewComponent: (
-        <div className="rounded-xl border border-border bg-card p-5">
-          <div className="flex items-center justify-between pb-3 border-b border-border">
-            <span className="font-extrabold text-sm tracking-widest text-foreground">
+        <div className="rounded-xl border border-border bg-card p-3 sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-border">
+            <span className="font-extrabold text-xs sm:text-sm tracking-wider sm:tracking-widest text-foreground">
               CARTX STORE
             </span>
             <div className="hidden sm:flex items-center gap-4 text-xs font-medium text-muted-foreground">
@@ -61,10 +61,10 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
               <span>{isBn ? "যোগাযোগ" : "Contact"}</span>
             </div>
             <div className="flex items-center gap-2 text-xs">
-              <span className="rounded-full bg-muted px-2.5 py-1 text-muted-foreground">
+              <span className="rounded-full bg-muted px-2.5 py-1 text-[11px] text-muted-foreground">
                 Search...
               </span>
-              <span className="rounded-full bg-primary/10 text-primary px-2.5 py-1 font-bold">
+              <span className="rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[11px] font-bold">
                 Cart (2)
               </span>
             </div>
@@ -81,16 +81,16 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
         ? "নতুন কালেকশন কিংবা প্রধান অফারকে বড় দৃষ্টিনন্দন ব্যানার ও সরাসরি শপিং বাটনের মাধ্যমে তুলে ধরুন।"
         : "High-impact visual slider or static hero banner pairing lifestyle media with localized conversion typography and primary CTAs.",
       previewComponent: (
-        <div className="rounded-xl border border-border bg-gradient-to-br from-primary/10 via-muted/30 to-background p-6 sm:p-8">
-          <span className="inline-block rounded-full bg-primary/15 text-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider mb-2">
+        <div className="rounded-xl border border-border bg-gradient-to-br from-primary/10 via-muted/30 to-background p-4 sm:p-6 lg:p-8">
+          <span className="inline-block rounded-full bg-primary/15 text-primary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider mb-2">
             {isBn ? "সিজনাল কালেকশন ২০২৬" : "NEW ARRIVALS 2026"}
           </span>
-          <h4 className="text-lg sm:text-xl font-extrabold text-foreground mb-2">
+          <h4 className="text-base sm:text-lg lg:text-xl font-extrabold text-foreground mb-2">
             {isBn
               ? "স্টাইলিশ ফ্যাশন ওয়্যার ও প্রিমিয়াম ডিজাইন"
               : "Elevate Your Everyday Essentials"}
           </h4>
-          <p className="text-xs text-muted-foreground max-w-md mb-4">
+          <p className="text-xs text-muted-foreground max-w-md mb-4 leading-relaxed">
             {isBn
               ? "মানসম্মত কাপড় এবং দীর্ঘস্থায়ী আরামের নিশ্চয়তা।"
               : "Meticulously crafted with organic breathable fabrics."}
@@ -113,13 +113,13 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
         ? "গ্রাহকদের পছন্দের ক্যাটাগরিতে দ্রুত প্রবেশ করতে সাহায্য করে এমন আধুনিক কার্ড গ্রিড।"
         : "Visual category blocks allowing shoppers to dive directly into specific sub-collections with hover zoom effects.",
       previewComponent: (
-        <div className="rounded-xl border border-border bg-card p-5">
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 text-center">
+        <div className="rounded-xl border border-border bg-card p-3 sm:p-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 text-center">
             {["Men's Wear", "Women's Collection", "Accessories"].map(
               (cat, idx) => (
                 <div
                   key={idx}
-                  className="rounded-lg border border-border/80 bg-muted/40 p-3 hover:border-primary/40 transition-colors"
+                  className="rounded-lg border border-border/80 bg-muted/40 p-2.5 sm:p-3 hover:border-primary/40 transition-colors"
                 >
                   <span className="block text-xs font-bold text-foreground">
                     {cat}
@@ -143,19 +143,19 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
         ? "মাল্টি-ইমেজ গ্যালারি, সাইজ সিলেক্টর, স্টক স্ট্যাটাস এবং ক্যাশ অন ডেলিভারি ব্যাজ।"
         : "Structured product pages highlighting multi-angle imagery, variant pills, inventory indicators, and official warranty tabs.",
       previewComponent: (
-        <div className="rounded-xl border border-border bg-card p-5">
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            <div className="w-24 h-24 rounded-lg bg-muted/50 border border-border/60 flex items-center justify-center text-xs font-bold text-muted-foreground shrink-0">
+        <div className="rounded-xl border border-border bg-card p-3 sm:p-5">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-lg bg-muted/50 border border-border/60 flex items-center justify-center text-xs font-bold text-muted-foreground shrink-0 mx-auto sm:mx-0">
               Photo
             </div>
-            <div className="space-y-1.5 flex-1">
-              <span className="text-xs font-bold text-foreground block">
+            <div className="space-y-1.5 flex-1 w-full text-center sm:text-left">
+              <span className="text-xs sm:text-sm font-bold text-foreground block">
                 Tailored Linen Blend Shirt
               </span>
-              <span className="font-mono text-xs font-extrabold text-primary block">
+              <span className="font-mono text-xs sm:text-sm font-extrabold text-primary block">
                 ৳1,850
               </span>
-              <div className="flex items-center gap-1.5 pt-1">
+              <div className="flex items-center justify-center sm:justify-start gap-1.5 pt-1 flex-wrap">
                 <span className="text-[10px] text-muted-foreground mr-1">
                   Size:
                 </span>
@@ -187,13 +187,13 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
       id="storefront-sections"
       aria-label="Example Storefront Sections"
       className={cn(
-        "py-16 sm:py-24 border-b border-border bg-background transition-colors",
+        "py-12 sm:py-16 md:py-24 border-b border-border bg-background transition-colors",
         className,
       )}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <ScrollReveal delay={0}>
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-3">
               <Layers className="h-3.5 w-3.5" />
               <span>{isBn ? "মডুলার সেকশন" : "Modular Sections"}</span>
@@ -218,7 +218,7 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
 
         {/* Interactive Tab navigation */}
         <ScrollReveal delay={80}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start max-w-5xl mx-auto">
             {/* Left: Tab list */}
             <div className="lg:col-span-5 space-y-2">
               {storefrontSections.map((sec, idx) => {
@@ -230,16 +230,16 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
                     type="button"
                     onClick={() => setActiveTab(idx)}
                     className={cn(
-                      "w-full text-left p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-3",
+                      "w-full text-left p-3 sm:p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-3 focus-visible:outline-2 focus-visible:outline-ring",
                       isActive
                         ? "border-primary bg-primary/[0.05] shadow-xs"
                         : "border-border bg-card hover:bg-muted/40 text-muted-foreground",
                     )}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                       <div
                         className={cn(
-                          "h-9 w-9 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                          "h-8 sm:h-9 w-8 sm:w-9 rounded-lg flex items-center justify-center shrink-0 transition-colors",
                           isActive
                             ? "bg-primary text-primary-foreground"
                             : "bg-muted text-muted-foreground",
@@ -247,11 +247,11 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
                       >
                         <Icon className="h-4 w-4" />
                       </div>
-                      <div>
-                        <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                      <div className="min-w-0">
+                        <h4 className="text-xs sm:text-sm font-bold text-foreground truncate">
                           {sec.title}
                         </h4>
-                        <p className="text-[11px] text-muted-foreground">
+                        <p className="text-[10px] sm:text-[11px] text-muted-foreground truncate">
                           {sec.subtitle}
                         </p>
                       </div>
@@ -265,14 +265,14 @@ export function StoreSectionsShowcase({ className }: { className?: string }) {
             </div>
 
             {/* Right: Active Section Preview Card */}
-            <div className="lg:col-span-7 rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between min-h-[380px]">
+            <div className="lg:col-span-7 rounded-2xl border border-border bg-card p-4 sm:p-6 lg:p-8 shadow-xs flex flex-col justify-between min-h-[300px] sm:min-h-[380px]">
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-full">
                     {currentSection.title}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">
                   {currentSection.subtitle}
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">

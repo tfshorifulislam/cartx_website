@@ -39,13 +39,13 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
       id="checkout-preview"
       aria-label="Product and Checkout Flow Preview"
       className={cn(
-        "py-16 sm:py-24 border-b border-border bg-card/30 transition-colors",
+        "py-12 sm:py-16 md:py-24 border-b border-border bg-card/30 transition-colors",
         className,
       )}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <ScrollReveal delay={0}>
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-3">
               <ShoppingBag className="h-3.5 w-3.5" />
               <span>{isBn ? "চেকআউট প্রিভিউ" : "Checkout Flow Preview"}</span>
@@ -70,9 +70,9 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
 
         {/* Demo Safe Environment Banner */}
         <ScrollReveal delay={60}>
-          <div className="max-w-4xl mx-auto rounded-xl border border-primary/20 bg-primary/[0.04] p-3 text-center text-xs text-primary font-medium mb-8 flex items-center justify-center gap-2">
+          <div className="max-w-4xl mx-auto rounded-xl border border-primary/20 bg-primary/[0.04] p-3 text-center text-xs text-primary font-medium mb-6 sm:mb-8 flex items-center justify-center gap-2">
             <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
-            <span>
+            <span className="leading-relaxed">
               {isBn
                 ? "সিমুলেশন টেস্ট মোড: কোনো বাস্তব লেনদেন প্রক্রিয়া করা হয় না এবং কোনো পেমেন্ট তথ্য সংগ্রহ করা হয় না।"
                 : "Safe Simulation Mode: Non-transactional environment. No real payment credentials or bank details are collected."}
@@ -84,53 +84,56 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
         <ScrollReveal delay={120}>
           <div className="max-w-4xl mx-auto rounded-2xl border border-border bg-card shadow-xs overflow-hidden">
             {/* Step Breadcrumbs */}
-            <div className="grid grid-cols-3 border-b border-border text-center text-xs font-semibold select-none bg-muted/20">
+            <div className="grid grid-cols-3 border-b border-border text-center text-[11px] sm:text-xs font-semibold select-none bg-muted/20">
               <button
                 type="button"
                 onClick={() => setActiveStep("product")}
                 className={cn(
-                  "py-3.5 px-2 transition-all cursor-pointer border-r border-border",
+                  "py-2.5 sm:py-3.5 px-1 sm:px-2 transition-all cursor-pointer border-r border-border flex items-center justify-center gap-1",
                   activeStep === "product"
                     ? "bg-card text-primary font-bold shadow-2xs border-b-2 border-b-primary"
                     : "text-muted-foreground",
                 )}
               >
-                1. {isBn ? "পণ্য নির্বাচন" : "Product Detail"}
+                <span className="sm:hidden">{isBn ? "১. পণ্য" : "1. Detail"}</span>
+                <span className="hidden sm:inline">{isBn ? "১. পণ্য নির্বাচন" : "1. Product Detail"}</span>
               </button>
               <button
                 type="button"
                 onClick={() => setActiveStep("checkout")}
                 className={cn(
-                  "py-3.5 px-2 transition-all cursor-pointer border-r border-border",
+                  "py-2.5 sm:py-3.5 px-1 sm:px-2 transition-all cursor-pointer border-r border-border flex items-center justify-center gap-1",
                   activeStep === "checkout"
                     ? "bg-card text-primary font-bold shadow-2xs border-b-2 border-b-primary"
                     : "text-muted-foreground",
                 )}
               >
-                2. {isBn ? "ডেলিভারি ও পেমেন্ট" : "Shipping & Payment"}
+                <span className="sm:hidden">{isBn ? "২. চেকআউট" : "2. Checkout"}</span>
+                <span className="hidden sm:inline">{isBn ? "২. ডেলিভারি ও পেমেন্ট" : "2. Shipping & Payment"}</span>
               </button>
               <button
                 type="button"
                 onClick={() => setActiveStep("success")}
                 className={cn(
-                  "py-3.5 px-2 transition-all cursor-pointer",
+                  "py-2.5 sm:py-3.5 px-1 sm:px-2 transition-all cursor-pointer flex items-center justify-center gap-1",
                   activeStep === "success"
                     ? "bg-card text-primary font-bold shadow-2xs border-b-2 border-b-primary"
                     : "text-muted-foreground",
                 )}
               >
-                3. {isBn ? "অর্ডার নিশ্চিতকরণ" : "Order Placed"}
+                <span className="sm:hidden">{isBn ? "৩. নিশ্চিত" : "3. Placed"}</span>
+                <span className="hidden sm:inline">{isBn ? "৩. অর্ডার নিশ্চিতকরণ" : "3. Order Placed"}</span>
               </button>
             </div>
 
             {/* Interactive Screen Content */}
-            <div className="p-6 sm:p-8">
+            <div className="p-4 sm:p-6 lg:p-8">
               {activeStep === "product" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                   {/* Product Media Area */}
-                  <div className="rounded-xl border border-border/80 bg-muted/30 p-6 flex flex-col items-center justify-center min-h-[260px] text-center">
-                    <div className="h-28 w-28 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold mb-3">
-                      <ShoppingBag className="h-10 w-10 text-primary" />
+                  <div className="rounded-xl border border-border/80 bg-muted/30 p-4 sm:p-6 flex flex-col items-center justify-center min-h-[200px] sm:min-h-[260px] text-center">
+                    <div className="h-20 w-20 sm:h-28 sm:w-28 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold mb-3">
+                      <ShoppingBag className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
                     </div>
                     <span className="text-xs font-bold text-foreground">
                       {isBn ? "টেইলর্ড চিনো প্যান্ট" : "Tailored Chino Pant"}
@@ -146,13 +149,13 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                       <span className="inline-block rounded-full bg-primary/10 text-primary px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider mb-1">
                         {isBn ? "বেস্টসেলার" : "Bestseller"}
                       </span>
-                      <h3 className="text-lg font-bold text-foreground">
+                      <h3 className="text-base sm:text-lg font-bold text-foreground">
                         {isBn
                           ? "টেইলর্ড চিনো প্যান্ট — প্রিমিয়াম কটন"
                           : "Tailored Chino Pant — Premium Cotton"}
                       </h3>
                       <div className="flex items-baseline gap-2 mt-1">
-                        <span className="font-mono text-xl font-extrabold text-foreground">
+                        <span className="font-mono text-lg sm:text-xl font-extrabold text-foreground">
                           ৳{productPrice}
                         </span>
                         <span className="font-mono text-xs text-muted-foreground line-through">
@@ -166,14 +169,14 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                       <label className="block text-xs font-semibold text-foreground mb-1.5">
                         {isBn ? "সাইজ নির্বাচন করুন:" : "Select Size:"}
                       </label>
-                      <div className="flex gap-2">
+                      <div className="grid grid-cols-4 gap-2 sm:flex">
                         {["30", "32", "34", "36"].map((sz) => (
                           <button
                             key={sz}
                             type="button"
                             onClick={() => setSelectedSize(sz)}
                             className={cn(
-                              "h-9 w-11 rounded-lg border text-xs font-bold transition-all cursor-pointer",
+                              "h-9 w-full sm:w-11 rounded-lg border text-xs font-bold transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-ring",
                               selectedSize === sz
                                 ? "bg-primary text-primary-foreground border-primary shadow-xs"
                                 : "border-border bg-card text-foreground hover:bg-muted/50",
@@ -190,16 +193,16 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                       <label className="block text-xs font-semibold text-foreground mb-1.5">
                         {isBn ? "রং নির্বাচন করুন:" : "Select Color:"}
                       </label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {["Charcoal", "Navy", "Olive"].map((clr) => (
                           <button
                             key={clr}
                             type="button"
                             onClick={() => setSelectedColor(clr)}
                             className={cn(
-                              "px-3 py-1.5 rounded-lg border text-xs font-medium transition-all cursor-pointer",
+                              "px-3 py-1.5 rounded-lg border text-xs font-medium transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-ring",
                               selectedColor === clr
-                                ? "bg-primary text-primary-foreground border-primary shadow-xs"
+                                ? "bg-primary text-primary-foreground border-primary shadow-xs font-semibold"
                                 : "border-border bg-card text-foreground hover:bg-muted/50",
                             )}
                           >
@@ -239,7 +242,7 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                     <button
                       type="button"
                       onClick={() => setActiveStep("checkout")}
-                      className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-xs sm:text-sm font-semibold text-primary-foreground hover:bg-[var(--primary-hover)] transition-all cursor-pointer shadow-xs"
+                      className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-xs sm:text-sm font-semibold text-primary-foreground hover:bg-[var(--primary-hover)] transition-all cursor-pointer shadow-xs focus-visible:outline-2 focus-visible:outline-ring"
                     >
                       <span>
                         {isBn
@@ -253,7 +256,7 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
               )}
 
               {activeStep === "checkout" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   {/* Left: Customer & Address Mock Info */}
                   <div className="space-y-4">
                     <h4 className="text-sm font-bold text-foreground pb-2 border-b border-border">
@@ -336,14 +339,14 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                             key={pm.id}
                             onClick={() => setPaymentMethod(pm.id)}
                             className={cn(
-                              "flex items-center justify-between p-3 rounded-xl border text-xs font-semibold cursor-pointer transition-all",
+                              "flex items-center justify-between p-2.5 sm:p-3 rounded-xl border text-xs font-semibold cursor-pointer transition-all gap-2",
                               paymentMethod === pm.id
                                 ? "border-primary bg-primary/[0.05] text-primary"
                                 : "border-border bg-card text-foreground hover:bg-muted/40",
                             )}
                           >
-                            <span>{pm.label}</span>
-                            <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded">
+                            <span className="truncate">{pm.label}</span>
+                            <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded shrink-0">
                               {pm.badge}
                             </span>
                           </div>
@@ -374,10 +377,10 @@ export function ProductCheckoutPreview({ className }: { className?: string }) {
                     <button
                       type="button"
                       onClick={() => setActiveStep("success")}
-                      className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-xs sm:text-sm font-semibold text-primary-foreground hover:bg-[var(--primary-hover)] transition-all cursor-pointer shadow-xs"
+                      className="w-full h-11 inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-xs sm:text-sm font-semibold text-primary-foreground hover:bg-[var(--primary-hover)] transition-all cursor-pointer shadow-xs focus-visible:outline-2 focus-visible:outline-ring"
                     >
-                      <CheckCircle2 className="h-4 w-4" />
-                      <span>
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                      <span className="truncate">
                         {isBn
                           ? "অর্ডার নিশ্চিত করুন (সিমুলেশন)"
                           : "Place Test Order (Simulation)"}

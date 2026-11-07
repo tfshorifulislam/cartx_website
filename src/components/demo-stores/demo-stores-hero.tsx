@@ -47,7 +47,7 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
         aria-hidden="true"
       />
 
-      <div className="container relative hero-padding">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative hero-padding">
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
           {/* Eyebrow Pill Badge */}
           <ScrollReveal delay={0}>
@@ -59,7 +59,7 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
 
           {/* Main H1 Heading */}
           <ScrollReveal delay={80}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.18] mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.18] mb-4">
               <span className="brand-gradient-text">
                 {isBn
                   ? "আসল কেনাকাটার অনুভূতি নিন ৬টি ডেমো স্টোরে"
@@ -70,7 +70,7 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
 
           {/* Subheading / Description */}
           <ScrollReveal delay={140}>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-2xl mb-6 sm:mb-8 leading-relaxed">
               {isBn
                 ? "ফ্যাশন, গ্যাজেট, কসমেটিকস কিংবা মুদি সামগ্রী—প্রতিটি খাতের জন্য অপ্টিমাইজড থিম এবং সম্পূর্ণ কেনাকাটা প্রক্রিয়া সরাসরি টেস্ট করুন।"
                 : "Explore real e-commerce experiences built with CartX. Browse dynamic storefronts, test product variants, and preview checkout flows across desktop and mobile."}
@@ -82,7 +82,7 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
             <button
               type="button"
               onClick={onExploreClick}
-              className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:opacity-90 transition-opacity cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 min-h-[44px] text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:opacity-90 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-ring"
             >
               <span>{isBn ? "ডেমো স্টোরগুলো দেখুন" : "Explore Demo Stores"}</span>
               <ArrowDown className="h-4 w-4" />

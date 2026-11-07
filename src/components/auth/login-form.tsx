@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { loginUser } from "@/lib/auth/auth-service";
 import { validateLoginCredentials } from "@/lib/auth/auth-validation";
 import { cn } from "@/lib/utils";
 
@@ -35,13 +34,14 @@ export function LoginForm({ className }: LoginFormProps) {
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  // Interaction and async submission states
+  // Interaction and submission states
   const [isLoading, setIsLoading] = useState(false);
   const [formErrors, setFormErrors] = useState<{
     email?: string;
     password?: string;
   }>({});
   const [serverError, setServerError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<{ title: string; message: string } | null>(null);
 
   // Forgot password notice dialog state
   const [showForgotPasswordNotice, setShowForgotPasswordNotice] =
@@ -54,6 +54,7 @@ export function LoginForm({ className }: LoginFormProps) {
       setFormErrors((prev) => ({ ...prev, email: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,12 +63,14 @@ export function LoginForm({ className }: LoginFormProps) {
       setFormErrors((prev) => ({ ...prev, password: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   // Form submission handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setServerError(null);
+    setNotice(null);
 
     // 1. Client-side input validation
     const validation = validateLoginCredentials({ email, password }, isBn);
@@ -79,32 +82,14 @@ export function LoginForm({ className }: LoginFormProps) {
     setFormErrors({});
     setIsLoading(true);
 
-    try {
-      // 2. Delegate authentication to the decoupled auth service
-      const response = await loginUser(
-        {
-          email,
-          password,
-          rememberMe,
-        },
-        locale
-      );
-
-      if (!response.success) {
-        setServerError(response.message);
-        if (response.fieldErrors) {
-          setFormErrors((prev) => ({ ...prev, ...response.fieldErrors }));
-        }
-      }
-    } catch {
-      setServerError(
-        isBn
-          ? "সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে আপনার নেটওয়ার্ক চেক করুন।"
-          : "Unable to connect to authentication server. Please check your network connection."
-      );
-    } finally {
-      setIsLoading(false);
-    }
+    // Display clear notice that merchant portal is not connected in this frontend-only website
+    setNotice({
+      title: isBn ? "পাবলিক ডেমো নোটিশ" : "Public Demo Notice",
+      message: isBn
+        ? "এই পাবলিক মার্কেটিং ওয়েবসাইটে মার্চেন্ট পোর্টাল লগইন সংযুক্ত নেই। কোনো ব্যাকএন্ড বা ডেটাবেস সংযোগ সক্রিয় নয়।"
+        : "Merchant portal authentication is not connected in this public marketing website. No backend or database connection is active.",
+    });
+    setIsLoading(false);
   };
 
   return (
@@ -141,6 +126,21 @@ export function LoginForm({ className }: LoginFormProps) {
 
       {/* ── Form Section ── */}
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+        {/* Frontend Demo Notice (when form is submitted in frontend-only mode) */}
+        {notice && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-2xl border border-primary/25 bg-primary/[0.08] p-3.5 text-xs text-foreground flex items-start gap-2.5 animate-in fade-in duration-150 motion-reduce:animate-none"
+          >
+            <Info className="size-4 shrink-0 mt-0.5 text-primary" />
+            <div className="flex-1 leading-relaxed">
+              <p className="font-bold text-primary mb-0.5">{notice.title}</p>
+              <p className="text-muted-foreground">{notice.message}</p>
+            </div>
+          </div>
+        )}
+
         {/* Server Response / Error Alert (e.g. when API is not connected) */}
         {serverError && (
           <div

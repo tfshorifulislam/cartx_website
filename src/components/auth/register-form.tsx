@@ -11,13 +11,13 @@ import {
   Loader2,
   AlertCircle,
   ArrowRight,
+  Info,
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { registerUser } from "@/lib/auth/auth-service";
 import { validateRegisterCredentials } from "@/lib/auth/auth-validation";
 import { cn } from "@/lib/utils";
 
@@ -50,6 +50,7 @@ export function RegisterForm({ className }: RegisterFormProps) {
     termsAccepted?: string;
   }>({});
   const [serverError, setServerError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<{ title: string; message: string } | null>(null);
 
   // Live input change handlers
   const handleFullNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,6 +59,7 @@ export function RegisterForm({ className }: RegisterFormProps) {
       setFormErrors((prev) => ({ ...prev, fullName: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +68,7 @@ export function RegisterForm({ className }: RegisterFormProps) {
       setFormErrors((prev) => ({ ...prev, email: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,6 +77,7 @@ export function RegisterForm({ className }: RegisterFormProps) {
       setFormErrors((prev) => ({ ...prev, password: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   const handleConfirmPasswordChange = (
@@ -84,12 +88,14 @@ export function RegisterForm({ className }: RegisterFormProps) {
       setFormErrors((prev) => ({ ...prev, confirmPassword: undefined }));
     }
     if (serverError) setServerError(null);
+    if (notice) setNotice(null);
   };
 
   // Form submission handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setServerError(null);
+    setNotice(null);
 
     // 1. Client-side input validation
     const validation = validateRegisterCredentials(
@@ -111,34 +117,14 @@ export function RegisterForm({ className }: RegisterFormProps) {
     setFormErrors({});
     setIsLoading(true);
 
-    try {
-      // 2. Delegate registration to the decoupled auth service
-      const response = await registerUser(
-        {
-          fullName,
-          email,
-          password,
-          confirmPassword,
-          termsAccepted,
-        },
-        locale
-      );
-
-      if (!response.success) {
-        setServerError(response.message);
-        if (response.fieldErrors) {
-          setFormErrors((prev) => ({ ...prev, ...response.fieldErrors }));
-        }
-      }
-    } catch {
-      setServerError(
-        isBn
-          ? "সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে আপনার নেটওয়ার্ক চেক করুন।"
-          : "Unable to connect to registration server. Please check your network connection."
-      );
-    } finally {
-      setIsLoading(false);
-    }
+    // Display clear notice that merchant store registration is not connected in this frontend-only website
+    setNotice({
+      title: isBn ? "পাবলিক ডেমো নোটিশ" : "Public Demo Notice",
+      message: isBn
+        ? "এই পাবলিক মার্কেটিং ওয়েবসাইটে স্টোর রেজিস্ট্রেশন ব্যাকএন্ড সংযুক্ত নেই। কোনো অ্যাকাউন্ট তৈরি বা ডেটা সংরক্ষণ করা হয়নি।"
+        : "Merchant store registration is not connected in this public marketing website. No backend account was created and no data was persisted.",
+    });
+    setIsLoading(false);
   };
 
   return (
@@ -175,6 +161,21 @@ export function RegisterForm({ className }: RegisterFormProps) {
 
       {/* ── Registration Form ── */}
       <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+        {/* Frontend Demo Notice (when form is submitted in frontend-only mode) */}
+        {notice && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-2xl border border-primary/25 bg-primary/[0.08] p-3.5 text-xs text-foreground flex items-start gap-2.5 animate-in fade-in duration-150 motion-reduce:animate-none"
+          >
+            <Info className="size-4 shrink-0 mt-0.5 text-primary" />
+            <div className="flex-1 leading-relaxed">
+              <p className="font-bold text-primary mb-0.5">{notice.title}</p>
+              <p className="text-muted-foreground">{notice.message}</p>
+            </div>
+          </div>
+        )}
+
         {/* Server Response / Error Alert (e.g. when API is not connected) */}
         {serverError && (
           <div

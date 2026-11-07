@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Send, CheckCircle2, AlertCircle, Loader2, Check } from "lucide-react";
+import { Send, AlertCircle, Loader2, Check, Info } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { DemoFormState, DemoFormErrors } from "./types";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -73,7 +73,6 @@ export function BookDemoForm({ className }: { className?: string }) {
   const [errors, setErrors] = useState<DemoFormErrors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState<string>("");
-  const [inquiryRef, setInquiryRef] = useState<string>("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -177,44 +176,13 @@ export function BookDemoForm({ className }: { className?: string }) {
     setStatus("loading");
     setServerMessage("");
 
-    try {
-      const res = await fetch("/api/book-demo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setStatus("error");
-        if (data.errors) {
-          setErrors(data.errors);
-        }
-        setServerMessage(
-          data.message ||
-            (isBn
-              ? "অনুরোধ জমা দেওয়া সম্ভব হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
-              : "We could not submit your request. Please try again.")
-        );
-        return;
-      }
-
-      setStatus("success");
-      setInquiryRef(data.inquiryId || "");
-      setServerMessage(
-        isBn
-          ? "ধন্যবাদ! আপনার ডেমো অনুরোধ সফলভাবে জমা হয়েছে। আমাদের টিম আপনার চাহিদা পর্যালোচনা করে যোগাযোগ করবে।"
-          : "Thank you! Your demo request has been submitted successfully. Our team will review your requirements and follow up."
-      );
-    } catch {
-      setStatus("error");
-      setServerMessage(
-        isBn
-          ? "সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে পুনরায় চেষ্টা করুন।"
-          : "We could not submit your request. Please try again."
-      );
-    }
+    // In this frontend-only public marketing website, form submission is not connected to a backend.
+    setStatus("success");
+    setServerMessage(
+      isBn
+        ? "এই ওয়েবসাইটটি একটি পাবলিক মার্কেটিং ওয়েবসাইট হিসেবে চলছে এবং ব্যাকএন্ড ডাটাবেসের সাথে সংযুক্ত নয়। আপনার ইনপুট সঠিকভাবে যাচাই করা হয়েছে, তবে কোনো তথ্য জমা বা সংরক্ষণ করা হয়নি। সরাসরি ডেমো বুক করতে দয়া করে demo@cartx.ai এ ইমেইল করুন অথবা আমাদের কল করুন।"
+        : "This website operates as a frontend-only public marketing demo with no backend or database connection. Your form inputs were validated successfully, but no request was transmitted or stored. To schedule a demo with our team, please contact us directly at demo@cartx.ai."
+    );
   };
 
   const handleReset = () => {
@@ -261,29 +229,26 @@ export function BookDemoForm({ className }: { className?: string }) {
         </ScrollReveal>
 
         {status === "success" ? (
-          <div className="rounded-3xl border border-success/30 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
-            <div className="h-14 w-14 rounded-2xl bg-success/10 text-success flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="h-8 w-8" />
+          <div className="rounded-3xl border border-primary/25 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+              <Info className="h-8 w-8" />
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-              {isBn ? "ডেমো অনুরোধ সফলভাবে জমা হয়েছে!" : "Demo Request Submitted!"}
+              {isBn ? "পাবলিক ডেমো নোটিশ" : "Frontend Demo Notice"}
             </h3>
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+              {isBn ? "সাবমিশন ব্যাকএন্ডের সাথে সংযুক্ত নয়" : "Submission Not Connected to Backend"}
+            </p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               {serverMessage}
             </p>
-            {inquiryRef && (
-              <div className="inline-block rounded-lg bg-muted/60 px-3.5 py-1.5 font-mono text-xs text-muted-foreground mb-6 border border-border">
-                {isBn ? "রেফারেন্স নম্বর: " : "Request Reference ID: "}
-                <span className="font-bold text-foreground">{inquiryRef}</span>
-              </div>
-            )}
             <div>
               <button
                 type="button"
                 onClick={handleReset}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
               >
-                <span>{isBn ? "আরেকটি অনুরোধ করুন" : "Submit Another Request"}</span>
+                <span>{isBn ? "ফর্মে ফিরে যান" : "Back to Form"}</span>
               </button>
             </div>
           </div>

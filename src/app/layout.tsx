@@ -7,7 +7,6 @@ import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { getActiveAnnouncement } from "@/lib/cms/content-service";
 import { SITE_CONFIG } from "@/lib/seo/site-config";
 
 const inter = Inter({
@@ -29,7 +28,8 @@ export const metadata: Metadata = {
     default: "CartX | Modern E-Commerce Platform",
     template: "%s | CartX",
   },
-  description: "Next-generation e-commerce platform built for scale, performance, and seamless shopping experiences.",
+  description:
+    "Next-generation e-commerce platform built for scale, performance, and seamless shopping experiences.",
 };
 
 export default function RootLayout({
@@ -37,31 +37,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const activeAnnouncement = getActiveAnnouncement();
-  const announcementProps = activeAnnouncement
-    ? {
-        id: activeAnnouncement.id,
-        badge: activeAnnouncement.badgeEn,
-        message: activeAnnouncement.messageEn,
-        linkText: activeAnnouncement.linkTextEn,
-        href: activeAnnouncement.href,
-        dismissible: true,
-      }
-    : null;
-
   return (
     <html
       lang="en"
       className={cn(
         "h-full antialiased font-sans",
         inter.variable,
-        notoSansBengali.variable
+        notoSansBengali.variable,
       )}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <SmoothScrollProvider>
           <LanguageProvider>
-            <AnnouncementBar announcement={announcementProps} />
+            <AnnouncementBar />
             <Header />
             <main className="flex-1 flex flex-col">{children}</main>
             <Footer />

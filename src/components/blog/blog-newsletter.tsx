@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, Info, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
@@ -55,12 +55,12 @@ export function BlogNewsletter({ className }: { className?: string }) {
           </p>
 
           {subscribed ? (
-            <div className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-success/10 border border-success/30 text-success text-xs sm:text-sm font-semibold">
-              <CheckCircle2 className="h-4 w-4" />
+            <div className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-primary/10 border border-primary/25 text-foreground text-xs sm:text-sm font-medium">
+              <Info className="h-4 w-4 shrink-0 text-primary" />
               <span>
                 {isBn
-                  ? "ধন্যবাদ! আপনি সফলভাবে আমাদের নিউজলেটারে যুক্ত হয়েছেন।"
-                  : "Thank you for subscribing! Check your inbox for confirmation."}
+                  ? "এটি একটি ফ্রন্টএন্ড ডেমো। নিউজলেটার সাবস্ক্রিপশন কোনো ব্যাকএন্ড সার্ভিসের সাথে সংযুক্ত নয়।"
+                  : "Frontend demo mode: Newsletter subscription is not connected to a mailing service."}
               </span>
             </div>
           ) : (

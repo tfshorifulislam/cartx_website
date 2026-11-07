@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Send, AlertCircle, Loader2, Info } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { ContactFormState, ContactFormErrors } from "./types";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -44,7 +44,6 @@ export function ContactForm({ initialCategory = "General Inquiry", className }: 
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState<string>("");
-  const [inquiryRef, setInquiryRef] = useState<string>("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -110,44 +109,13 @@ export function ContactForm({ initialCategory = "General Inquiry", className }: 
     setStatus("loading");
     setServerMessage("");
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setStatus("error");
-        if (data.errors) {
-          setErrors(data.errors);
-        }
-        setServerMessage(
-          data.message ||
-            (isBn
-              ? "বার্তা জমা দেওয়া সম্ভব হয়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
-              : "We could not submit your message. Please try again.")
-        );
-        return;
-      }
-
-      setStatus("success");
-      setInquiryRef(data.inquiryId || "");
-      setServerMessage(
-        isBn
-          ? "ধন্যবাদ! আপনার বার্তা সফলভাবে জমা হয়েছে। আমাদের টিম শীঘ্রই আপনার সাথে যোগাযোগ করবে।"
-          : "Thank you! Your message has been submitted successfully. Our team will follow up soon."
-      );
-    } catch {
-      setStatus("error");
-      setServerMessage(
-        isBn
-          ? "সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি। অনুগ্রহ করে আপনার ইন্টারনেট সংযোগ পরীক্ষা করে পুনরায় চেষ্টা করুন।"
-          : "We could not submit your message. Please try again."
-      );
-    }
+    // In this frontend-only public marketing website, contact submission is not connected to a backend.
+    setStatus("success");
+    setServerMessage(
+      isBn
+        ? "এই ওয়েবসাইটটি ব্যাকএন্ড বা ডেটাবেস সংযোগ ছাড়াই শুধুমাত্র ফ্রন্টএন্ড মোডে চলছে। আপনার বার্তাটি সফলভাবে যাচাই করা হয়েছে, তবে কোনো সার্ভারে পাঠানো হয়নি। সরাসরি যোগাযোগ করতে support@cartx.ai এ ইমেইল করুন।"
+        : "This website operates in frontend-only mode with no backend or database connected. Your message inputs were validated successfully, but no submission was transmitted to a server. To reach our team directly, please email support@cartx.ai."
+    );
   };
 
   const handleReset = () => {
@@ -191,29 +159,26 @@ export function ContactForm({ initialCategory = "General Inquiry", className }: 
         </ScrollReveal>
 
         {status === "success" ? (
-          <div className="rounded-3xl border border-success/30 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
-            <div className="h-14 w-14 rounded-2xl bg-success/10 text-success flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="h-8 w-8" />
+          <div className="rounded-3xl border border-primary/25 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
+            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+              <Info className="h-8 w-8" />
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-              {isBn ? "বার্তা সফলভাবে পাঠানো হয়েছে!" : "Message Received!"}
+              {isBn ? "পাবলিক ডেমো নোটিশ" : "Frontend Demo Notice"}
             </h3>
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+              {isBn ? "বার্তা সাবমিশন ব্যাকএন্ডের সাথে সংযুক্ত নয়" : "Submission Not Connected to Backend"}
+            </p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               {serverMessage}
             </p>
-            {inquiryRef && (
-              <div className="inline-block rounded-lg bg-muted/60 px-3.5 py-1.5 font-mono text-xs text-muted-foreground mb-6 border border-border">
-                {isBn ? "রেফারেন্স নম্বর: " : "Reference ID: "}
-                <span className="font-bold text-foreground">{inquiryRef}</span>
-              </div>
-            )}
             <div>
               <button
                 type="button"
                 onClick={handleReset}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
               >
-                <span>{isBn ? "আরেকটি বার্তা পাঠান" : "Send Another Message"}</span>
+                <span>{isBn ? "ফর্মে ফিরে যান" : "Back to Form"}</span>
               </button>
             </div>
           </div>

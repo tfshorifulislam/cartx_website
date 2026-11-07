@@ -4,7 +4,7 @@ import { FEATURE_SLUGS } from "@/components/features/feature-details";
 import { PUBLISHED_SOLUTION_SLUGS } from "@/components/solutions/solution-details/solution-details-data";
 import { PUBLISHED_THEME_SLUGS } from "@/components/themes/themes-data";
 import { PUBLISHED_INTEGRATION_SLUGS } from "@/components/integrations/integrations-data";
-import { getPublishedBlogPosts } from "@/lib/cms/content-service";
+import { BLOG_POSTS } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -84,8 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 6. Dynamic Published Blog Articles
-  const blogPosts = getPublishedBlogPosts();
-  blogPosts.forEach((post) => {
+  BLOG_POSTS.forEach((post) => {
     sitemapEntries.push({
       url: getCanonicalUrl(`/blog/${post.slug}`),
       lastModified: new Date(post.publishedAt || lastModified),

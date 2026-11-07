@@ -51,12 +51,12 @@ export function HelpView() {
       <section
         id="help-topics"
         aria-label="Help Topics & FAQs"
-        className="py-14 sm:py-20 bg-background transition-colors"
+        className="py-10 sm:py-16 md:py-20 bg-background transition-colors"
       >
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="container mx-auto max-w-5xl px-4 sm:px-6">
           {/* If searching, show search status */}
           {searchQuery ? (
-            <div className="mb-8 flex items-center justify-between text-xs text-muted-foreground border-b border-border pb-4">
+            <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-muted-foreground border-b border-border pb-4">
               <span>
                 {isBn
                   ? `"${searchQuery}" এর জন্য ${displayedArticles.length}টি উত্তর পাওয়া গেছে`
@@ -65,15 +65,15 @@ export function HelpView() {
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="text-primary hover:underline cursor-pointer font-semibold"
+                className="text-primary hover:underline cursor-pointer font-semibold text-left sm:text-right"
               >
                 {isBn ? "অনুসন্ধান মুছুন" : "Clear search"}
               </button>
             </div>
           ) : (
             /* 10 Topic Category Pills */
-            <div className="mb-12">
-              <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 scrollbar-none">
+            <div className="mb-8 sm:mb-12">
+              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:justify-center scrollbar-none">
                 {HELP_CATEGORIES.map((cat) => {
                   const isSelected = selectedCategory === cat.id;
                   const count = HELP_ARTICLES.filter((a) => a.category === cat.id).length;
@@ -84,7 +84,7 @@ export function HelpView() {
                       type="button"
                       onClick={() => setSelectedCategory(cat.id)}
                       className={cn(
-                        "shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer",
+                        "shrink-0 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold transition-all cursor-pointer",
                         isSelected
                           ? "bg-primary text-primary-foreground shadow-xs"
                           : "border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -93,7 +93,7 @@ export function HelpView() {
                       <span>{isBn ? cat.nameBn : cat.nameEn}</span>
                       <span
                         className={cn(
-                          "rounded-full px-1.5 py-0.2 text-[10px] font-mono",
+                          "rounded-full px-1.5 py-0.5 text-[10px] font-mono leading-none",
                           isSelected
                             ? "bg-primary-foreground/20 text-primary-foreground"
                             : "bg-muted text-muted-foreground"
@@ -107,11 +107,11 @@ export function HelpView() {
               </div>
 
               {/* Active Category Header */}
-              <div className="mt-8 mb-6 p-5 rounded-2xl border border-border bg-card/40">
-                <h2 className="text-lg sm:text-xl font-bold text-foreground">
+              <div className="mt-6 sm:mt-8 mb-6 p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-border bg-card/40">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold text-foreground">
                   {isBn ? activeCategoryMeta.nameBn : activeCategoryMeta.nameEn}
                 </h2>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1 leading-relaxed">
                   {isBn ? activeCategoryMeta.descriptionBn : activeCategoryMeta.descriptionEn}
                 </p>
               </div>
@@ -124,12 +124,12 @@ export function HelpView() {
               <HelpFAQAccordion articles={displayedArticles} />
             </div>
           ) : (
-            <div className="max-w-md mx-auto text-center py-16 rounded-2xl border border-dashed border-border bg-card/40 p-8">
-              <Inbox className="h-10 w-10 text-muted-foreground mx-auto mb-3 opacity-60" />
-              <h3 className="text-base font-bold text-foreground mb-1">
+            <div className="max-w-md mx-auto text-center py-10 sm:py-14 px-4 sm:px-8 rounded-xl sm:rounded-2xl border border-dashed border-border bg-card/40">
+              <Inbox className="size-9 sm:size-10 text-muted-foreground mx-auto mb-3 opacity-60" />
+              <h3 className="text-sm sm:text-base font-bold text-foreground mb-1">
                 {isBn ? "কোনো উত্তর পাওয়া যায়নি" : "No answers found"}
               </h3>
-              <p className="text-xs text-muted-foreground mb-4">
+              <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
                 {isBn
                   ? "আপনার অনুসন্ধান শব্দের সাথে মিলে এমন কোনো প্রশ্নোত্তর পাওয়া যায়নি।"
                   : "We couldn't find any articles matching your search query. Try another term or contact support."}
@@ -137,7 +137,7 @@ export function HelpView() {
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-xs font-semibold text-primary-foreground cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-xs font-semibold text-primary-foreground hover:bg-primary-hover transition-colors cursor-pointer"
               >
                 {isBn ? "সব বিষয় দেখুন" : "View all topics"}
               </button>

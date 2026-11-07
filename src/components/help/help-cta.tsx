@@ -14,15 +14,15 @@ export function HelpCTA({ className }: { className?: string }) {
   return (
     <section
       aria-label="Help Center Call to Action"
-      className={cn("py-16 sm:py-24 border-t border-border bg-card/30 transition-colors", className)}
+      className={cn("py-12 sm:py-16 md:py-20 border-t border-border bg-card/30 transition-colors", className)}
     >
-      <div className="container mx-auto">
-        <ScrollReveal className="max-w-4xl mx-auto rounded-3xl border border-border bg-card p-8 sm:p-12 text-center shadow-sm relative overflow-hidden">
-          <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-            <Mail className="h-6 w-6" />
+      <div className="container mx-auto max-w-5xl px-4 sm:px-6">
+        <ScrollReveal className="max-w-4xl mx-auto rounded-2xl sm:rounded-3xl border border-border bg-card p-6 sm:p-8 md:p-12 text-center shadow-xs relative overflow-hidden">
+          <div className="size-10 sm:size-12 rounded-xl sm:rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+            <Mail className="size-5 sm:size-6" />
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight mb-2 sm:mb-3 leading-tight sm:leading-snug">
             <span className="block text-foreground">
               {isBn ? "আমরা আপনাকে সহায়তা করতে প্রস্তুত" : "We're Here to Help"}
             </span>
@@ -31,36 +31,36 @@ export function HelpCTA({ className }: { className?: string }) {
             </span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed text-balance">
             {isBn
               ? "আমাদের কাস্টমার সাপোর্ট টিম আপনার যেকোনো কারিগরি ও ব্যবসায়িক প্রশ্নের উত্তর দিতে প্রস্তুত।"
               : "Our dedicated support engineers in Dhaka are available to assist you with onboarding, payment integrations, or domain setup."}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full sm:w-auto">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:opacity-90 transition-opacity cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:shadow-md hover:bg-primary-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
             >
               <span>{isBn ? "সাপোর্টে যোগাযোগ করুন" : "Contact Support"}</span>
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="size-3.5" />
             </Link>
             <a
               href="mailto:support@cartx.store"
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-6 py-3 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 hover:border-border/90 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <Mail className="h-4 w-4 text-primary" />
+              <Mail className="size-3.5 text-primary" />
               <span>support@cartx.store</span>
             </a>
           </div>
 
-          <div className="pt-6 border-t border-border/70 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
+          <div className="pt-5 sm:pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-xs text-muted-foreground text-center">
             <div className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-primary" />
+              <Clock className="size-3.5 text-primary shrink-0" />
               <span>{isBn ? "শনিবার - বৃহস্পতিবার: সকাল ৯টা - সন্ধ্যা ৬টা" : "Sat - Thu: 9:00 AM - 6:00 PM"}</span>
             </div>
             <div className="inline-flex items-center gap-1.5">
-              <MapPin className="h-3.5 w-3.5 text-primary" />
+              <MapPin className="size-3.5 text-primary shrink-0" />
               <span>{isBn ? "ঢাকা, বাংলাদেশ" : "Dhaka, Bangladesh"}</span>
             </div>
           </div>

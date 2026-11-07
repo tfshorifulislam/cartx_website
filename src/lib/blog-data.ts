@@ -45,6 +45,7 @@ export interface BlogPost {
   publishedAt: string;
   readTimeMinutes: number;
   featured?: boolean;
+  image?: string;
   tableOfContents: { id: string; titleEn: string; titleBn: string }[];
   contentSections: {
     id: string;

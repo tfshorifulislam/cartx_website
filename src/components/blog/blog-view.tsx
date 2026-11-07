@@ -13,6 +13,7 @@ import {
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Search, X, Inbox } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function BlogView() {
@@ -168,16 +169,17 @@ export function BlogView() {
                   ? "আপনার অনুসন্ধানের সাথে মিলে এমন কোনো ফলাফল নেই। অন্য কোনো শব্দ অনুসন্ধান করুন।"
                   : "Try adjusting your search query or selecting a different category."}
               </p>
-              <button
-                type="button"
+              <Button
+                size="sm"
+                variant="default"
                 onClick={() => {
                   setSearchQuery("");
                   setSelectedCategory("all");
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-xs font-semibold text-primary-foreground hover:bg-primary-hover transition-colors cursor-pointer"
+                className="cursor-pointer font-semibold"
               >
                 {isBn ? "সব নিবন্ধ দেখুন" : "View all articles"}
-              </button>
+              </Button>
             </div>
           )}
         </div>
@@ -188,4 +190,3 @@ export function BlogView() {
     </article>
   );
 }
-

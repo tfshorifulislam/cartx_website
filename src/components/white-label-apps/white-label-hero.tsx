@@ -55,10 +55,11 @@ export function WhiteLabelHero({ className }: { className?: string }) {
 
             {/* H1 */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15] mb-4">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "আপনার নিজস্ব ব্র্যান্ড। আপনার শপিং অ্যাপ।"
-                  : "Your Brand. Your Shopping App."}
+              <span className="block text-foreground">
+                {isBn ? "আপনার নিজস্ব ব্র্যান্ড।" : "Your Brand."}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "আপনার শপিং অ্যাপ।" : "Your Shopping App."}
               </span>
             </h1>
 

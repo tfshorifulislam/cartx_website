@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { splitHeading } from "@/lib/heading-utils";
 import { FeatureDetailConfig } from "./types";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +23,7 @@ export function FeatureCTA({ feature, className }: FeatureCTAProps) {
       aria-label="Closing Call to Action"
       className={cn(
         "dark relative section-padding overflow-hidden bg-slate-950 text-slate-100 transition-colors border-t border-border",
-        className
+        className,
       )}
     >
       {/* ── Subtle Background Radial Glow (Matches Final CTA Standard) ── */}
@@ -46,9 +47,17 @@ export function FeatureCTA({ feature, className }: FeatureCTAProps) {
 
             {/* Heading with Brand Gradient */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-[1.25] sm:leading-[1.2] text-balance">
-              <span className="brand-gradient-text">
-                {cta.title[locale] || cta.title.en}
-              </span>
+              {(() => {
+                const [l1, l2] = splitHeading(
+                  cta.title[locale] || cta.title.en,
+                );
+                return (
+                  <>
+                    <span className="block text-white">{l1}</span>
+                    <span className="block brand-gradient-text">{l2}</span>
+                  </>
+                );
+              })()}
             </h2>
 
             {/* Supporting Copy */}
@@ -78,4 +87,3 @@ export function FeatureCTA({ feature, className }: FeatureCTAProps) {
     </section>
   );
 }
-

@@ -33,10 +33,11 @@ export function IntegrationSecurityNotes({
               {isBn ? "নিরাপত্তা নীতি" : "Security Architecture"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "নিরাপত্তা প্রটোকল ও এনক্রিপশন স্ট্যান্ডার্ড"
-                  : "Security Notes & Best Practices"}
+              <span className="block text-foreground">
+                {isBn ? "নিরাপত্তা ও এনক্রিপশন" : "Security Architecture"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "নিরাপত্তা প্রটোকল ও এনক্রিপশন স্ট্যান্ডার্ড" : "Security Notes & Best Practices"}
               </span>
             </h2>
           </div>

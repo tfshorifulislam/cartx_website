@@ -15,7 +15,10 @@ export function HowItWorksPreview({ className }: { className?: string }) {
     <section
       id="sample-store-preview"
       aria-label="Sample Store Connection Preview"
-      className={cn("py-16 sm:py-24 border-b border-border bg-background transition-colors", className)}
+      className={cn(
+        "py-16 sm:py-24 border-b border-border bg-background transition-colors",
+        className,
+      )}
     >
       <div className="container mx-auto">
         <ScrollReveal className="max-w-3xl mx-auto text-center mb-12">
@@ -24,10 +27,15 @@ export function HowItWorksPreview({ className }: { className?: string }) {
             <span>{isBn ? "লাইভ কানেকশন" : "Seamless Store Sync"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn
+                ? "একত্রিত প্ল্যাটফর্ম আর্কিটেকচার"
+                : "Unified Platform Architecture"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
                 ? "মার্চেন্ট ড্যাশবোর্ড ও কাস্টমার স্টোরের নিখুঁত সংযোগ"
-                : "How the Merchant Dashboard Connects to Shoppers"}
+                : "Connecting Dashboard to Shoppers"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -40,13 +48,21 @@ export function HowItWorksPreview({ className }: { className?: string }) {
         {/* 2-Column Split: Merchant Action vs Customer Experience */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {/* Left: Merchant Panel */}
-          <ScrollReveal direction="left" distance={16} className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <ScrollReveal
+            direction="left"
+            distance={16}
+            className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between"
+          >
             <div className="space-y-4">
               <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-full inline-block">
-                {isBn ? "১. মার্চেন্ট ড্যাশবোর্ড অ্যাকশন" : "1. Merchant Admin Action"}
+                {isBn
+                  ? "১. মার্চেন্ট ড্যাশবোর্ড অ্যাকশন"
+                  : "1. Merchant Admin Action"}
               </span>
               <h3 className="text-lg font-bold text-foreground">
-                {isBn ? "ইনস্ট্যান্ট মূল্য বা স্টক আপডেট" : "One-Click Price or Stock Update"}
+                {isBn
+                  ? "ইনস্ট্যান্ট মূল্য বা স্টক আপডেট"
+                  : "One-Click Price or Stock Update"}
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {isBn
@@ -68,18 +84,31 @@ export function HowItWorksPreview({ className }: { className?: string }) {
 
             <div className="pt-4 mt-6 border-t border-border flex items-center gap-2 text-xs text-success font-semibold">
               <CheckCircle2 className="h-4 w-4" />
-              <span>{isBn ? "ক্লাউড ডাটাবেজ সিঙ্ক সম্পন্ন" : "Instantly propagated to cloud CDN"}</span>
+              <span>
+                {isBn
+                  ? "ক্লাউড ডাটাবেজ সিঙ্ক সম্পন্ন"
+                  : "Instantly propagated to cloud CDN"}
+              </span>
             </div>
           </ScrollReveal>
 
           {/* Right: Live Customer Storefront Result */}
-          <ScrollReveal direction="right" distance={16} delay={100} className="rounded-2xl border border-primary/40 bg-primary/[0.03] p-6 sm:p-8 shadow-xs flex flex-col justify-between">
+          <ScrollReveal
+            direction="right"
+            distance={16}
+            delay={100}
+            className="rounded-2xl border border-primary/40 bg-primary/[0.03] p-6 sm:p-8 shadow-xs flex flex-col justify-between"
+          >
             <div className="space-y-4">
               <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/15 px-2.5 py-0.5 rounded-full inline-block">
-                {isBn ? "২. লাইভ কাস্টমার স্টোরফ্রন্ট" : "2. Live Shopper Viewport"}
+                {isBn
+                  ? "২. লাইভ কাস্টমার স্টোরফ্রন্ট"
+                  : "2. Live Shopper Viewport"}
               </span>
               <h3 className="text-lg font-bold text-foreground">
-                {isBn ? "তাৎক্ষণিক লাইভ ডিসপ্লে পরিবর্তন" : "Zero-Delay Customer Checkout Sync"}
+                {isBn
+                  ? "তাৎক্ষণিক লাইভ ডিসপ্লে পরিবর্তন"
+                  : "Zero-Delay Customer Checkout Sync"}
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {isBn
@@ -89,12 +118,20 @@ export function HowItWorksPreview({ className }: { className?: string }) {
 
               <div className="rounded-xl border border-border bg-card p-4 text-xs space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-foreground">Relaxed Linen Shirt</span>
-                  <span className="text-[10px] bg-primary/10 text-primary font-bold px-1.5 py-0.5 rounded">Special Deal</span>
+                  <span className="font-bold text-foreground">
+                    Relaxed Linen Shirt
+                  </span>
+                  <span className="text-[10px] bg-primary/10 text-primary font-bold px-1.5 py-0.5 rounded">
+                    Special Deal
+                  </span>
                 </div>
                 <div className="flex items-baseline gap-2 font-mono">
-                  <span className="text-base font-extrabold text-foreground">৳1,650</span>
-                  <span className="text-xs text-muted-foreground line-through">৳1,850</span>
+                  <span className="text-base font-extrabold text-foreground">
+                    ৳1,650
+                  </span>
+                  <span className="text-xs text-muted-foreground line-through">
+                    ৳1,850
+                  </span>
                 </div>
               </div>
             </div>
@@ -104,7 +141,11 @@ export function HowItWorksPreview({ className }: { className?: string }) {
                 href="/demo-stores"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
               >
-                <span>{isBn ? "সকল ডেমো স্টোর দেখুন" : "Explore Realistic Demo Stores"}</span>
+                <span>
+                  {isBn
+                    ? "সকল ডেমো স্টোর দেখুন"
+                    : "Explore Realistic Demo Stores"}
+                </span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

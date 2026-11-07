@@ -41,10 +41,11 @@ export function IntegrationCategoryOverview({
               {isBn ? "ক্যাটাগরি নির্দেশিকা" : "Ecosystem Pillars"}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "৫টি মূল ক্যাটাগরিতে স্বয়ংক্রিয় ইন্টিগ্রেশন"
-                  : "Purpose-Built For Bangladeshi Commerce"}
+              <span className="block text-foreground">
+                {isBn ? "স্মার্ট কানেক্টিভিটি" : "E-Commerce Infrastructure"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "৫টি মূল ক্যাটাগরিতে স্বয়ংক্রিয় ইন্টিগ্রেশন" : "Purpose-Built For Bangladeshi Commerce"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">

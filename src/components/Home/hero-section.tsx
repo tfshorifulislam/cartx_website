@@ -57,9 +57,9 @@ export function HeroSection() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-balance !mb-3 sm:!mb-3.5">
-              {t("home.heroTitlePlain")}{" "}
-              <span className="brand-gradient-text">
+            <h1 className="text-balance mb-3! sm:mb-3.5!">
+              <span className="block text-foreground">{t("home.heroTitlePlain")}</span>
+              <span className="block brand-gradient-text">
                 {t("home.heroTitleHighlight")}
               </span>
             </h1>
@@ -108,7 +108,6 @@ export function HeroSection() {
           </ScrollReveal>
         </div>
       </div>
-      
     </section>
   );
 }

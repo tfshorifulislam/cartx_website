@@ -210,7 +210,10 @@ export function StartView({ className }: { className?: string }) {
               {isBn ? "সহজ ৩টি ধাপ" : "ONBOARDING SEQUENCE"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {isBn ? "অনবোর্ডিং রোডম্যাপ" : "Step-by-Step Launch Path"}
+              </span>
+              <span className="block brand-gradient-text">
                 {isBn
                   ? "যেভাবে আপনার স্টোর চালু করবেন"
                   : "How Your Store Goes from Setup to Live"}

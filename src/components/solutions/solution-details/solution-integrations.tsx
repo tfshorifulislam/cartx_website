@@ -1,5 +1,7 @@
 "use client";
 
+import { splitHeading } from "@/lib/heading-utils";
+
 import React from "react";
 import Link from "next/link";
 import { Network, ArrowRight } from "lucide-react";
@@ -33,7 +35,15 @@ export function SolutionIntegrations({ solution, className }: SolutionIntegratio
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">{title[locale] || title.en}</span>
+              {(() => {
+                const [l1, l2] = splitHeading(title[locale] || title.en);
+                return (
+                  <>
+                    <span className="block text-foreground">{l1}</span>
+                    <span className="block brand-gradient-text">{l2}</span>
+                  </>
+                );
+              })()}
             </h2>
 
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-balance max-w-2xl mx-auto">

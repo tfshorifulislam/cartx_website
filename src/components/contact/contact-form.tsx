@@ -176,7 +176,10 @@ export function ContactForm({ initialCategory = "General Inquiry", className }: 
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "যোগাযোগের সহজ মাধ্যম" : "Get in Touch"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn ? "আমাদের একটি বার্তা পাঠান" : "Send Us a Message"}
             </span>
           </h2>

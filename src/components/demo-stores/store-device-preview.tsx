@@ -33,10 +33,13 @@ export function StoreDevicePreview({ store, className }: StoreDevicePreviewProps
               <span>{isBn ? "রেসপন্সিভ প্রিভিউ" : "Responsive Device Views"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {isBn ? "রেসপনসিভ ও আধুনিক ডিজাইন" : "Cross-Device Experience"}
+              </span>
+              <span className="block brand-gradient-text">
                 {isBn
                   ? "ডেস্কটপ ও মোবাইলে স্টোরফ্রন্টের বাস্তব দৃশ্য"
-                  : "Desktop and Mobile Storefront Experience"}
+                  : "Desktop & Mobile Storefronts"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

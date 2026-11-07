@@ -25,10 +25,13 @@ export function DemoStoresCTA({ className }: { className?: string }) {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-                <span className="brand-gradient-text">
+                <span className="block text-foreground">
+                  {isBn ? "আজই শুরু করুন আপনার ব্যবসা" : "Ready to Start Building?"}
+                </span>
+                <span className="block brand-gradient-text">
                   {isBn
                     ? "আপনার নিজস্ব অনলাইন স্টোর তৈরি করুন"
-                    : "Create Your Store."}
+                    : "Create Your Branded Store."}
                 </span>
               </h2>
 

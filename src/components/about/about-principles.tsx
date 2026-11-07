@@ -69,8 +69,11 @@ export function AboutPrinciples({ className }: { className?: string }) {
               <span>{isBn ? "আমাদের কাজের মূল ভিত্তি" : "Our Guiding Values"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn ? "মূল মূলনীতি ও নীতিসমূহ" : "Principles We Stand By"}
+              <span className="block text-foreground">
+                {isBn ? "আমাদের মূল চালিকাশক্তি" : "Core Operating"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "মূলনীতি ও নীতিসমূহ" : "Principles We Stand By"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

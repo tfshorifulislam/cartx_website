@@ -33,10 +33,11 @@ export function IntegrationRequirements({
               {isBn ? "প্রয়োজনীয় শর্ত" : "Prerequisites"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "অ্যাকাউন্ট প্রয়োজনীয়তা ও পূর্বশর্তসমূহ"
-                  : "Requirements & Eligibility"}
+              <span className="block text-foreground">
+                {isBn ? "প্রয়োজনীয় পূর্বশর্ত" : "Prerequisites & Eligibility"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "অ্যাকাউন্ট প্রয়োজনীয়তা ও পূর্বশর্তসমূহ" : "Requirements & Account Eligibility"}
               </span>
             </h2>
           </div>

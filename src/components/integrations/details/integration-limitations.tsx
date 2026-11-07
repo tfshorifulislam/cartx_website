@@ -33,10 +33,11 @@ export function IntegrationLimitations({
               {isBn ? "সীমাবদ্ধতা ও ফি পলিসি" : "Constraints & Billing"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "সীমাবদ্ধতা ও ফি সংক্রান্ত স্পষ্ট নির্দেশিকা"
-                  : "Limitations & Additional Fees"}
+              <span className="block text-foreground">
+                {isBn ? "ব্যবহারের পরিধি" : "Operational Scope"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "সীমাবদ্ধতা ও ফি সংক্রান্ত স্পষ্ট নির্দেশিকা" : "Limitations & Additional Fees"}
               </span>
             </h2>
           </div>

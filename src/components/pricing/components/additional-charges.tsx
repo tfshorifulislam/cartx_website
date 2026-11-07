@@ -45,10 +45,13 @@ export function AdditionalCharges({ charges, className }: AdditionalChargesProps
             <span>{isBn ? "অতিরিক্ত চার্জ ও ফি" : "Usage & Additional Fees"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "কোন লুকানো চার্জ নেই" : "Clear & Predictable Costs"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
                 ? "স্বচ্ছ অতিরিক্ত চার্জ ও তৃতীয় পক্ষের ফি"
-                : "Transparent Additional Charges & Third-Party Fees"}
+                : "Transparent Additional Charges & Fees"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

@@ -45,16 +45,12 @@ export function ThemeDetailCTA({ theme, className }: ThemeDetailCTAProps) {
 
             {/* Main Heading */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              {locale === "bn" ? (
-                <>
-                  <span className="brand-gradient-text">{theme.name.bn}</span> দিয়ে আজই আপনার অনলাইন স্টোর শুরু করুন
-                </>
-              ) : (
-                <>
-                  Launch Your Online Store with{" "}
-                  <span className="brand-gradient-text">{theme.name.en}</span> Today
-                </>
-              )}
+              <span className="block text-foreground">
+                {locale === "bn" ? "আজই শুরু করুন আপনার ব্যবসা" : "Launch Your Online Store"}
+              </span>
+              <span className="block brand-gradient-text">
+                {locale === "bn" ? `${theme.name.bn} দিয়ে আপনার অনলাইন স্টোর` : `With ${theme.name.en} Today`}
+              </span>
             </h2>
 
             {/* Description */}

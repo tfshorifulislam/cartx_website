@@ -38,28 +38,31 @@ export function SolutionsHero({ className }: SolutionsHeroProps) {
       aria-label="Solutions Hero"
       className={cn(
         "hero-bg relative overflow-hidden transition-colors py-12",
-        className
+        className,
       )}
     >
       {/* ── Background subtle ambient accents (Exact Home/Features Hero alignment) ── */}
       <div
         className="pointer-events-none absolute -right-36 -top-36 h-[30rem] w-[30rem] rounded-full opacity-[0.045]"
         style={{
-          background: "radial-gradient(circle, var(--primary) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, var(--primary) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
       <div
         className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full opacity-[0.035]"
         style={{
-          background: "radial-gradient(circle, var(--secondary-accent) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, var(--secondary-accent) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: "radial-gradient(circle, var(--foreground) 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, var(--foreground) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
         aria-hidden="true"
@@ -76,8 +79,10 @@ export function SolutionsHero({ className }: SolutionsHeroProps) {
 
             {/* H1 Heading */}
             <h1 className="text-balance !mb-4 leading-[1.2] sm:leading-[1.18] font-bold tracking-tight text-3xl sm:text-4xl lg:text-5xl">
-              {t("solutionsHero.titlePlain")}{" "}
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {t("solutionsHero.titlePlain")}
+              </span>
+              <span className="block brand-gradient-text">
                 {t("solutionsHero.titleHighlight")}
               </span>
             </h1>
@@ -118,4 +123,3 @@ export function SolutionsHero({ className }: SolutionsHeroProps) {
     </section>
   );
 }
-

@@ -37,7 +37,10 @@ export function ThemePlanEligibility({ theme, className }: ThemePlanEligibilityP
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "প্ল্যান প্রাপ্যতা" : "Subscription Tiers"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn"
                   ? `${theme.name.bn} ব্যবহারের সাবস্ক্রিপশন প্ল্যান`
                   : `Plan Eligibility for ${theme.name.en}`}

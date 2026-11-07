@@ -51,7 +51,12 @@ export function WebQLtd({ className }: { className?: string }) {
                   <span>{isBn ? "প্রযোজনা ও মালিকানা" : "Parent Company & Engineering"}</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-                  {isBn ? "WebQ LTD সম্পর্কে" : "About WebQ LTD."}
+                  <span className="block text-foreground">
+                    {isBn ? "কার্টএক্সের পেছনের প্রতিষ্ঠান" : "The Engineering Behind CartX"}
+                  </span>
+                  <span className="block brand-gradient-text">
+                    {isBn ? "WebQ LTD সম্পর্কে" : "About WebQ LTD."}
+                  </span>
                 </h2>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground bg-muted/40 px-3 py-2 rounded-xl border border-border">

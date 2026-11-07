@@ -22,10 +22,11 @@ export function AboutCTA({ className }: { className?: string }) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
 
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "চলুন একসাথে গড়ে তুলি ডিজিটাল কমার্সের নতুন দিগন্ত"
-                  : "Let's Build Better Online Businesses."}
+              <span className="block text-foreground">
+                {isBn ? "চলুন একসাথে গড়ে তুলি" : "Let's Build Better"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "ডিজিটাল কমার্সের নতুন দিগন্ত" : "Online Businesses Together."}
               </span>
             </h2>
 

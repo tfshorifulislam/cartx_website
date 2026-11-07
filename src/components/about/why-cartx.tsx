@@ -66,8 +66,11 @@ export function WhyCartX({ className }: { className?: string }) {
               <span>{isBn ? "কেন CartX আলাদা" : "Built Differently"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn ? "কেন ব্যবসায়ীরা CartX বেছে নেন" : "Why Choose CartX"}
+              <span className="block text-foreground">
+                {isBn ? "অনলাইন ব্যবসার আস্থায়" : "Why Modern Merchants"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "কেন ব্যবসায়ীরা CartX বেছে নেন" : "Choose CartX"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

@@ -34,7 +34,10 @@ export function ThemeCustomizationOptions({ theme, className }: ThemeCustomizati
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "কাস্টমাইজেশন অপশন" : "Flexible Styling"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn"
                   ? `${theme.name.bn}-এ যা যা পরিবর্তন করা যাবে`
                   : `Customization Controls for ${theme.name.en}`}

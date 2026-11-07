@@ -1,6 +1,7 @@
 import React from "react";
 import { type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { splitHeading } from "@/lib/heading-utils";
 
 export interface SectionHeadingProps {
   /** Optional eyebrow text displayed inside the branded pill badge */
@@ -41,7 +42,6 @@ export function SectionHeading({
   eyebrowIcon: Icon,
   title,
   titleHighlight,
-  titleGradient = true,
   description,
   align = "center",
   as: Component = "h2",
@@ -74,7 +74,7 @@ export function SectionHeading({
         </div>
       )}
 
-      {/* ── Title (Styled with Hero Section Brand Gradient Text) ── */}
+      {/* ── Title (Standardized Two-Line Section Heading: Line 1 Black Text, Line 2 Brand Gradient) ── */}
       <Component
         className={cn(
           "font-bold tracking-tight text-balance leading-[1.25] sm:leading-[1.2]",
@@ -84,13 +84,21 @@ export function SectionHeading({
       >
         {titleHighlight ? (
           <>
-            <span className="text-foreground">{title}</span>{" "}
-            <span className="brand-gradient-text">{titleHighlight}</span>
+            <span className="block text-foreground">{title}</span>
+            <span className="block brand-gradient-text">{titleHighlight}</span>
           </>
-        ) : titleGradient ? (
-          <span className="brand-gradient-text">{title}</span>
+        ) : typeof title === "string" ? (
+          (() => {
+            const [l1, l2] = splitHeading(title);
+            return (
+              <>
+                <span className="block text-foreground">{l1}</span>
+                <span className="block brand-gradient-text">{l2}</span>
+              </>
+            );
+          })()
         ) : (
-          <span className="text-foreground">{title}</span>
+          title
         )}
       </Component>
 

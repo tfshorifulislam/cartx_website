@@ -1,5 +1,7 @@
 "use client";
 
+import { splitHeading } from "@/lib/heading-utils";
+
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -42,7 +44,15 @@ export function SolutionCTA({ solution, className }: SolutionCTAProps) {
 
             {/* Main Heading */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">{heading[locale] || heading.en}</span>
+              {(() => {
+                const [l1, l2] = splitHeading(heading[locale] || heading.en);
+                return (
+                  <>
+                    <span className="block text-foreground">{l1}</span>
+                    <span className="block brand-gradient-text">{l2}</span>
+                  </>
+                );
+              })()}
             </h2>
 
             {/* Description */}

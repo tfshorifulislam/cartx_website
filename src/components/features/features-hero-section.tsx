@@ -72,8 +72,8 @@ export function FeaturesHeroSection({ className }: FeaturesHeroSectionProps) {
 
               {/* H1 */}
               <h1 className="text-balance !mb-3 sm:!mb-3.5 leading-[1.25] sm:leading-[1.2]">
-                {t("featuresHero.titlePlain")}{" "}
-                <span className="brand-gradient-text">
+                <span className="block text-foreground">{t("featuresHero.titlePlain")}</span>
+                <span className="block brand-gradient-text">
                   {t("featuresHero.titleHighlight")}
                 </span>
               </h1>

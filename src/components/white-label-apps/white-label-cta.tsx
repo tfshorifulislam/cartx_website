@@ -21,14 +21,21 @@ export function WhiteLabelCTA({ className }: { className?: string }) {
           <div className="relative z-10 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-5 shadow-2xs">
               <Smartphone className="h-3.5 w-3.5" />
-              <span>{isBn ? "মোবাইল অ্যাপ কনসালটেশন" : "Branded App Consultation"}</span>
+              <span>
+                {isBn ? "মোবাইল অ্যাপ কনসালটেশন" : "Branded App Consultation"}
+              </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {isBn
+                  ? "আপনার অ্যাপ চালু করতে প্রস্তুত?"
+                  : "Ready for iOS & Android?"}
+              </span>
+              <span className="block brand-gradient-text">
                 {isBn
                   ? "আপনার নিজস্ব ব্র্যান্ডেড অ্যাপ নিয়ে আলোচনা করুন"
-                  : "Discuss Your Branded App."}
+                  : "Discuss Your Branded App Today."}
               </span>
             </h2>
 
@@ -57,11 +64,15 @@ export function WhiteLabelCTA({ className }: { className?: string }) {
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-muted-foreground pt-5 border-t border-border">
               <span className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="h-3.5 w-3.5 text-success" />
-                {isBn ? "১০০% অ্যাপ ও ডেটা মালিকানা" : "100% Brand & Data Ownership"}
+                {isBn
+                  ? "১০০% অ্যাপ ও ডেটা মালিকানা"
+                  : "100% Brand & Data Ownership"}
               </span>
               <span className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="h-3.5 w-3.5 text-success" />
-                {isBn ? "আইওএস ও অ্যান্ড্রয়েড ডুয়াল প্ল্যাটফর্ম" : "iOS & Android Dual Platform"}
+                {isBn
+                  ? "আইওএস ও অ্যান্ড্রয়েড ডুয়াল প্ল্যাটফর্ম"
+                  : "iOS & Android Dual Platform"}
               </span>
               <span className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="h-3.5 w-3.5 text-success" />
@@ -74,4 +85,3 @@ export function WhiteLabelCTA({ className }: { className?: string }) {
     </section>
   );
 }
-

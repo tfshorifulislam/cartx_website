@@ -23,7 +23,10 @@ export function HelpCTA({ className }: { className?: string }) {
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "আমরা আপনাকে সহায়তা করতে প্রস্তুত" : "We're Here to Help"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn ? "এখনও আপনার প্রশ্নের উত্তর খুঁজে পাননি?" : "Still Have Questions?"}
             </span>
           </h2>

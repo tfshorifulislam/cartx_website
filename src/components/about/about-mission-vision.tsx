@@ -24,8 +24,11 @@ export function AboutMissionVision({ className }: { className?: string }) {
               <span>{isBn ? "আমাদের উদ্দেশ্য ও পথচলা" : "Purpose & Direction"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn ? "লক্ষ্য ও ভবিষ্যৎ দৃষ্টিভঙ্গি" : "Our Mission & Vision"}
+              <span className="block text-foreground">
+                {isBn ? "আমাদের দীর্ঘমেয়াদী" : "Our Purpose &"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "লক্ষ্য ও ভবিষ্যৎ দৃষ্টিভঙ্গি" : "Mission & Vision"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

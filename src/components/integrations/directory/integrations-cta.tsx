@@ -48,12 +48,13 @@ export function IntegrationsCTA({ className }: IntegrationsCTAProps) {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-                <span className="brand-gradient-text">
-                  {isBn
-                    ? "আপনার কাস্টম ইআরপি বা পেমেন্ট সিস্টেম যুক্ত করতে চান?"
-                    : "Need a Specific Gateway or Custom ERP Bridge?"}
-                </span>
-              </h2>
+              <span className="block text-foreground">
+                {isBn ? "বিশেষ কাস্টম প্রয়োজন?" : "Have Custom Integration Needs?"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "আপনার কাস্টম ইআরপি বা সিস্টেম যুক্ত করতে চান?" : "Need a Specific Gateway or Custom ERP Bridge?"}
+              </span>
+            </h2>
 
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
                 {isBn

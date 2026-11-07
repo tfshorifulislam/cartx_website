@@ -92,9 +92,11 @@ export function WhiteLabelAppsSection({
 
             {/* H2 Title with Hero-matching Brand Gradient Highlight */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground leading-[1.2] !mb-3 sm:!mb-4 text-balance">
-              Take Your Brand{" "}
-              <span className="brand-gradient-text">
-                Beyond the Browser.
+              <span className="block text-foreground">
+                {locale === "bn" ? "আপনার ব্র্যান্ডকে নিয়ে যান" : "Take Your Brand"}
+              </span>
+              <span className="block brand-gradient-text">
+                {locale === "bn" ? "ওয়েব ব্রাউজারেরও বাইরে।" : "Beyond the Browser."}
               </span>
             </h2>
 

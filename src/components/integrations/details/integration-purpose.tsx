@@ -30,7 +30,10 @@ export function IntegrationPurpose({ integration, className }: IntegrationPurpos
               {isBn ? "সেবা ও উদ্দেশ্য" : "Capabilities & Impact"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {isBn ? "কাজের পরিধি ও সুবিধা" : "Functional Overview"}
+              </span>
+              <span className="block brand-gradient-text">
                 {isBn ? "ইন্টিগ্রেশনটি কীভাবে কাজ করে ও কী সুবিধা দেয়" : "What This Integration Does"}
               </span>
             </h2>

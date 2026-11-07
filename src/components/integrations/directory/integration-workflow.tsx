@@ -27,10 +27,11 @@ export function IntegrationWorkflow({ className }: IntegrationWorkflowProps) {
               {isBn ? "কাজের প্রক্রিয়া" : "Setup Workflow"}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "মাত্র ৬টি সহজ ধাপে ইন্টিগ্রেশন চালু করুন"
-                  : "How CartX Integrations Work in 6 Steps"}
+              <span className="block text-foreground">
+                {isBn ? "সহজ সেটআপ প্রক্রিয়া" : "Seamless Setup Flow"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "মাত্র ৬টি সহজ ধাপে ইন্টিগ্রেশন চালু করুন" : "How CartX Integrations Work in 6 Steps"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">

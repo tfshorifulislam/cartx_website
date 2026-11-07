@@ -61,7 +61,10 @@ export function ThemeRelatedThemes({ currentTheme, className }: ThemeRelatedThem
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "আরও এক্সপ্লোর করুন" : "Explore Alternatives"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn" ? "অন্যান্য সম্পর্কিত থিম" : "Related Storefront Themes"}
               </span>
             </h2>

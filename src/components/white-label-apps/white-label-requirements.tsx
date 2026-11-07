@@ -63,9 +63,12 @@ export function WhiteLabelRequirements({ className }: { className?: string }) {
             <span>{isBn ? "প্রয়োজনীয় শর্তাবলী ও স্বচ্ছ নীতিমালা" : "Service Requirements"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "পূর্বপ্রস্তুতি ও গাইডলাইন" : "Prerequisites & Preparation"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "অ্যাপ তৈরির পূর্বে জেনে রাখা দরকার এমন গুরুত্বপূর্ণ বিষয়"
+                ? "অ্যাপ তৈরির পূর্বে জেনে রাখা দরকার এমন বিষয়"
                 : "Essential Guidelines Before Requesting an App"}
             </span>
           </h2>

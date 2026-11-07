@@ -43,12 +43,15 @@ export function IntegrationFAQ({ integration, className }: IntegrationFAQProps) 
               <span>{isBn ? "প্রশ্নোত্তর" : "FAQ"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? `${integration.name} সম্পর্কিত সাধারণ প্রশ্নসমূহ`
-                  : `Frequently Asked Questions About ${integration.name}`}
-              </span>
-            </h2>
+          <span className="block text-foreground">
+            {isBn ? "সাধারণ জিজ্ঞাসা ও উত্তর" : "Frequently Asked Questions"}
+          </span>
+          <span className="block brand-gradient-text">
+            {isBn
+              ? `${integration.name} সম্পর্কিত তথ্যাবলী`
+              : `About ${integration.name} Integration`}
+          </span>
+        </h2>
           </div>
 
           <div className="space-y-3">

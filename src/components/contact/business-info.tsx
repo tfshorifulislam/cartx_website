@@ -65,7 +65,12 @@ export function BusinessInfo({ className }: { className?: string }) {
               {isBn ? "প্রতিষ্ঠানের বিবরণ" : "Corporate Details"}
             </span>
             <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
-              {isBn ? "ব্যবসায়িক তথ্য ও প্রাপ্যতা" : "Business Information"}
+              <span className="block text-foreground">
+                {isBn ? "অফিস ও সহায়তা ডেস্ক" : "Corporate Office"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "ব্যবসায়িক তথ্য ও প্রাপ্যতা" : "Business Information"}
+              </span>
             </h2>
           </div>
 

@@ -33,10 +33,13 @@ export function ThemesFeatures({ className }: ThemesFeaturesProps) {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "স্টোরফ্রন্ট সক্ষমতা" : "Core Visual Capabilities"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn"
                   ? "কার্টএক্স থিমের মূল সুবিধাসমূহ"
-                  : "Core Capabilities Built Into Every Theme"}
+                  : "Built Into Every Theme"}
               </span>
             </h2>
 

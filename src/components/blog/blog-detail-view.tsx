@@ -302,7 +302,12 @@ export function BlogDetailView({ post }: BlogDetailViewProps) {
                 {isBn ? "আরও পড়ুন" : "Keep Learning"}
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
-                {isBn ? "সম্পর্কিত অন্যান্য নিবন্ধ" : "Related Guides & Insights"}
+                <span className="block text-foreground">
+                  {isBn ? "জ্ঞান সমৃদ্ধ করুন" : "Keep Learning"}
+                </span>
+                <span className="block brand-gradient-text">
+                  {isBn ? "সম্পর্কিত অন্যান্য নিবন্ধ" : "Related Guides & Insights"}
+                </span>
               </h2>
             </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

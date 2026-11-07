@@ -32,10 +32,11 @@ export function IntegrationCapabilities({
               {isBn ? "সক্ষমতা তালিকা" : "Verified Features"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "সমর্থিত কারিগরি সক্ষমতা ও ফিচারসমূহ"
-                  : "Confirmed Capabilities"}
+              <span className="block text-foreground">
+                {isBn ? "সিস্টেম সক্ষমতা" : "Technical Scope"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "সমর্থিত কারিগরি সক্ষমতা ও ফিচারসমূহ" : "Confirmed Capabilities"}
               </span>
             </h2>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">

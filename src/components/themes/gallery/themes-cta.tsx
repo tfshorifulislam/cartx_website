@@ -43,17 +43,12 @@ export function ThemesCTA({ className }: ThemesCTAProps) {
 
             {/* Main Heading */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              {locale === "bn" ? (
-                <>
-                  আপনার অনলাইন স্টোরের জন্য{" "}
-                  <span className="brand-gradient-text">সেরা ডিজাইন নির্বাচন করুন</span>
-                </>
-              ) : (
-                <>
-                  Find a Design for{" "}
-                  <span className="brand-gradient-text">Your Store.</span>
-                </>
-              )}
+              <span className="block text-foreground">
+                {locale === "bn" ? "আপনার অনলাইন স্টোরের জন্য" : "Find the Perfect Design"}
+              </span>
+              <span className="block brand-gradient-text">
+                {locale === "bn" ? "সেরা ডিজাইন নির্বাচন করুন" : "For Your Store"}
+              </span>
             </h2>
 
             {/* Description */}

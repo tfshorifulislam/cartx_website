@@ -80,9 +80,12 @@ export function WhiteLabelProcess({ className }: { className?: string }) {
             <span>{isBn ? "ধাপে ধাপে যাত্রা" : "8-Step Implementation Journey"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "সুসংগঠিত রোডম্যাপ" : "Step-by-Step App Delivery"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "রিকোয়েস্ট থেকে অ্যাপ স্টোর রিলিজ পর্যন্ত ৮টি ধাপ"
+                ? "রিকোয়েস্ট থেকে রিলিজ পর্যন্ত ৮টি ধাপ"
                 : "From Initial Request to Official Store Release"}
             </span>
           </h2>

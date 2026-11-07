@@ -103,7 +103,10 @@ export function ContactFAQ({ className }: { className?: string }) {
             <span>{isBn ? "সাধারণ প্রশ্নোত্তর" : "Quick Answers"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "সহায়ক তথ্য ও উত্তর" : "Quick Answers"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn ? "সচরাচর জিজ্ঞাসিত প্রশ্নসমূহ" : "Frequently Asked Questions"}
             </span>
           </h2>

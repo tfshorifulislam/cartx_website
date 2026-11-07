@@ -39,10 +39,11 @@ export function IntegrationSetupGuide({
               {isBn ? "কনফিগারেশন নির্দেশিকা" : "Configuration Walkthrough"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "ধাপে ধাপে সংযোগ ও সেটআপ গাইড"
-                  : "Step-by-Step Setup Guide"}
+              <span className="block text-foreground">
+                {isBn ? "কনফিগারেশন গাইড" : "Configuration Steps"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "ধাপে ধাপে সংযোগ ও সেটআপ গাইড" : "Step-by-Step Setup Guide"}
               </span>
             </h2>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">

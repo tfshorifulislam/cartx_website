@@ -33,10 +33,11 @@ export function IntegrationDataExchanged({
               {isBn ? "ডেটা প্রবাহ ও গোপনীয়তা" : "Data Flow & Privacy"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "আদান-প্রদানকৃত ডেটা ও তথ্যের বিবরণ"
-                  : "Data Exchanged Between CartX & Provider"}
+              <span className="block text-foreground">
+                {isBn ? "ডেটা সিঙ্কিং বিবরণ" : "Data Flow Overview"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "আদান-প্রদানকৃত তথ্যের স্পষ্ট বিবরণ" : "Data Exchanged Between CartX & Provider"}
               </span>
             </h2>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">

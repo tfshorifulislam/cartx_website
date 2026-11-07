@@ -30,10 +30,11 @@ export function IntegrationSecurity({ className }: IntegrationSecurityProps) {
               <span>{isBn ? "নিরাপত্তা ও কমপ্লায়েন্স" : "Security & Reliability"}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "ব্যাংক-গ্রেড সুরক্ষা ও নির্ভরযোগ্য আর্কিটেকচার"
-                  : "Enterprise Security Built Into Every Integration"}
+              <span className="block text-foreground">
+                {isBn ? "নিরাপদ ও নির্ভরযোগ্য" : "Data Protection by Design"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "ব্যাংক-গ্রেড সুরক্ষা ও আর্কিটেকচার" : "Enterprise Security Built Into Every Integration"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">

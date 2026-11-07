@@ -35,10 +35,13 @@ export function ThemesFAQ({ className }: ThemesFAQProps) {
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "সাধারণ জিজ্ঞাসা ও উত্তর" : "Frequently Asked Questions"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn"
-                  ? "থিম সম্পর্কিত সাধারণ জিজ্ঞাসা"
-                  : "Everything You Need to Know About CartX Themes"}
+                  ? "থিম সম্পর্কিত তথ্যাবলী"
+                  : "Everything You Need to Know About Themes"}
               </span>
             </h2>
 

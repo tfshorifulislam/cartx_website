@@ -65,10 +65,13 @@ export function DemoProcess({ className }: { className?: string }) {
             {isBn ? "পরবর্তী ধাপসমূহ" : "WHAT HAPPENS NEXT"}
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "অনুরোধের পরবর্তী পদক্ষেপ" : "How Our Process Works"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "অনুরোধ জমা দেওয়ার পর কীভাবে প্রক্রিয়াটি সম্পন্ন হয়"
-                : "A Structured, Transparent Review Process"}
+                ? "স্বচ্ছ ও সুসংগঠিত প্রক্রিয়া"
+                : "A Structured, Transparent Review"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

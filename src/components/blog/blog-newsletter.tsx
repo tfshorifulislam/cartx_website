@@ -24,7 +24,10 @@ export function BlogNewsletter({ className }: { className?: string }) {
   return (
     <section
       aria-label="Newsletter Signup"
-      className={cn("py-16 sm:py-20 border-t border-border bg-card/30 transition-colors", className)}
+      className={cn(
+        "py-16 sm:py-20 border-t border-border bg-card/30 transition-colors",
+        className,
+      )}
     >
       <div className="container mx-auto">
         <ScrollReveal className="max-w-3xl mx-auto rounded-3xl border border-border bg-card p-8 sm:p-12 text-center shadow-sm relative overflow-hidden">
@@ -33,9 +36,16 @@ export function BlogNewsletter({ className }: { className?: string }) {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight mb-2">
-            {isBn
-              ? "সাপ্তাহিক ইকমার্স ইনসাইট সরাসরি আপনার ইনবক্সে"
-              : "Get Actionable E-Commerce Insights in Your Inbox"}
+            <span className="block text-foreground">
+              {isBn
+                ? "ই-কমার্স ইনসাইট ও আপডেট"
+                : "Actionable Industry Insights"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn
+                ? "সাপ্তাহিক নিউজলেটার পান আপনার ইনবক্সে"
+                : "Delivered Directly to Your Inbox"}
+            </span>
           </h2>
 
           <p className="text-xs sm:text-sm text-muted-foreground max-w-xl mx-auto mb-6 leading-relaxed">
@@ -54,13 +64,18 @@ export function BlogNewsletter({ className }: { className?: string }) {
               </span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder={isBn ? "আপনার ইমেইল ঠিকানা দিন" : "Enter your email address"}
+                placeholder={
+                  isBn ? "আপনার ইমেইল ঠিকানা দিন" : "Enter your email address"
+                }
                 className="flex-1 rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <button
@@ -83,4 +98,3 @@ export function BlogNewsletter({ className }: { className?: string }) {
     </section>
   );
 }
-

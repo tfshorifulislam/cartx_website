@@ -26,9 +26,14 @@ export function HowItWorksCTA() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto">
-            {isBn
-              ? "আপনার অনলাইন স্টোর চালু করতে প্রস্তুত?"
-              : "Ready to Build Your Store?"}
+            <span className="block text-foreground">
+              {isBn ? "আজই শুরু করুন আপনার ব্যবসা" : "Take the First Step"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn
+                ? "আপনার অনলাইন স্টোর চালু করতে প্রস্তুত?"
+                : "Ready to Build Your Store?"}
+            </span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">

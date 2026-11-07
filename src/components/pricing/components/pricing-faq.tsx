@@ -40,10 +40,13 @@ export function PricingFAQ({ faqs, className }: PricingFAQProps) {
             <span>{isBn ? "প্রয়োজনীয় প্রশ্নোত্তর" : "Billing FAQ"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "বিলিং সম্পর্কিত তথ্য" : "Billing & Subscription Details"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "মূল্যতালিকা ও বিলিং সংক্রান্ত সাধারণ প্রশ্নাবলী"
-                : "Frequently Asked Questions About Pricing & Plans"}
+                ? "মূল্যতালিকা সংক্রান্ত সাধারণ প্রশ্নাবলী"
+                : "Frequently Asked Questions About Plans"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

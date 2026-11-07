@@ -21,9 +21,12 @@ export function BookDemoCTA({ className }: { className?: string }) {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "কার্টএক্স অভিজ্ঞতা নিতে প্রস্তুত?" : "Ready to See CartX in Action?"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "আপনার ব্যবসার জন্য উপযুক্ত সমাধান খুঁজুন"
+                ? "আপনার ব্যবসার জন্য সেরা সমাধান খুঁজুন"
                 : "Let's Find the Right Fit for Your Business"}
             </span>
           </h2>

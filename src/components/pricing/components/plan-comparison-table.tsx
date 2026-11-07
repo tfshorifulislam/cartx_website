@@ -2,9 +2,19 @@
 
 import React from "react";
 import Link from "next/link";
-import { CheckCircle2, Minus, Layers, ArrowRight, HelpCircle } from "lucide-react";
+import {
+  CheckCircle2,
+  Minus,
+  Layers,
+  ArrowRight,
+  HelpCircle,
+} from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import { BillingPeriod, ComparisonCategory, PricingPlan } from "../types/pricing.types";
+import {
+  BillingPeriod,
+  ComparisonCategory,
+  PricingPlan,
+} from "../types/pricing.types";
 import { MobilePlanComparison } from "./mobile-plan-comparison";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { cn } from "@/lib/utils";
@@ -49,9 +59,7 @@ export function PlanComparisonTable({
       );
     }
     return (
-      <span className="text-xs font-medium text-foreground">
-        {String(val)}
-      </span>
+      <span className="text-xs font-medium text-foreground">{String(val)}</span>
     );
   };
 
@@ -59,17 +67,27 @@ export function PlanComparisonTable({
     <section
       id="plan-comparison"
       aria-label="Detailed Plan Comparison"
-      className={cn("py-16 sm:py-20 border-b border-border bg-card/30", className)}
+      className={cn(
+        "py-16 sm:py-20 border-b border-border bg-card/30",
+        className,
+      )}
     >
       <div className="container mx-auto">
         {/* Section Heading with ScrollReveal */}
-        <ScrollReveal direction="up" delay={0} className="max-w-3xl mx-auto text-center mb-14">
+        <ScrollReveal
+          direction="up"
+          delay={0}
+          className="max-w-3xl mx-auto text-center mb-14"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-3">
             <Layers className="h-3.5 w-3.5" />
             <span>{isBn ? "ফিচার তুলনা" : "Plan Comparison"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "বিস্তারিত প্ল্যান বিবরণী" : "Side-by-Side Breakdown"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
                 ? "ফিচার ও সক্ষমতার পূর্ণাঙ্গ তুলনা"
                 : "Compare All Features & Plan Entitlements"}
@@ -96,7 +114,10 @@ export function PlanComparisonTable({
               {/* Table Header: Plan Names & CTAs */}
               <thead>
                 <tr className="border-b border-border bg-muted/40">
-                  <th scope="col" className="p-5 w-[28%] text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  <th
+                    scope="col"
+                    className="p-5 w-[28%] text-xs font-bold uppercase tracking-wider text-muted-foreground"
+                  >
                     {isBn ? "ফিচার ও সক্ষমতা" : "Features & Capabilities"}
                   </th>
                   {plans.map((plan) => (
@@ -105,7 +126,7 @@ export function PlanComparisonTable({
                       scope="col"
                       className={cn(
                         "p-5 text-center w-[18%] transition-colors",
-                        plan.highlighted && "bg-primary/[0.04]"
+                        plan.highlighted && "bg-primary/[0.04]",
                       )}
                     >
                       <div className="font-extrabold text-base text-foreground mb-1">
@@ -124,7 +145,7 @@ export function PlanComparisonTable({
                           "group/thbtn inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-150 w-full shadow-2xs hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] motion-reduce:transform-none",
                           plan.highlighted
                             ? "bg-primary text-primary-foreground hover:bg-[var(--primary-hover)]"
-                            : "border border-border bg-card text-foreground hover:bg-muted/50"
+                            : "border border-border bg-card text-foreground hover:bg-muted/50",
                         )}
                       >
                         <span>{plan.cta.label[isBn ? "bn" : "en"]}</span>
@@ -176,7 +197,7 @@ export function PlanComparisonTable({
                             key={plan.id}
                             className={cn(
                               "py-3.5 px-5 text-center transition-colors duration-150",
-                              plan.highlighted && "bg-primary/[0.02]"
+                              plan.highlighted && "bg-primary/[0.02]",
                             )}
                           >
                             {renderValue(feature.planValues[plan.id])}

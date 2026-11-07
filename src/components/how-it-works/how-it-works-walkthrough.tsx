@@ -63,10 +63,13 @@ export function HowItWorksWalkthrough({ className }: { className?: string }) {
             <span>{isBn ? "ভিডিও ও ইন্টারঅ্যাক্টিভ ওয়াকথ্রু" : "Interactive Product Walkthrough"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "ভিজ্যুয়াল ওয়াকথ্রু" : "Interactive Platform Tour"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
                 ? "কার্টএক্স ড্যাশবোর্ডের পূর্ণাঙ্গ ব্যবহারবিধি"
-                : "Watch the CartX Merchant Workflow in Action"}
+                : "Watch the Merchant Workflow in Action"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

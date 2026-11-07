@@ -83,7 +83,10 @@ export function WhiteLabelFAQ({ className }: { className?: string }) {
     <section
       id="white-label-faq"
       aria-label="Frequently Asked Questions About White-Label Apps"
-      className={cn("py-16 sm:py-24 border-b border-border bg-background transition-colors", className)}
+      className={cn(
+        "py-16 sm:py-24 border-b border-border bg-background transition-colors",
+        className,
+      )}
     >
       <div className="container max-w-4xl mx-auto px-4 sm:px-6">
         <ScrollReveal className="text-center mb-14">
@@ -92,7 +95,10 @@ export function WhiteLabelFAQ({ className }: { className?: string }) {
             <span>{isBn ? "সাধারণ প্রশ্নোত্তর" : "App FAQ"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "সাধারণ জিজ্ঞাসা ও উত্তর" : "Everything You Need to Know"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
                 ? "মোবাইল অ্যাপ সংক্রান্ত সাধারণ প্রশ্নাবলী"
                 : "Frequently Asked Questions About Branded Apps"}
@@ -126,14 +132,16 @@ export function WhiteLabelFAQ({ className }: { className?: string }) {
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 text-muted-foreground shrink-0 transition-transform duration-200",
-                      isOpen && "rotate-180 text-primary"
+                      isOpen && "rotate-180 text-primary",
                     )}
                   />
                 </button>
 
                 {isOpen && (
                   <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-border/60">
-                    <div className="pt-3.5">{faq.answer[isBn ? "bn" : "en"]}</div>
+                    <div className="pt-3.5">
+                      {faq.answer[isBn ? "bn" : "en"]}
+                    </div>
                   </div>
                 )}
               </ScrollReveal>
@@ -144,4 +152,3 @@ export function WhiteLabelFAQ({ className }: { className?: string }) {
     </section>
   );
 }
-

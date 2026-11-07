@@ -43,8 +43,12 @@ export function FinalCTASection({ className }: FinalCTASectionProps) {
 
             {/* Heading with Brand Gradient Highlight */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-[1.15]">
-              Ready to Build Your{" "}
-              <span className="brand-gradient-text">Online Store?</span>
+              <span className="block text-white">
+                {locale === "bn" ? "আজই শুরু করুন" : "Ready to Build Your"}
+              </span>
+              <span className="block brand-gradient-text">
+                {locale === "bn" ? "আপনার অনলাইন স্টোর।" : "Online Store?"}
+              </span>
             </h2>
 
             {/* Supporting Copy */}

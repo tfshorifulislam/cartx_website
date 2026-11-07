@@ -246,7 +246,10 @@ export function BookDemoForm({ className }: { className?: string }) {
       <div className="container mx-auto max-w-4xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "লাইভ ডেমো বুক করুন" : "Schedule a Live Consultation"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn ? "আপনার ব্যবসা সম্পর্কে জানান" : "Tell Us About Your Business"}
             </span>
           </h2>

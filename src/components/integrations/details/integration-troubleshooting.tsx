@@ -35,10 +35,11 @@ export function IntegrationTroubleshooting({
               {isBn ? "সহায়তা ও সমাধান" : "Diagnostic Support"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mt-1">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "সাধারণ সমস্যা ও সমাধান (Troubleshooting)"
-                  : "Troubleshooting Common Errors"}
+              <span className="block text-foreground">
+                {isBn ? "ত্রুটি সমাধান গাইড" : "Diagnostic Reference"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "সাধারণ সমস্যা ও সমাধান সংক্রান্ত নির্দেশিকা" : "Troubleshooting Common Errors"}
               </span>
             </h2>
             <p className="text-sm text-muted-foreground mt-2 max-w-2xl">

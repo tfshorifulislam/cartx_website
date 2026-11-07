@@ -85,10 +85,13 @@ export function DemoCoverage({ className }: { className?: string }) {
             {isBn ? "ডেমোতে যা যা দেখানো হবে" : "DEMO FOCUS AREAS"}
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "ব্যবসায়িক প্রবৃদ্ধির জন্য" : "Explore the Capabilities"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "আপনার ব্যবসার জন্য গুরুত্বপূর্ণ ফিচারগুলো এক্সপ্লোর করুন"
-                : "Explore the Capabilities That Matter to Your Business"}
+                ? "গুরুত্বপূর্ণ ফিচারগুলো এক্সপ্লোর করুন"
+                : "That Matter to Your Business"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

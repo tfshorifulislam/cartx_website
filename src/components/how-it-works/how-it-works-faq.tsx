@@ -89,9 +89,14 @@ export function HowItWorksFAQ() {
             <span>{isBn ? "সাধারণ প্রশ্নোত্তর" : "Frequently Asked Questions"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
-            {isBn
-              ? "শুরু করার আগে আপনার যা জানা প্রয়োজন"
-              : "Everything You Need to Know Before Starting"}
+            <span className="block text-foreground">
+              {isBn ? "শুরু করার আগে" : "Essential Guidance"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn
+                ? "আপনার যা জানা প্রয়োজন"
+                : "Everything You Need to Know"}
+            </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             {isBn

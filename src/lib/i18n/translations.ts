@@ -75,7 +75,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Brand Trust Strip (Section 02)
     "trustStrip.badge": "ALL-IN-ONE COMMERCE PLATFORM",
-    "trustStrip.title": "Core capabilities built into every CartX store",
+    "trustStrip.title": "Core Capabilities Built Into\nevery CartX Store",
     "trustStrip.pillar1.title": "Store Management",
     "trustStrip.pillar1.desc": "Branded storefronts, custom domains, and mobile-first themes.",
     "trustStrip.pillar2.title": "Order Management",
@@ -90,7 +90,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Problem & Solution (Section 03)
     "problemSolution.badge": "THE PROBLEM & THE SOLUTION",
-    "problemSolution.title": "Your Online Business, Without the Daily Chaos.",
+    "problemSolution.title": "Your Online Business,\nWithout the Daily Chaos.",
     "problemSolution.description": "Managing products, orders, stock, payments and delivery across disconnected tools can become difficult as your business grows. CartX brings supported workflows together in one place.",
     "problemSolution.card1.title": "Scattered Operations",
     "problemSolution.card1.desc": "Product, order, and inventory information kept across separate places.",
@@ -104,7 +104,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Create Your Store (Section 04)
     "createStore.badge": "STOREFRONT BUILDER",
-    "createStore.title": "Your Storefront, Your Brand.",
+    "createStore.title": "Your Storefront,\nYour Brand.",
     "createStore.description": "Set up your store identity, organize your products and create a shopping experience that reflects your brand.",
     "createStore.step1.title": "1. Brand Identity",
     "createStore.step1.desc": "Upload your logo, select brand colors, and configure typography.",
@@ -123,7 +123,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Product Feature Overview (Section 05)
     "featureOverview.badge": "PRODUCT FEATURES",
-    "featureOverview.title": "Everything You Need to Manage Your Store.",
+    "featureOverview.title": "Everything You Need to\nManage Your Store.",
     "featureOverview.description": "Core tools designed to help you organize products, fulfill orders, collect payments and monitor daily store performance.",
     "featureOverview.card1.title": "Product Management",
     "featureOverview.card1.desc": "Organize products, variants, categories, images, prices and stock information.",
@@ -145,7 +145,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — How CartX Works (Section 06)
     "howItWorks.badge": "HOW CARTX WORKS",
-    "howItWorks.title": "Go from Idea to Online Store in Simple Steps.",
+    "howItWorks.title": "Go from Idea to Online Store\nin Simple Steps.",
     "howItWorks.description": "Start with your account, configure your storefront, catalog your products, and launch through your connected dashboard.",
     "howItWorks.step1.number": "01",
     "howItWorks.step1.title": "Create Your Account",
@@ -163,7 +163,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Store Themes & Templates (Section 07)
     "themesSection.badge": "STORE THEMES & TEMPLATES",
-    "themesSection.title": "A Store Design That Fits Your Brand.",
+    "themesSection.title": "A Store Design That\nFits Your Brand.",
     "themesSection.description": "Explore store themes designed for different product categories and brand identities.",
     "themesSection.notice": "Illustrative concept previews shown. Published theme availability varies by release schedule and plan.",
     "themesSection.card1.name": "Aura Studio",
@@ -185,7 +185,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Manage Orders & Inventory (Section 08)
     "orderInventory.badge": "ORDERS & INVENTORY",
-    "orderInventory.title": "Stay in Control of Every Order.",
+    "orderInventory.title": "Stay in Control of\nEvery Order & Inventory.",
     "orderInventory.description": "Track order status, check stock availability and keep fulfillment information organized from your merchant dashboard.",
     "orderInventory.mockupNotice": "Merchant Dashboard Preview (Illustrative Mockup)",
     "orderInventory.orderListTitle": "Recent Orders",
@@ -207,7 +207,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Payments & Delivery (Section 09)
     "paymentsDelivery.badge": "PAYMENTS & DELIVERY",
-    "paymentsDelivery.title": "Connect the Way Your Customers Pay and Receive Orders.",
+    "paymentsDelivery.title": "Connect the Way Customers\nPay and Receive Orders.",
     "paymentsDelivery.description": "Provide flexible payment choices for local shoppers and streamline parcel fulfillment through connected logistics workflows.",
     "paymentsDelivery.payments.groupTitle": "Payment Options",
     "paymentsDelivery.payments.groupDesc": "Accept payments with confidence, manage cash on delivery, and track transaction records in one place.",
@@ -235,7 +235,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Marketing & Growth Tools (Section 10)
     "marketingGrowth.badge": "MARKETING & GROWTH",
-    "marketingGrowth.title": "Tools to Support Your Next Stage of Growth.",
+    "marketingGrowth.title": "Tools to Support\nYour Next Stage of Growth.",
     "marketingGrowth.description": "Use your store data and supported marketing tools to make more informed business decisions.",
     "marketingGrowth.statusSupported": "Supported Feature",
     "marketingGrowth.statusPlanned": "Planned / In Development",
@@ -255,7 +255,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Business Insights (Section 11)
     "businessInsights.badge": "BUSINESS INSIGHTS & REPORTS",
-    "businessInsights.title": "Understand Your Store Performance.",
+    "businessInsights.title": "Understand Your\nStore Performance.",
     "businessInsights.description": "Review your store's available reports to understand sales trends and operational performance.",
     "businessInsights.demoDataNotice": "Illustrative demo data — not real CartX customer or business figures.",
     "businessInsights.timeRange": "Last 30 Days",
@@ -284,7 +284,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — White-label Mobile Apps (Section 12)
     "whiteLabelApps.badge": "WHITE-LABEL MOBILE APPS",
-    "whiteLabelApps.title": "Take Your Brand Beyond the Browser.",
+    "whiteLabelApps.title": "Take Your Brand\nBeyond the Browser.",
     "whiteLabelApps.description": "Explore branded mobile app options designed to bring your store experience closer to your customers.",
     "whiteLabelApps.benefit1.title": "Your Brand, Your Experience",
     "whiteLabelApps.benefit1.desc": "Showcase your store through a branded mobile experience.",
@@ -321,7 +321,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Demo Store Showcase (Section 13)
     "demoStoresSection.badge": "DEMO STORE SHOWCASE",
-    "demoStoresSection.title": "See What Your Store Could Look Like.",
+    "demoStoresSection.title": "See What Your Store\nCould Look Like.",
     "demoStoresSection.description": "Explore storefront designs for different industries and discover how your brand could look with CartX.",
     "demoStoresSection.conceptNotice": "Conceptual storefront previews shown for demonstrative purposes. No live customer or merchant credentials are used.",
     "demoStoresSection.mobileFriendly": "Mobile-friendly",
@@ -342,7 +342,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Pricing Preview (Section 14)
     "pricingSection.badge": "TRANSPARENT PRICING",
-    "pricingSection.title": "Choose a Plan That Fits Your Business.",
+    "pricingSection.title": "Choose a Plan That\nFits Your Business.",
     "pricingSection.description": "Start with the tools you need today and explore additional capabilities as your business grows.",
     "pricingSection.statusPending": "Pricing details announced at service launch",
     "pricingSection.disclaimer": "All plans include web storefront hosting and security updates. Custom domain registration and third-party gateway fees are billed directly by respective providers.",
@@ -370,12 +370,12 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Customer Stories / Testimonials (Section 15)
     "customerStories.badge": "CUSTOMER STORIES",
-    "customerStories.title": "Built Around Real Business Needs.",
+    "customerStories.title": "Built Around\nReal Business Needs.",
     "customerStories.description": "Verified merchant journeys and operational milestones from businesses running on CartX.",
 
     // Home Page — FAQ Preview (Section 16)
     "faqPreview.badge": "FREQUENTLY ASKED QUESTIONS",
-    "faqPreview.title": "Questions About CartX?",
+    "faqPreview.title": "Questions About\nCartX Platform?",
     "faqPreview.description": "Common questions about store setup, operational features, payment options, and platform capabilities.",
     "faqPreview.q1": "What is CartX?",
     "faqPreview.a1": "CartX is being developed as an e-commerce SaaS platform designed to help businesses create and manage their online stores and essential selling workflows.",
@@ -398,7 +398,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Final CTA (Section 17)
     "finalCta.badge": "GET STARTED WITH CARTX",
-    "finalCta.title": "Ready to Build Your Online Store?",
+    "finalCta.title": "Ready to Build\nYour Online Store?",
     "finalCta.description": "Bring your products, orders and essential store operations together with CartX.",
     "finalCta.trustNote": "Free setup consultation • No credit card required to explore",
 
@@ -469,7 +469,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 03: Feature Category Grid
     "featuresGrid.eyebrow": "FEATURE CATEGORIES",
-    "featuresGrid.title": "Explore Everything You Need to Run Your Store",
+    "featuresGrid.title": "Explore Everything You Need to\nRun Your Online Store",
     "featuresGrid.description": "Discover the tools available to manage your storefront, products, orders, customers and day-to-day store operations.",
     "featuresGrid.learnMore": "Learn More",
     "featuresGrid.viewOverview": "View Overview",
@@ -812,19 +812,19 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 04: Feature Deep Dives
     "featuresDeepDive.eyebrow": "FEATURE DEEP DIVES",
-    "featuresDeepDive.title": "A Closer Look at CartX Features",
+    "featuresDeepDive.title": "Deep Dive into\nCore Platform Capabilities",
     "featuresDeepDive.description": "Explore how CartX's available tools support the everyday tasks involved in managing an online store.",
     "featuresDeepDive.demoNotice": "Illustrative demo data",
 
     // Features Page — Section 05: Plan Availability
     "featuresPlan.eyebrow": "PLAN AVAILABILITY",
-    "featuresPlan.title": "Feature Availability Across Plans",
+    "featuresPlan.title": "Feature Availability\nAcross Subscription Plans",
     "featuresPlan.description": "Understand which CartX features are available under each subscription plan to choose the right fit for your business.",
     "featuresPlan.viewPricing": "View Pricing",
 
     // Features Page — Section 06: FAQ
     "featuresFaq.eyebrow": "FREQUENTLY ASKED QUESTIONS",
-    "featuresFaq.title": "Frequently Asked Questions About CartX Features",
+    "featuresFaq.title": "Frequently Asked Questions\nAbout CartX Features",
     "featuresFaq.description": "Find answers about available features, integrations, plan eligibility and the tools you can use to manage your online store.",
     "featuresFaq.q1": "What features does CartX offer?",
     "featuresFaq.a1": "CartX provides a modern connected commerce platform offering product catalog management, order processing, real-time inventory control, local payment gateways (bKash, Nagad, cards, COD), delivery courier integrations (Pathao, Steadfast), marketing discounts, store performance analytics, and responsive storefronts.",
@@ -849,7 +849,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 07: Final CTA
     "featuresCta.badge": "READY TO GROW",
-    "featuresCta.title": "Find the Right Tools for Your Business.",
+    "featuresCta.title": "Find the Right Tools for\nYour Growing Business.",
     "featuresCta.description": "Explore transparent plan options designed to help your store launch quickly and scale smoothly.",
     "featuresCta.viewPricing": "View Pricing",
     "featuresCta.trustNote": "All plans include web storefront hosting and security updates.",
@@ -875,7 +875,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsHero.ctaStart": "Start Free Trial",
     "solutionsHero.trustLine": "Engineered for fashion, electronics, cosmetics, grocery and modern retail",
     "solutionsGrid.eyebrow": "INDUSTRY WORKFLOWS",
-    "solutionsGrid.title": "Built for Your Specific Business Category",
+    "solutionsGrid.title": "Tailored Solutions for\nYour Specific Business",
     "solutionsGrid.description": "Discover how CartX handles multi-variant catalogs, inventory synchronization, and local delivery requirements across commerce verticals.",
     "solutionsGrid.comingSoonBadge": "Coming Soon",
     "solutionsGrid.availableBadge": "Available",
@@ -942,7 +942,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsGrid.digital.w4": "Customer file library access from account portal",
     "solutionsGrid.digital.notice": "Digital file hosting and automated download delivery are planned for future platform updates. CartX currently specializes in physical goods commerce.",
     "solutionsChallenges.eyebrow": "OPERATIONAL CHALLENGES",
-    "solutionsChallenges.title": "Common E-commerce Hurdles CartX Solves",
+    "solutionsChallenges.title": "Common E-Commerce Hurdles\nCartX Solves Effortlessly",
     "solutionsChallenges.description": "Running an online store involves distinct operational friction. Here is how CartX's unified architecture addresses each challenge with verified functionality.",
     "solutionsChallenges.c1.title": "Complex Variant Matrices & Sizing",
     "solutionsChallenges.c1.desc": "Managing apparel with multi-attribute sizes, colors, and compare-at discounts often leads to confusing checkout choices and high return rates.",
@@ -963,11 +963,11 @@ export const translations: Record<Locale, Translations> = {
     "solutionsChallenges.c6.desc": "Without unified reporting, merchants cannot tell which products drive profits or identify loyal repeat customers.",
     "solutionsChallenges.c6.solution": "Native analytics surface gross revenue, order volume, best-selling SKUs, and lifetime customer purchase histories.",
     "solutionsFeatures.eyebrow": "PLATFORM MODULES",
-    "solutionsFeatures.title": "Essential Modules Powering Every Solution",
+    "solutionsFeatures.title": "Essential Modules Powering\nEvery Business Solution",
     "solutionsFeatures.description": "Every solution is built upon CartX's 8 core commerce modules, working seamlessly together without third-party plugin bloat.",
     "solutionsFeatures.viewAll": "Explore All Features",
     "solutionsWorkflow.eyebrow": "REAL-WORLD WORKFLOW",
-    "solutionsWorkflow.title": "Fashion Store Workflow: From Setup to Delivery",
+    "solutionsWorkflow.title": "Fashion Store Workflow:\nFrom Setup to Delivery",
     "solutionsWorkflow.description": "See how a lifestyle brand conducts everyday commerce operations on the CartX engine with clear operational checkpoints.",
     "solutionsWorkflow.step1.title": "Curate Catalog & Configure Variants",
     "solutionsWorkflow.step1.desc": "Create categories (Men, Women, Lookbook) and configure multi-attribute variants with size, color swatches, and high-resolution galleries.",
@@ -980,17 +980,17 @@ export const translations: Record<Locale, Translations> = {
     "solutionsWorkflow.step5.title": "Review Revenue & Retain Customers",
     "solutionsWorkflow.step5.desc": "Track gross revenue, fulfillment status, and customer repeat purchase history directly from the unified CartX dashboard.",
     "solutionsDemo.eyebrow": "STORE PREVIEWS",
-    "solutionsDemo.title": "Experience Category Storefronts Live",
+    "solutionsDemo.title": "Experience Category\nStorefronts Live",
     "solutionsDemo.description": "Explore interactive concept storefronts demonstrating modern layout aesthetics, clean navigation, and instant mobile responsiveness.",
     "solutionsDemo.viewDemo": "View Demo Store",
     "solutionsDemo.previewNotice": "Official Preview Environment",
     "solutionsDemo.badge": "Interactive Preview",
     "solutionsIntegrations.eyebrow": "LOCAL ECOSYSTEM",
-    "solutionsIntegrations.title": "Verified Payment & Delivery Connectors",
+    "solutionsIntegrations.title": "Verified Payment &\nDelivery Connectors",
     "solutionsIntegrations.description": "Pre-built connectors for the payment gateways, couriers, and marketing channels Bangladeshi businesses rely on daily.",
     "solutionsIntegrations.viewAll": "Explore Ecosystem Integrations",
     "solutionsFaq.eyebrow": "FREQUENTLY ASKED QUESTIONS",
-    "solutionsFaq.title": "Frequently Asked Questions About Solutions",
+    "solutionsFaq.title": "Frequently Asked Questions\nAbout Business Solutions",
     "solutionsFaq.description": "Clear answers regarding supported business models, variant limitations, digital goods, B2B workflows, and plan features.",
     "solutionsFaq.q1": "Which types of businesses can use CartX?",
     "solutionsFaq.a1": "CartX is engineered for retail businesses selling physical products—including fashion and apparel, consumer electronics, beauty and cosmetics, grocery and organic food, home decor, books, and lifestyle goods. The platform provides localized checkout, inventory tracking, and courier dispatch tailored for Bangladesh.",
@@ -1009,7 +1009,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsFaq.q8": "Which features are available on each subscription plan?",
     "solutionsFaq.a8": "CartX offers three transparent tiers: Starter (up to 100 products, 1 staff account, essential hosting), Growth (up to 2,500 products, 5 staff accounts, advanced courier & discount engine), and Scale (unlimited products, unlimited staff accounts, custom domain included, and dedicated support). All plans include web storefront hosting and SSL.",
     "solutionsCta.eyebrow": "START YOUR STORE",
-    "solutionsCta.title": "Ready to Build the Ideal Store for Your Business?",
+    "solutionsCta.title": "Ready to Build the Ideal Store\nfor Your Business?",
     "solutionsCta.description": "Launch your branded storefront today with fast hosting, instant bKash checkout, and automated courier integration.",
     "solutionsCta.primary": "Start Free Trial",
     "solutionsCta.secondary": "Explore Platform Features",
@@ -1172,7 +1172,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Brand Trust Strip (Section 02)
     "trustStrip.badge": "অল-ইন-ওয়ান কমার্স প্ল্যাটফর্ম",
-    "trustStrip.title": "প্রতিটি কার্টএক্স স্টোরের সাথে সংযুক্ত মূল সুবিধাসমূহ",
+    "trustStrip.title": "প্রতিটি কার্টএক্স স্টোরের সাথে\nসংযুক্ত মূল সুবিধাসমূহ",
     "trustStrip.pillar1.title": "স্টোর ম্যানেজমেন্ট",
     "trustStrip.pillar1.desc": "ব্র্যান্ডেড স্টোরফ্রন্ট, কাস্টম ডোমেইন এবং মোবাইল-ফার্স্ট থিম।",
     "trustStrip.pillar2.title": "অর্ডার ম্যানেজমেন্ট",
@@ -1187,7 +1187,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Problem & Solution (Section 03)
     "problemSolution.badge": "সমস্যা ও সমাধান",
-    "problemSolution.title": "আপনার অনলাইন ব্যবসা, প্রতিদিনের জটিলতা ছাড়াই।",
+    "problemSolution.title": "আপনার অনলাইন ব্যবসা,\nপ্রতিদিনের জটিলতা ছাড়াই।",
     "problemSolution.description": "ব্যবসা বড় হওয়ার সাথে সাথে বিচ্ছিন্ন টুলে পণ্য, অর্ডার, স্টক, পেমেন্ট ও ডেলিভারি পরিচালনা করা কঠিন হয়ে পড়ে। কার্টএক্স এই সমস্ত ওয়ার্কফ্লোকে এক জায়গায় নিয়ে আসে।",
     "problemSolution.card1.title": "Scattered Operations",
     "problemSolution.card1.desc": "Product, order ও inventory তথ্য আলাদা জায়গায়।",
@@ -1201,7 +1201,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Create Your Store (Section 04)
     "createStore.badge": "স্টোরফ্রন্ট বিল্ডার",
-    "createStore.title": "আপনার স্টোরফ্রন্ট, আপনার ব্র্যান্ড।",
+    "createStore.title": "আপনার স্টোরফ্রন্ট,\nআপনার ব্র্যান্ড।",
     "createStore.description": "আপনার স্টোরের পরিচয় নির্ধারণ করুন, পণ্য গুছিয়ে রাখুন এবং আপনার ব্র্যান্ডকে তুলে ধরার মতো কেনাকাটার অভিজ্ঞতা তৈরি করুন।",
     "createStore.step1.title": "১. ব্র্যান্ড আইডেন্টিটি",
     "createStore.step1.desc": "লোগো আপলোড, ব্র্যান্ডের রঙ নির্বাচন এবং টাইপোগ্রাফি নির্ধারণ করুন।",
@@ -1220,7 +1220,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Product Feature Overview (Section 05)
     "featureOverview.badge": "ফিচার ওভারভিউ",
-    "featureOverview.title": "আপনার স্টোর পরিচালনার জন্য যা কিছু প্রয়োজন।",
+    "featureOverview.title": "আপনার স্টোর পরিচালনার জন্য\nযা কিছু প্রয়োজন।",
     "featureOverview.description": "পণ্য সাজানো, অর্ডার ডেলিভারি, পেমেন্ট সংগ্রহ এবং দৈনন্দিন ব্যবসায়িক পারফরম্যান্স ট্র্যাক করার সমন্বিত টুলস।",
     "featureOverview.card1.title": "প্রোডাক্ট ম্যানেজমেন্ট",
     "featureOverview.card1.desc": "পণ্য, ভ্যারিয়েন্ট, ক্যাটাগরি, ছবি, মূল্য এবং স্টক তথ্য সুশৃঙ্খলভাবে সাজান।",
@@ -1242,7 +1242,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — How CartX Works (Section 06)
     "howItWorks.badge": "কার্টএক্স যেভাবে কাজ করে",
-    "howItWorks.title": "সহজ কয়েকটি ধাপে আপনার ব্যবসার অনলাইন যাত্রা।",
+    "howItWorks.title": "সহজ কয়েকটি ধাপে\nআপনার ব্যবসার অনলাইন যাত্রা।",
     "howItWorks.description": "অ্যাকাউন্ট তৈরি করুন, স্টোরফ্রন্ট সাজান, পণ্য যুক্ত করুন এবং আপনার ড্যাশবোর্ড থেকে বিক্রি শুরু করুন।",
     "howItWorks.step1.number": "০১",
     "howItWorks.step1.title": "অ্যাকাউন্ট তৈরি করুন",
@@ -1260,7 +1260,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Store Themes & Templates (Section 07)
     "themesSection.badge": "স্টোর থিম ও টেমপ্লেট",
-    "themesSection.title": "আপনার ব্র্যান্ডের উপযোগী স্টোর ডিজাইন।",
+    "themesSection.title": "আপনার ব্র্যান্ডের উপযোগী\nআধুনিক স্টোর ডিজাইন।",
     "themesSection.description": "বিভিন্ন প্রোডাক্ট ক্যাটাগরি এবং ব্র্যান্ড পরিচয়ের উপযোগী স্টোর থিমসমূহ ঘুরে দেখুন।",
     "themesSection.notice": "ধারণামূলক কনসেপ্ট প্রিভিউ প্রদর্শিত। অফিসিয়াল থিমসমূহ রিলিজ শিডিউল এবং প্ল্যান অনুযায়ী পরিবর্তনশীল।",
     "themesSection.card1.name": "অরা স্টুডিও",
@@ -1282,7 +1282,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Manage Orders & Inventory (Section 08)
     "orderInventory.badge": "অর্ডার ও ইনভেন্টরি",
-    "orderInventory.title": "প্রতিটি অর্ডারে রাখুন সম্পূর্ণ নিয়ন্ত্রণ।",
+    "orderInventory.title": "প্রতিটি অর্ডারে রাখুন\nসম্পূর্ণ নিয়ন্ত্রণ।",
     "orderInventory.description": "অর্ডার স্ট্যাটাস ট্র্যাক করুন, স্টকের পরিমাণ জানুন এবং মার্চেন্ট ড্যাশবোর্ড থেকে ডেলিভারি তথ্য গোছানো রাখুন।",
     "orderInventory.mockupNotice": "মার্চেন্ট ড্যাশবোর্ড প্রিভিউ (প্রদর্শনীমূলক মকআপ)",
     "orderInventory.orderListTitle": "সাম্প্রতিক অর্ডারসমূহ",
@@ -1304,7 +1304,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Payments & Delivery (Section 09)
     "paymentsDelivery.badge": "পেমেন্ট ও ডেলিভারি",
-    "paymentsDelivery.title": "গ্রাহকের পেমেন্ট এবং অর্ডার ডেলিভারির নির্ভরযোগ্য মাধ্যম যুক্ত করুন।",
+    "paymentsDelivery.title": "গ্রাহকের পেমেন্ট এবং অর্ডারে\nনির্ভরযোগ্য ডেলিভারি মাধ্যম।",
     "paymentsDelivery.description": "স্থানীয় গ্রাহকদের জন্য সহজ পেমেন্ট সুবিধা এবং সংযুক্ত কুরিয়ার ব্যবস্থার মাধ্যমে দ্রুত ও সুশৃঙ্খল ডেলিভারি নিশ্চিত করুন।",
     "paymentsDelivery.payments.groupTitle": "পেমেন্ট অপশনস",
     "paymentsDelivery.payments.groupDesc": "ক্যাশ অন ডেলিভারি পরিচালনা, পেমেন্ট গেটওয়ে এবং লেনদেনের সঠিক হিসাব এক জায়গা থেকেই ট্র্যাক করুন।",
@@ -1332,7 +1332,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Marketing & Growth Tools (Section 10)
     "marketingGrowth.badge": "মার্কেটিং ও গ্রোথ",
-    "marketingGrowth.title": "আপনার ব্যবসার পরবর্তী ধাপের প্রসারে সহায়ক টুলস।",
+    "marketingGrowth.title": "আপনার ব্যবসার পরবর্তী ধাপের\nপ্রসারে সহায়ক টুলস।",
     "marketingGrowth.description": "স্টোরের তথ্য এবং সমর্থিত মার্কেটিং টুলের সাহায্যে নিন সঠিক ও বাস্তবমুখী ব্যবসায়িক সিদ্ধান্ত।",
     "marketingGrowth.statusSupported": "সমর্থিত ফিচার",
     "marketingGrowth.statusPlanned": "পরিকল্পিত / নির্মীয়মান",
@@ -1352,7 +1352,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Business Insights (Section 11)
     "businessInsights.badge": "ব্যবসায়িক অন্তর্দৃষ্টি ও রিপোর্ট",
-    "businessInsights.title": "আপনার স্টোরের পারফরম্যান্স জানুন সহজেই।",
+    "businessInsights.title": "সহজেই জেনে নিন আপনার\nস্টোরের পারফরম্যান্স।",
     "businessInsights.description": "বিক্রয় ট্রেন্ড এবং অপারেশনাল অগ্রগতি বুঝতে আপনার স্টোরের উপলব্ধ রিপোর্টগুলো পর্যালোচনা করুন।",
     "businessInsights.demoDataNotice": "চিত্রণমূলক ডেমো ডেটা — কোনো বাস্তব গ্রাহক বা ব্যবসায়িক ফলাফল নয়।",
     "businessInsights.timeRange": "গত ৩০ দিন",
@@ -1381,7 +1381,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — White-label Mobile Apps (Section 12)
     "whiteLabelApps.badge": "হোয়াইট-লেবেল মোবাইল অ্যাপস",
-    "whiteLabelApps.title": "আপনার ব্র্যান্ডকে পৌঁছে দিন ব্রাউজারের সীমানা ছাড়িয়ে।",
+    "whiteLabelApps.title": "আপনার ব্র্যান্ডকে নিয়ে যান\nব্রাউজারের সীমানা ছাড়িয়ে।",
     "whiteLabelApps.description": "গ্রাহকদের কেনাকাটার অভিজ্ঞতা আরও সহজ করতে প্রস্তুতকৃত ব্র্যান্ডেড মোবাইল অ্যাপের সুবিধাগুলো অন্বেষণ করুন।",
     "whiteLabelApps.benefit1.title": "আপনার ব্র্যান্ড, নিজস্ব অভিজ্ঞতা",
     "whiteLabelApps.benefit1.desc": "আপনার নিজস্ব ব্র্যান্ড আইডেন্টিটিতে প্রস্তুতকৃত মোবাইল অ্যাপের মাধ্যমে স্টোর উপস্থাপন করুন।",
@@ -1418,7 +1418,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Demo Store Showcase (Section 13)
     "demoStoresSection.badge": "ডেমো স্টোর শোকেস",
-    "demoStoresSection.title": "আপনার স্টোরটি দেখতে কেমন হতে পারে দেখুন।",
+    "demoStoresSection.title": "আপনার অনলাইন স্টোরটি\nদেখতে কেমন হতে পারে দেখুন।",
     "demoStoresSection.description": "বিভিন্ন শিল্পের জন্য প্রস্তুতকৃত স্টোরফ্রন্ট ডিজাইনগুলো দেখুন এবং আপনার ব্র্যান্ড কার্টএক্স-এ কেমন দেখাবে তা জানুন।",
     "demoStoresSection.conceptNotice": "প্রদর্শনীমূলক ধারণামূলক ডেমো স্টোর। কোনো বাস্তব গ্রাহক বা মার্চেন্টের ব্যক্তিগত তথ্য ব্যবহৃত হয়নি।",
     "demoStoresSection.mobileFriendly": "মোবাইল-বান্ধব",
@@ -1439,7 +1439,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Pricing Preview (Section 14)
     "pricingSection.badge": "স্বচ্ছ প্রাইসিং",
-    "pricingSection.title": "আপনার ব্যবসার উপযোগী প্ল্যান বেছে নিন।",
+    "pricingSection.title": "আপনার ব্যবসার উপযোগী\nসেরা প্ল্যান বেছে নিন।",
     "pricingSection.description": "আজকের প্রয়োজনীয় টুলস দিয়ে শুরু করুন এবং ব্যবসা বৃদ্ধির সাথে সাথে নতুন ফিচার যুক্ত করুন।",
     "pricingSection.statusPending": "সার্ভিস লঞ্চের সময় চূড়ান্ত প্রাইসিং ঘোষণা করা হবে",
     "pricingSection.disclaimer": "সকল প্ল্যানে ওয়েব স্টোরফ্রন্ট হোস্টিং ও সিকিউরিটি আপডেট অন্তর্ভুক্ত। কাস্টম ডোমেইন ও পেমেন্ট গেটওয়ে ফি স্ব-স্ব প্রোভাইডারের শর্ত অনুযায়ী প্রযোজ্য।",
@@ -1467,12 +1467,12 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Customer Stories / Testimonials (Section 15)
     "customerStories.badge": "কাস্টমার স্টোরিজ",
-    "customerStories.title": "বাস্তব ব্যবসায়িক চাহিদার ভিত্তিতে প্রস্তুত।",
+    "customerStories.title": "বাস্তব অভিজ্ঞতার ভিত্তিতে\nব্যবসায়িক সমাধান।",
     "customerStories.description": "কার্টএক্সের সাথে পরিচালিত যাচাইকৃত মার্চেন্টদের ব্যবসায়িক অগ্রযাত্রার গল্প।",
 
     // Home Page — FAQ Preview (Section 16)
     "faqPreview.badge": "সাধারণ জিজ্ঞাসা",
-    "faqPreview.title": "কার্টএক্স সম্পর্কে প্রশ্ন আছে?",
+    "faqPreview.title": "সাধারণ জিজ্ঞাসা\nকার্টএক্স প্ল্যাটফর্ম সম্পর্কে?",
     "faqPreview.description": "স্টোর সেটআপ, ফিচার, পেমেন্ট মাধ্যম এবং প্ল্যাটফর্মের সক্ষমতা সম্পর্কিত সাধারণ প্রশ্ন ও উত্তর।",
     "faqPreview.q1": "কার্টএক্স কী?",
     "faqPreview.a1": "কার্টএক্স একটি আধুনিক ইকমার্স SaaS প্ল্যাটফর্ম হিসেবে প্রস্তুত করা হচ্ছে যা ব্যবসায়ীদের তাদের অনলাইন স্টোর তৈরি এবং প্রয়োজনীয় বিক্রয় কার্যক্রম পরিচালনায় সহায়তা করে।",
@@ -1495,7 +1495,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Home Page — Final CTA (Section 17)
     "finalCta.badge": "কার্টএক্সে যুক্ত হোন",
-    "finalCta.title": "অনলাইন স্টোর শুরু করতে প্রস্তুত?",
+    "finalCta.title": "আজই শুরু করুন\nআপনার অনলাইন স্টোর।",
     "finalCta.description": "আপনার পণ্য, অর্ডার এবং দৈনন্দিন ব্যবসায়িক কার্যক্রম এক জায়গায় পরিচালনা করুন কার্টএক্সের সাথে।",
     "finalCta.trustNote": "বিনামূল্যে সেটআপ পরামর্শ • শুরু করতে কোনো ক্রেডিট কার্ডের প্রয়োজন নেই",
 
@@ -1566,7 +1566,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 03: Feature Category Grid
     "featuresGrid.eyebrow": "ফিচার ক্যাটাগরিসমূহ",
-    "featuresGrid.title": "স্টোর পরিচালনার সকল প্রয়োজনীয় ফিচার",
+    "featuresGrid.title": "স্টোর পরিচালনার সকল\nপ্রয়োজনীয় প্ল্যাটফর্ম ফিচার",
     "featuresGrid.description": "স্টোরফ্রন্ট, পণ্য, অর্ডার, কাস্টমার এবং দৈনন্দিন ব্যবসায়িক কার্যক্রম পরিচালনার সমস্ত টুল সম্পর্কে জানুন।",
     "featuresGrid.learnMore": "বিস্তারিত দেখুন",
     "featuresGrid.viewOverview": "ওভারভিউ দেখুন",
@@ -1909,19 +1909,19 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 04: Feature Deep Dives
     "featuresDeepDive.eyebrow": "ফিচার পর্যালোচনা",
-    "featuresDeepDive.title": "কার্টএক্স ফিচারের বিস্তারিত বিবরণ",
+    "featuresDeepDive.title": "কার্টএক্স প্ল্যাটফর্ম ফিচারের\nপূর্ণাঙ্গ ও বিস্তারিত বিবরণ",
     "featuresDeepDive.description": "অনলাইন স্টোরের প্রতিটি ধাপকে সহজ ও স্বয়ংক্রিয় করতে কার্টএক্সের নির্ভরযোগ্য টুলসমূহ পর্যালোচনা করুন।",
     "featuresDeepDive.demoNotice": "প্রদর্শনীমূলক ডেমো ডেটা",
 
     // Features Page — Section 05: Plan Availability
     "featuresPlan.eyebrow": "প্ল্যান অনুসারে ফিচার",
-    "featuresPlan.title": "বিভিন্ন সাবস্ক্রিপশন প্ল্যানে ফিচারের প্রাপ্যতা",
+    "featuresPlan.title": "বিভিন্ন সাবস্ক্রিপশন প্ল্যানে\nফিচারের স্পষ্ট প্রাপ্যতা",
     "featuresPlan.description": "আপনার ব্যবসার চাহিদানুযায়ী সঠিক প্ল্যান বেছে নিতে প্রতিটি সাবস্ক্রিপশন প্ল্যানের ফিচার সম্পর্কে জানুন।",
     "featuresPlan.viewPricing": "প্রাইসিং দেখুন",
 
     // Features Page — Section 06: FAQ
     "featuresFaq.eyebrow": "সাধারণ জিজ্ঞাসাসমূহ",
-    "featuresFaq.title": "কার্টএক্স ফিচার সম্পর্কিত সাধারণ প্রশ্নাবলি",
+    "featuresFaq.title": "কার্টএক্স ফিচার সম্পর্কিত\nসাধারণ জিজ্ঞাসা ও উত্তর",
     "featuresFaq.description": "উপলব্ধ ফিচার, ইন্টিগ্রেশন, প্ল্যানের যোগ্যতা এবং অনলাইন স্টোর পরিচালনার টুল সম্পর্কে বিস্তারিত জানুন।",
     "featuresFaq.q1": "কার্টএক্স কী কী ফিচার প্রদান করে?",
     "featuresFaq.a1": "কার্টএক্স একটি আধুনিক ও সমন্বিত কমার্স প্ল্যাটফর্ম যা প্রোডাক্ট ক্যাটালগ ম্যানেজমেন্ট, অর্ডার প্রসেসিং, রিয়েল-টাইম ইনভেন্টরি, লোকাল পেমেন্ট গেটওয়ে (বিকাশ, নগদ, কার্ড, সিওডি), কুরিয়ার ইন্টিগ্রেশন (পাঠাও, স্টিডফাস্ট), ডিসকাউন্ট ক্যাম্পেইন ও অ্যানালিটিক্স সরবরাহ করে।",
@@ -1946,7 +1946,7 @@ export const translations: Record<Locale, Translations> = {
 
     // Features Page — Section 07: Final CTA
     "featuresCta.badge": "ব্যবসা এগিয়ে নিন",
-    "featuresCta.title": "আপনার ব্যবসার জন্য উপযুক্ত সমাধান বেছে নিন।",
+    "featuresCta.title": "আপনার ব্যবসার জন্য\nউপযুক্ত সমাধান বেছে নিন।",
     "featuresCta.description": "সহজ ও স্বচ্ছ সাবস্ক্রিপশন প্ল্যানের মাধ্যমে আজই আপনার অনলাইন স্টোর শুরু করুন।",
     "featuresCta.viewPricing": "প্রাইসিং দেখুন",
     "featuresCta.trustNote": "সকল প্ল্যানে ওয়েব স্টোরফ্রন্ট হোস্টিং ও নিয়মিত সিকিউরিটি আপডেট অন্তর্ভুক্ত।",
@@ -1972,7 +1972,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsHero.ctaStart": "বিনামূল্যে শুরু করুন",
     "solutionsHero.trustLine": "ফ্যাশন, ইলেকট্রনিক্স, কসমেটিক্স, গ্রোসারি ও খুচরা ব্যবসার উপযোগী কার্যপ্রণালী",
     "solutionsGrid.eyebrow": "ইন্ডাস্ট্রি কার্যপ্রণালী",
-    "solutionsGrid.title": "আপনার নির্দিষ্ট ব্যবসার ধরনের উপযোগী",
+    "solutionsGrid.title": "আপনার নির্দিষ্ট ব্যবসার\nধরন অনুযায়ী সেরা সমাধান",
     "solutionsGrid.description": "বিভিন্ন বাণিজ্যিক খাতের জন্য মাল্টি-ভ্যারিয়েন্ট ক্যাটালগ, ইনভেন্টরি সিঙ্ক ও ডেলিভারি ব্যবস্থাপনায় কার্টএক্স কীভাবে কাজ করে তা দেখুন।",
     "solutionsGrid.comingSoonBadge": "শীঘ্রই আসছে",
     "solutionsGrid.availableBadge": "উপলব্ধ",
@@ -2039,7 +2039,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsGrid.digital.w4": "কাস্টমার অ্যাকাউন্ট পোর্টালে স্থায়ী ফাইল ডাউনলোড অ্যাক্সেস",
     "solutionsGrid.digital.notice": "ডিজিটাল ফাইল হোস্টিং ও স্বয়ংক্রিয় ডাউনলোড ডেলিভারি ভবিষ্যতের প্ল্যাটফর্ম আপডেটের জন্য পরিকল্পিত। কার্টএক্স বর্তমানে মূলত ফিজিক্যাল পণ্যের কমার্সে বিশেষজ্ঞ।",
     "solutionsChallenges.eyebrow": "ব্যবসায়িক চ্যালেঞ্জসমূহ",
-    "solutionsChallenges.title": "ই-কমার্সের সাধারণ সমস্যা ও কার্টএক্সের সমাধান",
+    "solutionsChallenges.title": "ই-কমার্সের সাধারণ সমস্যা ও\nকার্টএক্সের সহজ সমাধান",
     "solutionsChallenges.description": "বাংলাদেশে অনলাইন ব্যবসা পরিচালনায় বাস্তবসম্মত নানা চ্যালেঞ্জ তৈরি হয়। কার্টএক্সের সমন্বিত আর্কিটেকচার যেভাবে প্রতিটি সমস্যা সমাধান করে।",
     "solutionsChallenges.c1.title": "জটিল ভ্যারিয়েন্ট ও এসকেইউ ব্যবস্থাপনা",
     "solutionsChallenges.c1.desc": "পোশাকের বিভিন্ন সাইজ ও রঙের ক্যাটালগ অগোছালো থাকলে ক্রেতারা অর্ডার করতে দ্বিধায় ভোগেন এবং ভুলের হার বাড়ে।",
@@ -2060,11 +2060,11 @@ export const translations: Record<Locale, Translations> = {
     "solutionsChallenges.c6.desc": "সঠিক রিপোর্টের অভাবে কোন পণ্য বেশি বিক্রি হচ্ছে বা কোন ক্রেতারা নিয়মিত আসছেন তা বোঝা কঠিন হয়।",
     "solutionsChallenges.c6.solution": "নেটিভ অ্যানালিটিক্স ড্যাশবোর্ডে মোট আয়, সফল অর্ডার সংখ্যা, শীর্ষ পণ্য এবং কাস্টমার লাইফটাইম হিস্ট্রি দেখা যায়।",
     "solutionsFeatures.eyebrow": "প্ল্যাটফর্ম মডিউলসমূহ",
-    "solutionsFeatures.title": "প্রতিটি সলিউশনের পেছনের শক্তিশালী প্ল্যাটফর্ম ফিচার",
+    "solutionsFeatures.title": "প্রতিটি সলিউশনের পেছনের\nশক্তিশালী প্ল্যাটফর্ম ফিচার",
     "solutionsFeatures.description": "প্রতিটি ইন্ডাস্ট্রি সলিউশন কার্টএক্সের ৮টি কোর কমার্স মডিউলের ওপর প্রতিষ্ঠিত, যা কোনো প্লাগইন ঝামেলা ছাড়াই সমন্বিতভাবে কাজ করে।",
     "solutionsFeatures.viewAll": "সকল প্ল্যাটফর্ম ফিচার দেখুন",
     "solutionsWorkflow.eyebrow": "বাস্তব কার্যপ্রণালী",
-    "solutionsWorkflow.title": "ফ্যাশন স্টোর কার্যপ্রণালী: সেটআপ থেকে ডেলিভারি",
+    "solutionsWorkflow.title": "ফ্যাশন স্টোর কার্যপ্রণালী:\nসেটআপ থেকে ডেলিভারি",
     "solutionsWorkflow.description": "একটি লাইফস্টাইল ব্র্যান্ড প্রতিদিনের ব্যবসায়িক কার্যক্রম কীভাবে কার্টএক্সে সম্পন্ন করে তার বাস্তব বিবরণ।",
     "solutionsWorkflow.step1.title": "ক্যাটালগ সাজানো ও ভ্যারিয়েন্ট কনফিগার",
     "solutionsWorkflow.step1.desc": "ক্যাটাগরি তৈরি করুন এবং পণ্যের সাইজ, কালার সোয়াচ ও হাই-রেজোলিউশন ফটো গ্যালারি সহ ভ্যারিয়েন্ট যুক্ত করুন।",
@@ -2077,17 +2077,17 @@ export const translations: Record<Locale, Translations> = {
     "solutionsWorkflow.step5.title": "বিক্রয় পর্যবেক্ষণ ও কাস্টমার রিটেনশন",
     "solutionsWorkflow.step5.desc": "ড্যাশবোর্ড থেকে মোট আয়, ডেলিভারি হার এবং কাস্টমার অর্ডার ইতিহাস পর্যবেক্ষণ করে পরবর্তী ক্যাম্পেইন পরিকল্পনা করুন।",
     "solutionsDemo.eyebrow": "লাইভ ডেমো স্টোর",
-    "solutionsDemo.title": "ক্যাটাগরি ভিত্তিক স্টোরফ্রন্ট সরাসরি দেখুন",
+    "solutionsDemo.title": "ক্যাটাগরি ভিত্তিক স্টোরফ্রন্ট\nসরাসরি ডেমো দেখুন",
     "solutionsDemo.description": "আধুনিক ডিজাইন ও দ্রুতগতির মোবাইল রেসপনসিভনেস প্রত্যক্ষ করতে আমাদের কনসেপ্ট ডেমো স্টোরগুলো ঘুরে দেখুন।",
     "solutionsDemo.viewDemo": "ডেমো স্টোর দেখুন",
     "solutionsDemo.previewNotice": "অফিসিয়াল প্রিভিউ এনভায়রনমেন্ট",
     "solutionsDemo.badge": "ইন্টারেক্টিভ প্রিভিউ",
     "solutionsIntegrations.eyebrow": "স্থানীয় ইকোসিস্টেম",
-    "solutionsIntegrations.title": "যাচাইকৃত পেমেন্ট ও ডেলিভারি ইন্টিগ্রেশন",
+    "solutionsIntegrations.title": "যাচাইকৃত পেমেন্ট ও\nডেলিভারি ইন্টিগ্রেশন",
     "solutionsIntegrations.description": "বাংলাদেশের ব্যবসায়ীদের নিত্যপ্রয়োজনীয় পেমেন্ট গেটওয়ে, কুরিয়ার ও মার্কেটিং চ্যানেলের জন্য তৈরি সমন্বিত কানেক্টর।",
     "solutionsIntegrations.viewAll": "ইকোসিস্টেম ইন্টিগ্রেশন দেখুন",
     "solutionsFaq.eyebrow": "সাধারণ জিজ্ঞাসা",
-    "solutionsFaq.title": "কার্টএক্স সলিউশন সংক্রান্ত সাধারণ প্রশ্নোত্তর",
+    "solutionsFaq.title": "কার্টএক্স সলিউশন সংক্রান্ত\nসাধারণ প্রশ্নোত্তর",
     "solutionsFaq.description": "ব্যবসায়ের ধরন, ভ্যারিয়েন্ট সাপোর্ট, ডিজিটাল প্রোডাক্ট, বিটুবি এবং প্ল্যান সুবিধা সম্পর্কিত স্পষ্ট উত্তর।",
     "solutionsFaq.q1": "কোন ধরনের ব্যবসা কার্টএক্স ব্যবহার করতে পারে?",
     "solutionsFaq.a1": "কার্টএক্স মূলত ফিজিক্যাল পণ্য পরিচালনাকারী সকল রিটেইল ব্যবসার জন্য উপযোগী—যেমন ফ্যাশন ও পোশাক, ইলেকট্রনিক্স, কসমেটিক্স ও বিউটি, মুদি ও খাদ্যপণ্য, হোম ডেকর, বই ও লাইফস্টাইল পণ্য। বাংলাদেশের জন্য প্রয়োজনীয় পেমেন্ট ও ডেলিভারি ব্যবস্থা এতে পূর্বনির্ধারিতভাবে যুক্ত রয়েছে।",
@@ -2106,7 +2106,7 @@ export const translations: Record<Locale, Translations> = {
     "solutionsFaq.q8": "বিভিন্ন সাবস্ক্রিপশন প্ল্যানে কী কী সুবিধা অন্তর্ভুক্ত?",
     "solutionsFaq.a8": "কার্টএক্সে ৩টি স্বচ্ছ প্ল্যান রয়েছে: স্টার্টার (১০০ পণ্য, ১টি স্টাফ অ্যাকাউন্ট), গ্রোথ (২,৫০০ পণ্য, ৫টি স্টাফ অ্যাকাউন্ট, অ্যাডভান্সড কুরিয়ার ও কুপন রুলস), এবং স্কেল (আনলিমিটেড পণ্য ও স্টাফ অ্যাকাউন্ট, ফ্রি ডোমেইন ও ডেডিকেটেড সাপোর্ট)। সকল প্ল্যানে ফ্রি এসএসএল সহ ক্লাউড হোস্টিং অন্তর্ভুক্ত।",
     "solutionsCta.eyebrow": "আপনার স্টোর শুরু করুন",
-    "solutionsCta.title": "আপনার ব্যবসার জন্য উপযুক্ত অনলাইন স্টোর তৈরিতে প্রস্তুত?",
+    "solutionsCta.title": "আপনার ব্যবসার জন্য\nউপযুক্ত স্টোর তৈরিতে প্রস্তুত?",
     "solutionsCta.description": "হাই-স্পিড হোস্টিং, তাৎক্ষণিক বিকাশ চেকআউট ও স্বয়ংক্রিয় কুরিয়ার সুবিধা নিয়ে আজই শুরু করুন আপনার ব্র্যান্ডের অনলাইন স্টোর।",
     "solutionsCta.primary": "বিনামূল্যে শুরু করুন",
     "solutionsCta.secondary": "প্ল্যাটফর্ম ফিচারসমূহ দেখুন",

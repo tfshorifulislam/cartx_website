@@ -77,10 +77,13 @@ export function WhiteLabelPricing({ className }: WhiteLabelPricingProps) {
             <span>{isBn ? "মোবাইল অ্যাপ অ্যাড-অন" : "Mobile Apps Add-on"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "ব্র্যান্ডেড অ্যাপ সেবা" : "Custom Mobile Solutions"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "হোয়াইট-লেবেল মোবাইল অ্যাপের প্রাপ্যতা ও খরচ"
-                : "White-Label Mobile Apps Availability & Pricing"}
+                ? "হোয়াইট-লেবেল অ্যাপের প্রাপ্যতা ও খরচ"
+                : "White-Label Mobile App Pricing"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

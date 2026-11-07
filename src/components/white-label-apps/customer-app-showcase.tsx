@@ -88,9 +88,12 @@ export function CustomerAppShowcase({ className }: { className?: string }) {
             <span>{isBn ? "কাস্টমার শপিং অভিজ্ঞতা" : "Customer App Showcase"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
+            <span className="block text-foreground">
+              {isBn ? "গ্রাহকদের সেরা অভিজ্ঞতা" : "Delight Every Shopper"}
+            </span>
+            <span className="block brand-gradient-text">
               {isBn
-                ? "গ্রাহকদের জন্য মসৃণ ও দ্রুততম শপিং ইন্টারফেস"
+                ? "মসৃণ ও দ্রুততম শপিং ইন্টারফেস"
                 : "The Native Mobile Shopping Journey"}
             </span>
           </h2>

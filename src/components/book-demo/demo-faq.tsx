@@ -109,8 +109,11 @@ export function DemoFAQ({ className }: { className?: string }) {
             <span>{isBn ? "প্রশ্নোত্তর" : "Demo FAQ"}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-            <span className="brand-gradient-text">
-              {isBn ? "ডেমো বুকিং সম্পর্কিত সাধারণ প্রশ্ন" : "Questions About Booking a Demo?"}
+            <span className="block text-foreground">
+              {isBn ? "সাধারণ জিজ্ঞাসা ও উত্তর" : "Frequently Asked Questions"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn ? "ডেমো বুকিং সম্পর্কিত তথ্যাবলী" : "About Booking a Demo"}
             </span>
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">

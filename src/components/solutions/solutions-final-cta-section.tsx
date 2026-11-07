@@ -11,7 +11,9 @@ export interface SolutionsFinalCTASectionProps {
   className?: string;
 }
 
-export function SolutionsFinalCTASection({ className }: SolutionsFinalCTASectionProps) {
+export function SolutionsFinalCTASection({
+  className,
+}: SolutionsFinalCTASectionProps) {
   const { t } = useLanguage();
 
   return (
@@ -19,7 +21,7 @@ export function SolutionsFinalCTASection({ className }: SolutionsFinalCTASection
       aria-label="Start Your Store Today"
       className={cn(
         "dark relative section-padding overflow-hidden bg-slate-950 text-slate-100 transition-colors border-t border-border",
-        className
+        className,
       )}
     >
       {/* ── Background Subtle Glow ── */}
@@ -43,7 +45,15 @@ export function SolutionsFinalCTASection({ className }: SolutionsFinalCTASection
 
             {/* Title with Brand Gradient */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-[1.25] sm:leading-[1.2] text-balance">
-              <span className="brand-gradient-text">{t("solutionsCta.title")}</span>
+              {(() => {
+                const [l1, l2] = (t("solutionsCta.title") || "").split("\n");
+                return (
+                  <>
+                    <span className="block text-white">{l1}</span>
+                    <span className="block brand-gradient-text">{l2}</span>
+                  </>
+                );
+              })()}
             </h2>
 
             {/* Description */}
@@ -80,4 +90,3 @@ export function SolutionsFinalCTASection({ className }: SolutionsFinalCTASection
     </section>
   );
 }
-

@@ -45,7 +45,10 @@ export function IntegrationContactCTA({
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-                <span className="brand-gradient-text">
+                <span className="block text-foreground">
+                  {isBn ? "সহায়তা প্রয়োজন?" : "Need Technical Assistance?"}
+                </span>
+                <span className="block brand-gradient-text">
                   {isBn
                     ? "আমাদের কারিগরি টিম সংযোগ প্রক্রিয়া সহজ করে দেবে"
                     : "Our Integration Engineers Are Ready to Assist"}

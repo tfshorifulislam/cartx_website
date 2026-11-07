@@ -80,7 +80,10 @@ export function ThemeCapabilities({ theme, className }: ThemeCapabilitiesProps) 
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-balance !mb-4 leading-tight">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {locale === "bn" ? "থিমের মূল সক্ষমতা" : "Theme Capabilities"}
+              </span>
+              <span className="block brand-gradient-text">
                 {locale === "bn"
                   ? `${theme.name.bn}-এর বিশেষ বৈশিষ্ট্যসমূহ`
                   : `Built Specifically for ${theme.name.en}`}

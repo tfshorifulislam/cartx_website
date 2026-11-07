@@ -48,10 +48,11 @@ export function IntegrationGrid({
               {isBn ? "ইন্টিগ্রেশন ডিরেক্টরি" : "Integrations Directory"}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3">
-              <span className="brand-gradient-text">
-                {isBn
-                  ? "আপনার পছন্দের সার্ভিস ও গেটওয়ে যুক্ত করুন"
-                  : "Connect Your Favorite Services & Gateways"}
+              <span className="block text-foreground">
+                {isBn ? "সরাসরি কানেক্ট করুন" : "Browse All Connectors"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "আপনার পছন্দের সার্ভিস ও গেটওয়ে যুক্ত করুন" : "Connect Your Favorite Services & Gateways"}
               </span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground">

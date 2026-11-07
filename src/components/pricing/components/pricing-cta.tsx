@@ -33,10 +33,13 @@ export function PricingCTA({ className }: PricingCTAProps) {
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              <span className="brand-gradient-text">
+              <span className="block text-foreground">
+                {isBn ? "আজই শুরু করুন আপনার ব্যবসা" : "Ready to Start Building?"}
+              </span>
+              <span className="block brand-gradient-text">
                 {isBn
-                  ? "আপনার প্ল্যান নির্বাচন করুন এবং আজই ব্যবসা শুরু করুন"
-                  : "Choose Your Plan and Start Building."}
+                  ? "আপনার প্ল্যান নির্বাচন করে এগিয়ে যান"
+                  : "Choose Your Plan and Launch Today"}
               </span>
             </h2>
 

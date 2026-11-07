@@ -27,8 +27,11 @@ export function ContactCTA({ className }: { className?: string }) {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4">
-            <span className="brand-gradient-text">
-              {isBn ? "কার্টএক্স এক্সপ্লোর করতে প্রস্তুত?" : "Ready to Explore CartX?"}
+            <span className="block text-foreground">
+              {isBn ? "অনলাইন স্টোর শুরু করতে প্রস্তুত?" : "Ready to Start Building?"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn ? "কার্টএক্স প্ল্যাটফর্ম এক্সপ্লোর করুন" : "Explore the CartX Platform"}
             </span>
           </h2>
 

@@ -19,7 +19,7 @@ export function HelpHero({ searchQuery, onSearchChange, className }: HelpHeroPro
   return (
     <section
       aria-label="Help Center Hero"
-      className={cn("hero-bg relative overflow-hidden transition-colors py-12", className)}
+      className={cn("hero-bg relative overflow-hidden transition-colors", className)}
     >
       <div className="container relative hero-padding">
         <ScrollReveal direction="up" distance={20} className="mx-auto max-w-4xl text-center">

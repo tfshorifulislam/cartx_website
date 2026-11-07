@@ -24,7 +24,7 @@ export function FeaturesHeroSection({ className }: FeaturesHeroSectionProps) {
     <section
       aria-label="Features Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

@@ -10,7 +10,7 @@ export function HeroSection() {
   const { t, locale } = useLanguage();
 
   return (
-    <section className="hero-bg relative overflow-hidden transition-colors py-12">
+    <section className="hero-bg relative overflow-hidden transition-colors">
       {/* ── Decorative background shapes ── */}
 
       {/* Large soft radial in the top-right — anchors the mockup side */}
@@ -58,7 +58,9 @@ export function HeroSection() {
 
             {/* H1 */}
             <h1 className="text-balance mb-3! sm:mb-3.5!">
-              <span className="block text-foreground">{t("home.heroTitlePlain")}</span>
+              <span className="block text-foreground">
+                {t("home.heroTitlePlain")}
+              </span>
               <span className="block brand-gradient-text">
                 {t("home.heroTitleHighlight")}
               </span>

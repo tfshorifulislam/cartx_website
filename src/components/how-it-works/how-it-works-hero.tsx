@@ -15,7 +15,7 @@ export function HowItWorksHero({ className }: { className?: string }) {
     <section
       aria-label="How CartX Works Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

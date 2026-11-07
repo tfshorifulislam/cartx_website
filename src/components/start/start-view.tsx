@@ -81,7 +81,7 @@ export function StartView({ className }: { className?: string }) {
       {/* Hero Section */}
       <section
         aria-label="Get Started Hero"
-        className="hero-bg relative overflow-hidden transition-colors py-12"
+        className="hero-bg relative overflow-hidden transition-colors"
       >
         {/* Decorative subtle background accents */}
         <div

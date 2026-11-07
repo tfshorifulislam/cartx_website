@@ -19,7 +19,7 @@ export function DemoStoresHero({ className, onExploreClick }: DemoStoresHeroProp
     <section
       aria-label="Demo Stores Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

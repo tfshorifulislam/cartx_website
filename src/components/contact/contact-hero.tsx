@@ -30,7 +30,7 @@ export function ContactHero({ onScrollToForm, className }: ContactHeroProps) {
     <section
       aria-label="Contact Us Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

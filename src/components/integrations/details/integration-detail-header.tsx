@@ -32,7 +32,7 @@ export function IntegrationDetailHeader({
     <section
       aria-label="Provider Overview Header"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

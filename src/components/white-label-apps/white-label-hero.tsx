@@ -15,7 +15,7 @@ export function WhiteLabelHero({ className }: { className?: string }) {
     <section
       aria-label="White-label Mobile Apps Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

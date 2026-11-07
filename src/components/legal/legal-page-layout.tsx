@@ -59,7 +59,7 @@ export function LegalPageLayout({
   return (
     <article className="flex flex-col min-h-screen bg-background text-foreground transition-colors">
       {/* Hero Header */}
-      <header className="hero-bg py-12 transition-colors">
+      <header className="hero-bg transition-colors">
         <div className="container relative hero-padding mx-auto max-w-5xl px-4 sm:px-6">
           <ScrollReveal delay={0}>
             <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-muted-foreground mb-4">

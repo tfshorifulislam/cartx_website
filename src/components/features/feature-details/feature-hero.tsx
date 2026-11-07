@@ -23,7 +23,7 @@ export function FeatureHero({ feature, className }: FeatureHeroProps) {
     <section
       aria-label={`${feature.name[locale] || feature.name.en} Hero`}
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
+        "hero-bg relative overflow-hidden transition-colors",
         className
       )}
     >

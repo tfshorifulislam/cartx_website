@@ -14,7 +14,7 @@ export function AboutHero({ className }: { className?: string }) {
   return (
     <section
       aria-label="About CartX Hero"
-      className={cn("hero-bg relative overflow-hidden transition-colors py-12", className)}
+      className={cn("hero-bg relative overflow-hidden transition-colors", className)}
     >
       <div className="container relative hero-padding">
         <div className="mx-auto max-w-4xl text-center">

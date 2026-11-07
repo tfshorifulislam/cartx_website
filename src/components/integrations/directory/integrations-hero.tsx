@@ -37,15 +37,21 @@ export function IntegrationsHero({ className }: IntegrationsHeroProps) {
   const trustHighlights = [
     {
       icon: Zap,
-      label: isBn ? "অফিসিয়াল এমএফএস ডিরেক্ট এপিআই" : "Direct MFS Gateway APIs",
+      label: isBn
+        ? "অফিসিয়াল এমএফএস ডিরেক্ট এপিআই"
+        : "Direct MFS Gateway APIs",
     },
     {
       icon: Layers,
-      label: isBn ? "অটোমেটেড কুরিয়ার পার্সেল বুকিং" : "Automated Courier Dispatch",
+      label: isBn
+        ? "অটোমেটেড কুরিয়ার পার্সেল বুকিং"
+        : "Automated Courier Dispatch",
     },
     {
       icon: ShieldCheck,
-      label: isBn ? "ব্যাংক-গ্রেড ডেটা এনক্রিপশন" : "Encrypted Credential Vault",
+      label: isBn
+        ? "ব্যাংক-গ্রেড ডেটা এনক্রিপশন"
+        : "Encrypted Credential Vault",
     },
   ];
 
@@ -53,8 +59,8 @@ export function IntegrationsHero({ className }: IntegrationsHeroProps) {
     <section
       aria-label="Integrations Hero"
       className={cn(
-        "hero-bg relative overflow-hidden transition-colors py-12",
-        className
+        "hero-bg relative overflow-hidden transition-colors",
+        className,
       )}
     >
       {/* ── Decorative background shapes (Matches Home Hero) ── */}
@@ -101,7 +107,9 @@ export function IntegrationsHero({ className }: IntegrationsHeroProps) {
           <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/[0.06] px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest text-primary mb-3.5 sm:mb-4 select-none">
             <Layers className="size-3 text-secondary-accent shrink-0" />
             <span>
-              {isBn ? "কার্টএক্স ইন্টিগ্রেশন হাব" : "CartX Integration Ecosystem"}
+              {isBn
+                ? "কার্টএক্স ইন্টিগ্রেশন হাব"
+                : "CartX Integration Ecosystem"}
             </span>
           </div>
 
@@ -131,14 +139,20 @@ export function IntegrationsHero({ className }: IntegrationsHeroProps) {
               onClick={handleBrowseClick}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:shadow-md hover:bg-primary-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
             >
-              <span>{isBn ? "ইন্টিগ্রেশন ব্রাউজ করুন" : "Browse Integrations"}</span>
+              <span>
+                {isBn ? "ইন্টিগ্রেশন ব্রাউজ করুন" : "Browse Integrations"}
+              </span>
               <ArrowDown className="size-3.5" />
             </a>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 hover:border-border/90 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <span>{isBn ? "নতুন ইন্টিগ্রেশন অনুরোধ করুন" : "Request an Integration"}</span>
+              <span>
+                {isBn
+                  ? "নতুন ইন্টিগ্রেশন অনুরোধ করুন"
+                  : "Request an Integration"}
+              </span>
               <ArrowRight className="size-3.5 text-muted-foreground" />
             </Link>
           </div>

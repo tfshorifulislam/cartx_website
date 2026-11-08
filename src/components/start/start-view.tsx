@@ -110,11 +110,12 @@ export function StartView({ className }: { className?: string }) {
 
           {/* Main H1 Heading */}
           <ScrollReveal delay={80}>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground mb-4">
-              <span className="brand-gradient-text block mb-1">
-                {isBn
-                  ? "আপনার অনলাইন স্টোর তৈরি শুরু করুন।"
-                  : "Start Building Your Online Store."}
+            <h1 className="text-balance mb-3! sm:mb-3.5!">
+              <span className="block text-foreground">
+                {isBn ? "আপনার অনলাইন স্টোর" : "Start Building"}
+              </span>
+              <span className="block brand-gradient-text">
+                {isBn ? "তৈরি শুরু করুন।" : "Your Online Store."}
               </span>
             </h1>
           </ScrollReveal>

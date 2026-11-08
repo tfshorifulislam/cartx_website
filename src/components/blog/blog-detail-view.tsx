@@ -17,6 +17,7 @@ import { useLanguage } from "@/lib/i18n/language-context";
 import { BlogPost, BLOG_CATEGORIES, getRelatedBlogPosts } from "@/lib/blog-data";
 import { BlogCard } from "./blog-card";
 import { BlogNewsletter } from "./blog-newsletter";
+import { BlogCTA } from "./blog-cta";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface BlogDetailViewProps {
@@ -321,7 +322,10 @@ export function BlogDetailView({ post }: BlogDetailViewProps) {
         </section>
       )}
 
-      {/* Section 8: Newsletter */}
+      {/* Section 8: Final Blog CTA */}
+      <BlogCTA />
+
+      {/* Section 9: Newsletter */}
       <BlogNewsletter />
     </article>
   );

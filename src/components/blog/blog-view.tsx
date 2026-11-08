@@ -5,6 +5,7 @@ import { BlogHero } from "./blog-hero";
 import { BlogFeatured } from "./blog-featured";
 import { BlogCard } from "./blog-card";
 import { BlogNewsletter } from "./blog-newsletter";
+import { BlogCTA } from "./blog-cta";
 import {
   BLOG_POSTS,
   BLOG_CATEGORIES,
@@ -185,7 +186,10 @@ export function BlogView() {
         </div>
       </section>
 
-      {/* Section 7: Newsletter Signup */}
+      {/* Section 7: Final Blog CTA */}
+      <BlogCTA />
+
+      {/* Section 8: Newsletter Signup */}
       <BlogNewsletter />
     </article>
   );

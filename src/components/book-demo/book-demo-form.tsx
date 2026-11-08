@@ -2,10 +2,28 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Send, AlertCircle, Loader2, Check, Info } from "lucide-react";
+import { Send, AlertCircle, Loader2, Info } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { DemoFormState, DemoFormErrors } from "./types";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import {
+  Card,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const BUSINESS_CATEGORIES = [
@@ -75,14 +93,12 @@ export function BookDemoForm({ className }: { className?: string }) {
   const [serverMessage, setServerMessage] = useState<string>("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value, type } = e.target;
-    const checked = (e.target as HTMLInputElement).checked;
-
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: value,
     }));
 
     if (errors[name as keyof DemoFormErrors]) {
@@ -177,12 +193,14 @@ export function BookDemoForm({ className }: { className?: string }) {
     setServerMessage("");
 
     // In this frontend-only public marketing website, form submission is not connected to a backend.
-    setStatus("success");
-    setServerMessage(
-      isBn
-        ? "এই ওয়েবসাইটটি একটি পাবলিক মার্কেটিং ওয়েবসাইট হিসেবে চলছে এবং ব্যাকএন্ড ডাটাবেসের সাথে সংযুক্ত নয়। আপনার ইনপুট সঠিকভাবে যাচাই করা হয়েছে, তবে কোনো তথ্য জমা বা সংরক্ষণ করা হয়নি। সরাসরি ডেমো বুক করতে দয়া করে demo@cartx.ai এ ইমেইল করুন অথবা আমাদের কল করুন।"
-        : "This website operates as a frontend-only public marketing demo with no backend or database connection. Your form inputs were validated successfully, but no request was transmitted or stored. To schedule a demo with our team, please contact us directly at demo@cartx.ai."
-    );
+    setTimeout(() => {
+      setStatus("success");
+      setServerMessage(
+        isBn
+          ? "এই ওয়েবসাইটটি একটি পাবলিক মার্কেটিং ওয়েবসাইট হিসেবে চলছে এবং ব্যাকএন্ড ডাটাবেসের সাথে সংযুক্ত নয়। আপনার ইনপুট সঠিকভাবে যাচাই করা হয়েছে, তবে কোনো তথ্য জমা বা সংরক্ষণ করা হয়নি। সরাসরি ডেমো বুক করতে দয়া করে demo@cartx.ai এ ইমেইল করুন অথবা আমাদের কল করুন।"
+          : "This website operates as a frontend-only public marketing demo with no backend or database connection. Your form inputs were validated successfully, but no request was transmitted or stored. To schedule a demo with our team, please contact us directly at demo@cartx.ai."
+      );
+    }, 400);
   };
 
   const handleReset = () => {
@@ -229,396 +247,443 @@ export function BookDemoForm({ className }: { className?: string }) {
         </ScrollReveal>
 
         {status === "success" ? (
-          <div className="rounded-3xl border border-primary/25 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
-            <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
-              <Info className="h-8 w-8" />
+          <Card className="rounded-3xl border border-primary/25 bg-card p-8 sm:p-12 text-center shadow-card max-w-2xl mx-auto animate-in fade-in zoom-in-95 duration-300">
+            <div className="size-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+              <Info className="size-7" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-foreground mb-2">
               {isBn ? "পাবলিক ডেমো নোটিশ" : "Frontend Demo Notice"}
-            </h3>
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
-              {isBn ? "সাবমিশন ব্যাকএন্ডের সাথে সংযুক্ত নয়" : "Submission Not Connected to Backend"}
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+            </CardTitle>
+            <div className="mb-3">
+              <Badge variant="secondary" className="text-xs font-semibold uppercase tracking-wider">
+                {isBn ? "সাবমিশন ব্যাকএন্ডের সাথে সংযুক্ত নয়" : "Submission Not Connected to Backend"}
+              </Badge>
+            </div>
+            <CardDescription className="text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto mb-6">
               {serverMessage}
-            </p>
+            </CardDescription>
             <div>
-              <button
+              <Button
                 type="button"
+                variant="outline"
                 onClick={handleReset}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 transition-colors cursor-pointer"
+                className="cursor-pointer font-semibold"
               >
                 <span>{isBn ? "ফর্মে ফিরে যান" : "Back to Form"}</span>
-              </button>
+              </Button>
             </div>
-          </div>
+          </Card>
         ) : (
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-sm space-y-7"
-          >
-            {/* Honeypot hidden input */}
-            <div className="hidden" aria-hidden="true">
-              <label htmlFor="demo_website_hp">Do not fill this</label>
-              <input
-                id="demo_website_hp"
-                type="text"
-                name="website_hp"
-                tabIndex={-1}
-                autoComplete="off"
-                value={formData.website_hp}
-                onChange={handleChange}
-              />
-            </div>
-
-            {/* Error Banner */}
-            {status === "error" && (
-              <div
-                role="alert"
-                className="rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-xs sm:text-sm text-destructive flex items-center gap-3"
-              >
-                <AlertCircle className="h-4 w-4 shrink-0" />
-                <span>{serverMessage}</span>
-              </div>
-            )}
-
-            {/* Row 1: Full Name & Work Email */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="demo-fullName" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "আপনার পুরো নাম *" : "Full Name *"}
-                </label>
+          <Card className="rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-xs">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="space-y-7"
+            >
+              {/* Honeypot hidden input */}
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="demo_website_hp">Do not fill this</label>
                 <input
-                  id="demo-fullName"
-                  name="fullName"
+                  id="demo_website_hp"
                   type="text"
-                  required
-                  placeholder={isBn ? "উদা: তানভীর আহমেদ" : "e.g. Tanvir Ahmed"}
-                  value={formData.fullName}
+                  name="website_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website_hp}
                   onChange={handleChange}
-                  aria-invalid={Boolean(errors.fullName)}
-                  className={cn(
-                    "w-full rounded-xl border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 shadow-xs transition-colors",
-                    errors.fullName ? "border-destructive focus:ring-destructive/30" : "border-border focus:ring-primary"
-                  )}
                 />
-                {errors.fullName && (
-                  <p className="mt-1.5 text-xs text-destructive font-medium">{errors.fullName}</p>
-                )}
               </div>
 
-              <div>
-                <label htmlFor="demo-workEmail" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "ওয়ার্ক ইমেইল ঠিকানা *" : "Work Email Address *"}
-                </label>
-                <input
-                  id="demo-workEmail"
-                  name="workEmail"
-                  type="email"
-                  required
-                  placeholder={isBn ? "you@company.com" : "you@company.com"}
-                  value={formData.workEmail}
-                  onChange={handleChange}
-                  aria-invalid={Boolean(errors.workEmail)}
-                  className={cn(
-                    "w-full rounded-xl border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 shadow-xs transition-colors",
-                    errors.workEmail ? "border-destructive focus:ring-destructive/30" : "border-border focus:ring-primary"
+              {/* Error Banner */}
+              {status === "error" && (
+                <div
+                  role="alert"
+                  className="rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-xs sm:text-sm text-destructive flex items-center gap-3"
+                >
+                  <AlertCircle className="size-4 shrink-0" />
+                  <span>{serverMessage}</span>
+                </div>
+              )}
+
+              {/* Row 1: Full Name & Work Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-fullName">
+                    {isBn ? "আপনার পুরো নাম" : "Full Name"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="demo-fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    placeholder={isBn ? "উদা: তানভীর আহমেদ" : "e.g. Tanvir Ahmed"}
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    error={Boolean(errors.fullName)}
+                    aria-invalid={Boolean(errors.fullName)}
+                  />
+                  {errors.fullName && (
+                    <p className="text-xs text-destructive font-medium">{errors.fullName}</p>
                   )}
-                />
-                {errors.workEmail && (
-                  <p className="mt-1.5 text-xs text-destructive font-medium">{errors.workEmail}</p>
-                )}
-              </div>
-            </div>
+                </div>
 
-            {/* Row 2: Business Name & Category */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="demo-businessName" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "ব্যবসা বা প্রতিষ্ঠানের নাম *" : "Business Name *"}
-                </label>
-                <input
-                  id="demo-businessName"
-                  name="businessName"
-                  type="text"
-                  required
-                  placeholder={isBn ? "আপনার ব্র্যান্ডের নাম" : "Your brand or store name"}
-                  value={formData.businessName}
-                  onChange={handleChange}
-                  aria-invalid={Boolean(errors.businessName)}
-                  className={cn(
-                    "w-full rounded-xl border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 shadow-xs transition-colors",
-                    errors.businessName ? "border-destructive focus:ring-destructive/30" : "border-border focus:ring-primary"
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-workEmail">
+                    {isBn ? "ওয়ার্ক ইমেইল ঠিকানা" : "Work Email Address"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="demo-workEmail"
+                    name="workEmail"
+                    type="email"
+                    required
+                    placeholder="you@company.com"
+                    value={formData.workEmail}
+                    onChange={handleChange}
+                    error={Boolean(errors.workEmail)}
+                    aria-invalid={Boolean(errors.workEmail)}
+                  />
+                  {errors.workEmail && (
+                    <p className="text-xs text-destructive font-medium">{errors.workEmail}</p>
                   )}
-                />
-                {errors.businessName && (
-                  <p className="mt-1.5 text-xs text-destructive font-medium">{errors.businessName}</p>
-                )}
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="demo-businessCategory" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "ব্যবসার ধরন / ক্যাটাগরি *" : "Business Category *"}
-                </label>
-                <select
-                  id="demo-businessCategory"
-                  name="businessCategory"
-                  required
-                  value={formData.businessCategory}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors"
-                >
-                  {BUSINESS_CATEGORIES.map((cat) => (
-                    <option key={cat.id} value={cat.id}>
-                      {isBn ? cat.bn : cat.en}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+              {/* Row 2: Business Name & Category */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-businessName">
+                    {isBn ? "ব্যবসা বা প্রতিষ্ঠানের নাম" : "Business Name"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="demo-businessName"
+                    name="businessName"
+                    type="text"
+                    required
+                    placeholder={isBn ? "আপনার ব্র্যান্ডের নাম" : "Your brand or store name"}
+                    value={formData.businessName}
+                    onChange={handleChange}
+                    error={Boolean(errors.businessName)}
+                    aria-invalid={Boolean(errors.businessName)}
+                  />
+                  {errors.businessName && (
+                    <p className="text-xs text-destructive font-medium">{errors.businessName}</p>
+                  )}
+                </div>
 
-            {/* Row 3: Business Size & Inquiry Type */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="demo-businessSize" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "ব্যবসার আকার বা ধাপ *" : "Business Size *"}
-                </label>
-                <select
-                  id="demo-businessSize"
-                  name="businessSize"
-                  required
-                  value={formData.businessSize}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors"
-                >
-                  {BUSINESS_SIZES.map((sz) => (
-                    <option key={sz.id} value={sz.id}>
-                      {isBn ? sz.bn : sz.en}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="demo-inquiryType" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "অনুসন্ধানের প্রধান বিষয় *" : "Inquiry Type *"}
-                </label>
-                <select
-                  id="demo-inquiryType"
-                  name="inquiryType"
-                  required
-                  value={formData.inquiryType}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors"
-                >
-                  {INQUIRY_TYPES.map((inq) => (
-                    <option key={inq.id} value={inq.id}>
-                      {isBn ? inq.bn : inq.en}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 4: Required Capabilities (Multi-select Accessible Chips) */}
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="block text-xs sm:text-sm font-semibold text-foreground">
-                  {isBn
-                    ? "ডেমোতে যেসব ক্যাপাবিলিটি দেখতে চান * (একাধিক নির্বাচনযোগ্য)"
-                    : "Required Capabilities * (Select all that apply)"}
-                </label>
-                <span className="text-[11px] text-muted-foreground font-mono">
-                  {formData.requiredCapabilities.length} selected
-                </span>
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-businessCategory">
+                    {isBn ? "ব্যবসার ধরন / ক্যাটাগরি" : "Business Category"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Select
+                    value={formData.businessCategory}
+                    onValueChange={(val) => {
+                      if (val) {
+                        setFormData((prev) => ({ ...prev, businessCategory: val }));
+                        if (errors.businessCategory) {
+                          setErrors((prev) => ({ ...prev, businessCategory: undefined }));
+                        }
+                      }
+                    }}
+                  >
+                    <SelectTrigger id="demo-businessCategory" className="w-full">
+                      <SelectValue placeholder={isBn ? "ক্যাটাগরি নির্বাচন করুন" : "Select category"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {BUSINESS_CATEGORIES.map((cat) => (
+                        <SelectItem key={cat.id} value={cat.id}>
+                          {isBn ? cat.bn : cat.en}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.businessCategory && (
+                    <p className="text-xs text-destructive font-medium">{errors.businessCategory}</p>
+                  )}
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                {CAPABILITY_OPTIONS.map((cap) => {
-                  const isSelected = formData.requiredCapabilities.includes(cap.id);
-                  return (
-                    <button
-                      key={cap.id}
-                      type="button"
-                      onClick={() => toggleCapability(cap.id)}
-                      className={cn(
-                        "text-left p-3 rounded-xl border text-xs font-semibold transition-all cursor-pointer flex items-center justify-between gap-2",
-                        isSelected
-                          ? "border-primary bg-primary/[0.08] text-primary shadow-xs"
-                          : "border-border bg-background text-foreground/80 hover:bg-muted/50"
-                      )}
-                    >
-                      <span className="truncate">{isBn ? cap.bn : cap.en}</span>
-                      <div
+              {/* Row 3: Business Size & Inquiry Type */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-businessSize">
+                    {isBn ? "ব্যবসার আকার বা ধাপ" : "Business Size"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Select
+                    value={formData.businessSize}
+                    onValueChange={(val) => {
+                      if (val) {
+                        setFormData((prev) => ({ ...prev, businessSize: val }));
+                        if (errors.businessSize) {
+                          setErrors((prev) => ({ ...prev, businessSize: undefined }));
+                        }
+                      }
+                    }}
+                  >
+                    <SelectTrigger id="demo-businessSize" className="w-full">
+                      <SelectValue placeholder={isBn ? "প্রতিষ্ঠানের আকার নির্বাচন করুন" : "Select business size"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {BUSINESS_SIZES.map((sz) => (
+                        <SelectItem key={sz.id} value={sz.id}>
+                          {isBn ? sz.bn : sz.en}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.businessSize && (
+                    <p className="text-xs text-destructive font-medium">{errors.businessSize}</p>
+                  )}
+                </div>
+
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-inquiryType">
+                    {isBn ? "অনুসন্ধানের প্রধান বিষয়" : "Inquiry Type"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Select
+                    value={formData.inquiryType}
+                    onValueChange={(val) => {
+                      if (val) {
+                        setFormData((prev) => ({ ...prev, inquiryType: val }));
+                        if (errors.inquiryType) {
+                          setErrors((prev) => ({ ...prev, inquiryType: undefined }));
+                        }
+                      }
+                    }}
+                  >
+                    <SelectTrigger id="demo-inquiryType" className="w-full">
+                      <SelectValue placeholder={isBn ? "অনুসন্ধানের ধরন নির্বাচন করুন" : "Select inquiry type"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {INQUIRY_TYPES.map((inq) => (
+                        <SelectItem key={inq.id} value={inq.id}>
+                          {isBn ? inq.bn : inq.en}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.inquiryType && (
+                    <p className="text-xs text-destructive font-medium">{errors.inquiryType}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Row 4: Required Capabilities (Multi-select using shadcn Checkbox & Label) */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label className="text-xs sm:text-sm font-semibold text-foreground">
+                    {isBn
+                      ? "ডেমোতে যেসব ক্যাপাবিলিটি দেখতে চান"
+                      : "Required Capabilities"}{" "}
+                    <span className="text-destructive">*</span>
+                    <span className="text-muted-foreground font-normal ml-1">
+                      ({isBn ? "একাধিক নির্বাচনযোগ্য" : "Select all that apply"})
+                    </span>
+                  </Label>
+                  <span className="text-[11px] text-muted-foreground font-mono">
+                    {formData.requiredCapabilities.length} selected
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                  {CAPABILITY_OPTIONS.map((cap) => {
+                    const isChecked = formData.requiredCapabilities.includes(cap.id);
+                    return (
+                      <label
+                        key={cap.id}
+                        htmlFor={`cap-${cap.id}`}
                         className={cn(
-                          "h-4 w-4 rounded-md border flex items-center justify-center shrink-0 transition-colors",
-                          isSelected
-                            ? "bg-primary border-primary text-primary-foreground"
-                            : "border-border bg-card"
+                          "flex items-center justify-between p-3 rounded-xl border text-xs font-medium cursor-pointer transition-all select-none",
+                          isChecked
+                            ? "border-primary bg-primary/[0.06] text-foreground shadow-2xs"
+                            : "border-border bg-card hover:bg-muted/50 text-foreground/80"
                         )}
                       >
-                        {isSelected && <Check className="h-3 w-3 stroke-[3]" />}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-              {errors.requiredCapabilities && (
-                <p className="mt-1.5 text-xs text-destructive font-medium">
-                  {errors.requiredCapabilities}
-                </p>
-              )}
-            </div>
-
-            {/* Row 5: Preferred Contact Method & Phone Number */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="demo-preferredContactMethod" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn ? "পছন্দের যোগাযোগ মাধ্যম *" : "Preferred Contact Method *"}
-                </label>
-                <select
-                  id="demo-preferredContactMethod"
-                  name="preferredContactMethod"
-                  value={formData.preferredContactMethod}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors"
-                >
-                  <option value="email">{isBn ? "ইমেইল (Email)" : "Email"}</option>
-                  <option value="phone">{isBn ? "ফোন / মোবাইল (Phone)" : "Phone"}</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="demo-phone" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                  {isBn
-                    ? formData.preferredContactMethod === "phone"
-                      ? "মোবাইল নম্বর *"
-                      : "মোবাইল নম্বর (ঐচ্ছিক)"
-                    : formData.preferredContactMethod === "phone"
-                    ? "Phone Number *"
-                    : "Phone Number (Optional)"}
-                </label>
-                <input
-                  id="demo-phone"
-                  name="phone"
-                  type="tel"
-                  placeholder={isBn ? "+880 1XXX-XXXXXX" : "+880 1XXX-XXXXXX"}
-                  value={formData.phone}
-                  onChange={handleChange}
-                  aria-invalid={Boolean(errors.phone)}
-                  className={cn(
-                    "w-full rounded-xl border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 shadow-xs transition-colors",
-                    errors.phone ? "border-destructive focus:ring-destructive/30" : "border-border focus:ring-primary"
-                  )}
-                />
-                {errors.phone && (
-                  <p className="mt-1.5 text-xs text-destructive font-medium">{errors.phone}</p>
+                        <span className="truncate pr-2">{isBn ? cap.bn : cap.en}</span>
+                        <Checkbox
+                          id={`cap-${cap.id}`}
+                          checked={isChecked}
+                          onCheckedChange={() => toggleCapability(cap.id)}
+                          className="shrink-0"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+                {errors.requiredCapabilities && (
+                  <p className="text-xs text-destructive font-medium">
+                    {errors.requiredCapabilities}
+                  </p>
                 )}
               </div>
-            </div>
 
-            {/* Row 6: Website URL (Optional) */}
-            <div>
-              <label htmlFor="demo-website" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                {isBn ? "বর্তমান ওয়েবসাইট বা শপ লিংক (ঐচ্ছিক)" : "Current Website or Store Link (Optional)"}
-              </label>
-              <input
-                id="demo-website"
-                name="website"
-                type="url"
-                placeholder="https://yourstore.com"
-                value={formData.website}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors"
-              />
-            </div>
+              {/* Row 5: Preferred Contact Method & Phone Number */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-preferredContactMethod">
+                    {isBn ? "পছন্দের যোগাযোগ মাধ্যম" : "Preferred Contact Method"}{" "}
+                    <span className="text-destructive">*</span>
+                  </Label>
+                  <Select
+                    value={formData.preferredContactMethod}
+                    onValueChange={(val) => {
+                      if (val === "email" || val === "phone") {
+                        setFormData((prev) => ({ ...prev, preferredContactMethod: val }));
+                      }
+                    }}
+                  >
+                    <SelectTrigger id="demo-preferredContactMethod" className="w-full">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="email">{isBn ? "ইমেইল (Email)" : "Email"}</SelectItem>
+                      <SelectItem value="phone">{isBn ? "ফোন / মোবাইল (Phone)" : "Phone"}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-            {/* Row 7: Additional Requirements Message (Optional) */}
-            <div>
-              <label htmlFor="demo-message" className="block text-xs sm:text-sm font-semibold text-foreground mb-1.5">
-                {isBn ? "অতিরিক্ত চাহিদা বা বিশেষ প্রশ্ন (ঐচ্ছিক)" : "Additional Requirements / Message (Optional)"}
-              </label>
-              <textarea
-                id="demo-message"
-                name="message"
-                rows={4}
-                placeholder={
-                  isBn
-                    ? "আপনার বর্তমান অর্ডার ভলিউম, বিশেষ ইন্টিগ্রেশন বা কোনো নির্দিষ্ট চাহিদা থাকলে লিখুন..."
-                    : "Share details on your current order volume, specific requirements, or rollout timeline..."
-                }
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary shadow-xs transition-colors resize-y"
-              />
-            </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="demo-phone">
+                    {isBn
+                      ? formData.preferredContactMethod === "phone"
+                        ? "মোবাইল নম্বর *"
+                        : "মোবাইল নম্বর (ঐচ্ছিক)"
+                      : formData.preferredContactMethod === "phone"
+                      ? "Phone Number *"
+                      : "Phone Number (Optional)"}
+                  </Label>
+                  <Input
+                    id="demo-phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+880 1XXX-XXXXXX"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    error={Boolean(errors.phone)}
+                    aria-invalid={Boolean(errors.phone)}
+                  />
+                  {errors.phone && (
+                    <p className="text-xs text-destructive font-medium">{errors.phone}</p>
+                  )}
+                </div>
+              </div>
 
-            {/* Row 8: Privacy acknowledgement */}
-            <div className="pt-2">
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="privacyAccepted"
-                  checked={formData.privacyAccepted}
+              {/* Row 6: Website URL (Optional) */}
+              <div className="space-y-1.5">
+                <Label htmlFor="demo-website">
+                  {isBn ? "বর্তমান ওয়েবসাইট বা শপ লিংক (ঐচ্ছিক)" : "Current Website or Store Link (Optional)"}
+                </Label>
+                <Input
+                  id="demo-website"
+                  name="website"
+                  type="url"
+                  placeholder="https://yourstore.com"
+                  value={formData.website}
                   onChange={handleChange}
-                  className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary"
                 />
-                <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  {isBn ? (
+              </div>
+
+              {/* Row 7: Additional Requirements Message (Optional) */}
+              <div className="space-y-1.5">
+                <Label htmlFor="demo-message">
+                  {isBn ? "অতিরিক্ত চাহিদা বা বিশেষ প্রশ্ন (ঐচ্ছিক)" : "Additional Requirements / Message (Optional)"}
+                </Label>
+                <Textarea
+                  id="demo-message"
+                  name="message"
+                  rows={4}
+                  placeholder={
+                    isBn
+                      ? "আপনার বর্তমান অর্ডার ভলিউম, বিশেষ ইন্টিগ্রেশন বা কোনো নির্দিষ্ট চাহিদা থাকলে লিখুন..."
+                      : "Share details on your current order volume, specific requirements, or rollout timeline..."
+                  }
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="resize-y min-h-24 rounded-xl"
+                />
+              </div>
+
+              {/* Row 8: Privacy acknowledgement */}
+              <div className="pt-2">
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="demo-privacyAccepted"
+                    checked={formData.privacyAccepted}
+                    onCheckedChange={(checked) => {
+                      setFormData((prev) => ({ ...prev, privacyAccepted: Boolean(checked) }));
+                      if (errors.privacyAccepted) {
+                        setErrors((prev) => ({ ...prev, privacyAccepted: undefined }));
+                      }
+                    }}
+                    error={Boolean(errors.privacyAccepted)}
+                    className="mt-0.5"
+                  />
+                  <div className="grid gap-1.5 leading-none">
+                    <Label
+                      htmlFor="demo-privacyAccepted"
+                      className="text-xs sm:text-sm text-muted-foreground leading-relaxed cursor-pointer font-normal"
+                    >
+                      {isBn ? (
+                        <>
+                          আমি কার্টএক্স-এর{" "}
+                          <Link href="/privacy-policy" className="text-primary hover:underline font-semibold" target="_blank">
+                            গোপনীয়তা নীতি (Privacy Policy)
+                          </Link>{" "}
+                          পড়েছি এবং সম্মত হচ্ছি যে আমার প্রদত্ত তথ্যের মাধ্যমে টিম ডেমো সমন্বয় করতে পারে।
+                        </>
+                      ) : (
+                        <>
+                          I acknowledge the CartX{" "}
+                          <Link href="/privacy-policy" className="text-primary hover:underline font-semibold" target="_blank">
+                            Privacy Policy
+                          </Link>{" "}
+                          and agree that my submitted information will be used to coordinate this demo.
+                        </>
+                      )}
+                    </Label>
+                    {errors.privacyAccepted && (
+                      <p className="text-xs text-destructive font-medium">
+                        {errors.privacyAccepted}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="pt-3 flex items-center justify-between flex-wrap gap-4">
+                <Button
+                  type="submit"
+                  size="default"
+                  disabled={status === "loading"}
+                  className="w-full sm:w-auto px-8 py-2.5 gap-2 font-semibold shadow-xs hover:shadow-md transition-all cursor-pointer"
+                >
+                  {status === "loading" ? (
                     <>
-                      আমি কার্টএক্স-এর{" "}
-                      <Link href="/privacy-policy" className="text-primary hover:underline font-semibold" target="_blank">
-                        গোপনীয়তা নীতি (Privacy Policy)
-                      </Link>{" "}
-                      পড়েছি এবং সম্মত হচ্ছি যে আমার প্রদত্ত তথ্যের মাধ্যমে টিম ডেমো সমন্বয় করতে পারে।
+                      <Loader2 className="size-4 animate-spin" />
+                      <span>{isBn ? "অনুরোধ জমা হচ্ছে…" : "Submitting your request…"}</span>
                     </>
                   ) : (
                     <>
-                      I acknowledge the CartX{" "}
-                      <Link href="/privacy-policy" className="text-primary hover:underline font-semibold" target="_blank">
-                        Privacy Policy
-                      </Link>{" "}
-                      and agree that my submitted information will be used to coordinate this demo.
+                      <Send className="size-4" />
+                      <span>{isBn ? "ডেমোর অনুরোধ জমা দিন" : "Request a Demo"}</span>
                     </>
                   )}
+                </Button>
+
+                <span className="text-xs text-muted-foreground">
+                  {isBn ? "কোনো পেমেন্ট বা বাধ্যবাধকতা নেই" : "No credit card or commitment required"}
                 </span>
-              </label>
-              {errors.privacyAccepted && (
-                <p className="mt-1.5 text-xs text-destructive font-medium pl-7">
-                  {errors.privacyAccepted}
-                </p>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-xs sm:text-sm font-semibold text-primary-foreground shadow-sm hover:opacity-90 disabled:opacity-50 transition-all cursor-pointer"
-              >
-                {status === "loading" ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span>{isBn ? "অনুরোধ জমা হচ্ছে…" : "Submitting your request…"}</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4" />
-                    <span>{isBn ? "ডেমোর অনুরোধ জমা দিন" : "Request a Demo"}</span>
-                  </>
-                )}
-              </button>
-
-              <span className="text-xs text-muted-foreground">
-                {isBn ? "কোনো পেমেন্ট বা বাধ্যবাধকতা নেই" : "No credit card or commitment required"}
-              </span>
-            </div>
-          </form>
+              </div>
+            </form>
+          </Card>
         )}
       </div>
     </section>
   );
 }
-

@@ -42,11 +42,16 @@ export function BookDemoHero({ onScrollToForm, className }: BookDemoHeroProps) {
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground">
-            <span className="brand-gradient-text block mb-1">
+          <h1 className="text-balance mb-3! sm:mb-3.5!">
+            <span className="block text-foreground">
               {isBn
-                ? "কার্টএক্স কীভাবে আপনার ব্যবসাকে এগিয়ে নেবে তা দেখুন।"
-                : "See How CartX Can Support Your Business."}
+                ? "কার্টএক্স কীভাবে আপনার ব্যবসাকে"
+                : "See How CartX"}
+            </span>
+            <span className="block brand-gradient-text">
+              {isBn
+                ? "এগিয়ে নেবে তা দেখুন।"
+                : "Can Support Your Business."}
             </span>
           </h1>
 

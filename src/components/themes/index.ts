@@ -3,7 +3,6 @@ export * from "./themes-data";
 export * from "./gallery/themes-hero";
 export * from "./gallery/theme-filter-select";
 export * from "./gallery/theme-search-filters";
-export * from "./gallery/themes-filter-bar";
 export * from "./gallery/theme-card";
 export * from "./gallery/theme-empty-state";
 export * from "./gallery/themes-grid";

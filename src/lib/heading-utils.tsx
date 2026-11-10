@@ -1,10 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * Split a heading text into two balanced, visually pleasing lines.
- * Honors newlines, commas, colons, em-dashes, and natural word breaks.
- */
 export function splitHeading(title: string): [string, string] {
   const trimmed = title.trim();
   if (trimmed.includes("\n")) {
@@ -40,11 +36,6 @@ export interface TwoLineHeadingProps extends React.HTMLAttributes<HTMLHeadingEle
   line2ClassName?: string;
 }
 
-/**
- * TwoLineHeading — Standardized two-line heading across the CartX website.
- * Line 1: Black/foreground text using existing global typography styles.
- * Line 2: Brand gradient text using .brand-gradient-text CSS class.
- */
 export function TwoLineHeading({
   as: Component = "h2",
   line1,
@@ -67,8 +58,16 @@ export function TwoLineHeading({
 
   return (
     <Component className={className} {...props}>
-      {l1 && <span className={cn("block text-foreground", line1ClassName)}>{l1}</span>}
-      {l2 && <span className={cn("block brand-gradient-text", line2ClassName)}>{l2}</span>}
+      {l1 && (
+        <span className={cn("block text-foreground", line1ClassName)}>
+          {l1}
+        </span>
+      )}
+      {l2 && (
+        <span className={cn("block brand-gradient-text", line2ClassName)}>
+          {l2}
+        </span>
+      )}
       {children}
     </Component>
   );

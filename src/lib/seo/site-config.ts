@@ -1,8 +1,3 @@
-/**
- * CartX SEO & Site Configuration
- * Centralized source of truth for canonical URLs, brand identity, and default metadata.
- */
-
 export const SITE_CONFIG = {
   name: "CartX",
   legalName: "WebQ LTD",
@@ -22,4 +17,3 @@ export function getCanonicalUrl(path: string): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `${SITE_CONFIG.url}${cleanPath === "/" ? "" : cleanPath}`;
 }
-

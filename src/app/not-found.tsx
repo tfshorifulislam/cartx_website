@@ -4,7 +4,8 @@ import { Home, Compass, FileQuestion } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "404 - Page Not Found | CartX",
-  description: "The page you are looking for does not exist or has been relocated.",
+  description:
+    "The page you are looking for does not exist or has been relocated.",
   robots: {
     index: false,
     follow: false,
@@ -36,14 +37,15 @@ export default function NotFound() {
             Page Not Found
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md mx-auto">
-            The requested page could not be located. It may have been moved, renamed, or is temporarily unavailable.
+            The requested page could not be located. It may have been moved,
+            renamed, or is temporarily unavailable.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:bg-[var(--primary-hover)] transition-all w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-xs sm:text-sm font-semibold text-primary-foreground shadow-xs hover:bg-primary-hover transition-all w-full sm:w-auto"
           >
             <Home className="size-4" />
             <span>Return to Homepage</span>
@@ -53,7 +55,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-xs sm:text-sm font-semibold text-foreground hover:bg-muted/50 transition-all w-full sm:w-auto"
           >
             <Compass className="size-4" />
-            <span>Explore Help Center</span>
+            <span>Go to Help Center</span>
           </Link>
         </div>
 

@@ -64,10 +64,10 @@ export function DemoStoreModal({
         showCloseButton={false}
         className={cn(
           "w-full max-w-[calc(100%-1rem)] sm:max-w-4xl md:max-w-5xl xl:max-w-6xl",
-          "h-[94vh] sm:h-[90vh] max-h-[920px]",
+          "h-[94vh] sm:h-[90vh] max-h-230",
           "p-0 gap-0 overflow-hidden flex flex-col",
           "rounded-2xl border border-border bg-card shadow-2xl",
-          "outline-none"
+          "outline-none",
         )}
       >
         {/* ── Top Control Bar (Header) ── */}
@@ -107,11 +107,13 @@ export function DemoStoreModal({
                 "inline-flex items-center gap-1.5 rounded-md px-2.5 sm:px-3 py-1 text-xs font-semibold transition-all cursor-pointer min-h-[30px]",
                 viewMode === "desktop"
                   ? "bg-primary text-primary-foreground shadow-2xs font-bold"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
               )}
             >
               <Monitor className="size-3.5 shrink-0" />
-              <span className="hidden sm:inline">{isBn ? "ডেস্কটপ" : "Desktop"}</span>
+              <span className="hidden sm:inline">
+                {isBn ? "ডেস্কটপ" : "Desktop"}
+              </span>
             </button>
             <button
               type="button"
@@ -122,11 +124,13 @@ export function DemoStoreModal({
                 "inline-flex items-center gap-1.5 rounded-md px-2.5 sm:px-3 py-1 text-xs font-semibold transition-all cursor-pointer min-h-[30px]",
                 viewMode === "mobile"
                   ? "bg-primary text-primary-foreground shadow-2xs font-bold"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
               )}
             >
               <Smartphone className="size-3.5 shrink-0" />
-              <span className="hidden sm:inline">{isBn ? "মোবাইল" : "Mobile"}</span>
+              <span className="hidden sm:inline">
+                {isBn ? "মোবাইল" : "Mobile"}
+              </span>
             </button>
           </div>
 
@@ -400,9 +404,7 @@ export function DemoStoreModal({
 
           {/* Right: Primary Call to Action & Dismiss Button */}
           <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
-            <DialogClose
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted/60 transition-colors cursor-pointer min-h-[36px]"
-            >
+            <DialogClose className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted/60 transition-colors cursor-pointer min-h-[36px]">
               {isBn ? "প্রিভিউ বন্ধ করুন" : "Close Preview"}
             </DialogClose>
 
@@ -410,7 +412,9 @@ export function DemoStoreModal({
               href="/start"
               className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-xs hover:bg-primary-hover hover:-translate-y-0.5 transition-all cursor-pointer min-h-[36px]"
             >
-              <span>{isBn ? "এমন স্টোর তৈরি করুন" : "Create Store Like This"}</span>
+              <span>
+                {isBn ? "এমন স্টোর তৈরি করুন" : "Create Store Like This"}
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { LegalPageLayout, LegalSection } from "@/components/legal/legal-page-layout";
+import { LegalLayout, LegalSection } from "@/components/legal/legal-layout";
 import { getCanonicalUrl } from "@/lib/seo/site-config";
 
 const canonical = getCanonicalUrl("/refund-policy");
@@ -123,7 +123,7 @@ const SECTIONS: LegalSection[] = [
 
 export default function RefundPolicyPage() {
   return (
-    <LegalPageLayout
+    <LegalLayout
       titleEn="Refund & Cancellation Policy"
       titleBn="রিফান্ড ও বাতিলকরণ পলিসি"
       lastUpdated="November 2026 (Draft Working Document)"

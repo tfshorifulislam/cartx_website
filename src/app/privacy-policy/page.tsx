@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { LegalPageLayout, LegalSection } from "@/components/legal/legal-page-layout";
+import { LegalLayout, LegalSection } from "@/components/legal/legal-layout";
 import { getCanonicalUrl } from "@/lib/seo/site-config";
 
 const canonical = getCanonicalUrl("/privacy-policy");
@@ -168,7 +168,7 @@ const SECTIONS: LegalSection[] = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPageLayout
+    <LegalLayout
       titleEn="Privacy Policy"
       titleBn="গোপনীয়তা নীতি"
       lastUpdated="November 2026 (Draft Working Document)"

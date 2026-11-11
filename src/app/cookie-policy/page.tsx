@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { LegalPageLayout, LegalSection } from "@/components/legal/legal-page-layout";
+import { LegalLayout, LegalSection } from "@/components/legal/legal-layout";
 import { getCanonicalUrl } from "@/lib/seo/site-config";
 
 const canonical = getCanonicalUrl("/cookie-policy");
@@ -127,7 +127,7 @@ const SECTIONS: LegalSection[] = [
 
 export default function CookiePolicyPage() {
   return (
-    <LegalPageLayout
+    <LegalLayout
       titleEn="Cookie Policy"
       titleBn="কুকি পলিসি"
       lastUpdated="November 2026 (Draft Working Document)"
